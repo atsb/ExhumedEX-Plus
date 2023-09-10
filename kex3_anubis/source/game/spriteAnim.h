@@ -33,7 +33,7 @@ typedef enum
     SFF_HASROTATIONS    = BIT(2)
 } frameFlags_t;
 
-typedef struct
+struct spriteFrame_t
 {
     uint16_t                    delay;
     uint16_t                    flags;
@@ -44,15 +44,15 @@ typedef struct
 
     bool                        HasNextFrame(void) { return nextFrame[0] != '-'; }
     bool                        HasRefireFrame(void) { return refireFrame[0] != '-'; }
-} spriteFrame_t;
+};
 
-typedef struct
+struct spriteAnim_t
 {
     kexStr                      name;
     kexArray<spriteFrame_t>     frames;
 
     const unsigned int          NumFrames(void) const { return frames.Length(); }
-} spriteAnim_t;
+};
 
 class kexSpriteAnimManager
 {

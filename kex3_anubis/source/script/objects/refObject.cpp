@@ -34,7 +34,7 @@ void kexScriptObjHandle::Init(void)
     e->RegisterObjectBehaviour("ref", asBEHAVE_CONSTRUCT, "void f(const ref &in)", asFUNCTIONPR(kexScriptObjHandle::ObjectConstruct, (kexScriptObjHandle*, const kexScriptObjHandle&), void), asCALL_CDECL_OBJFIRST);
     e->RegisterObjectBehaviour("ref", asBEHAVE_CONSTRUCT, "void f(const ?&in)", asFUNCTIONPR(kexScriptObjHandle::ObjectConstruct, (kexScriptObjHandle*, void*, int), void), asCALL_CDECL_OBJFIRST);
     e->RegisterObjectBehaviour("ref", asBEHAVE_DESTRUCT, "void f()", asFUNCTIONPR(kexScriptObjHandle::ObjectDeconstruct, (kexScriptObjHandle *), void), asCALL_CDECL_OBJFIRST);
-    e->RegisterObjectBehaviour("ref", asBEHAVE_REF_CAST, "void f(?&out)", asMETHODPR(kexScriptObjHandle, Cast, (void**, int), void), asCALL_THISCALL);
+    // Deprecated e->RegisterObjectBehaviour("ref", asBEHAVE_REF_CAST, "void f(?&out)", asMETHODPR(kexScriptObjHandle, Cast, (void**, int), void), asCALL_THISCALL);
     e->RegisterObjectMethod("ref", "ref &opAssign(const ref &in)", asMETHOD(kexScriptObjHandle, operator=), asCALL_THISCALL);
     e->RegisterObjectMethod("ref", "ref &opAssign(const ?&in)", asMETHOD(kexScriptObjHandle, Assign), asCALL_THISCALL);
     e->RegisterObjectMethod("ref", "bool opEquals(const ref &in) const", asMETHODPR(kexScriptObjHandle, operator==, (const kexScriptObjHandle &) const, bool), asCALL_THISCALL);
@@ -318,13 +318,13 @@ void kexScriptObjHandle::Cast(void **outRef, int typeId)
     }
     else if(m_type->GetFlags() & asOBJ_SCRIPT_OBJECT)
     {
-        // Attempt a dynamic cast of the stored handle to the requested handle type
+        /* Attempt a dynamic cast of the stored handle to the requested handle type
         if(engine->IsHandleCompatibleWithObject(m_ref, m_type->GetTypeId(), typeId))
         {
             // The script type is compatible so we can simply return the same pointer
             AddRefHandle();
             *outRef = m_ref;
-        }
+        }*/ //deprecated
     }
     else
     {

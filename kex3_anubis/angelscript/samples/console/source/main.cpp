@@ -38,7 +38,7 @@ string         p_name = "player";
 int main(int argc, char **argv)
 {
 	// Create the script engine
-	asIScriptEngine *engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+	asIScriptEngine *engine = asCreateScriptEngine();
 	if( engine == 0 )
 	{
 		cout << "Failed to create script engine." << endl;
@@ -102,8 +102,8 @@ int main(int argc, char **argv)
 			cout << "Unknown command." << endl;
 	}
 
-	// Release the engine
-	engine->Release();
+	// Shut down the engine
+	engine->ShutDownAndRelease();
 
 	return 0;
 }

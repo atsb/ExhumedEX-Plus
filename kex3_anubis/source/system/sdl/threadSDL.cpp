@@ -15,7 +15,7 @@
 //      Thread Class (SDL)
 //
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "kexlib.h"
 
 class kexThreadSDL : public kexThread

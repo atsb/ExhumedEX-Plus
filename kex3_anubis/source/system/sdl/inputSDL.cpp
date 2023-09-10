@@ -17,7 +17,7 @@
 
 #include <math.h>
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "kexlib.h"
 
 #define DEAD_ZONE (32768 / 3)

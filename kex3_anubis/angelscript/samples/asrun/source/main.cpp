@@ -2,6 +2,7 @@
 #include <assert.h>  // assert()
 #include <string.h>  // strstr()
 #include <vector>
+#include <stdlib.h>  // system()
 #include <stdio.h>
 #include <sstream>   // stringstream
 #include <angelscript.h>
@@ -10,9 +11,14 @@
 #include "../../../add_on/scriptarray/scriptarray.h"
 #include "../../../add_on/scriptdictionary/scriptdictionary.h"
 #include "../../../add_on/scriptfile/scriptfile.h"
+#include "../../../add_on/scriptfile/scriptfilesystem.h"
 #include "../../../add_on/scripthelper/scripthelper.h"
 #include "../../../add_on/debugger/debugger.h"
 #include "../../../add_on/contextmgr/contextmgr.h"
+
+#ifdef _WIN32
+#include <Windows.h> // WriteConsoleW
+#endif
 
 #if defined(_MSC_VER)
 #include <crtdbg.h>   // MSVC debugging routines
@@ -29,6 +35,7 @@ void              MessageCallback(const asSMessageInfo *msg, void *param);
 asIScriptContext *RequestContextCallback(asIScriptEngine *engine, void *param);
 void              ReturnContextCallback(asIScriptEngine *engine, asIScriptContext *ctx, void *param);
 void              PrintString(const string &str);
+int               ExecSystemCmd(const string &cmd);
 CScriptArray     *GetCommandLineArgs();
 
 // The command line arguments
@@ -76,7 +83,7 @@ int main(int argc, char **argv)
 	}
 
 	// Create the script engine
-	asIScriptEngine *engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+	asIScriptEngine *engine = asCreateScriptEngine();
 	if( engine == 0 )
 	{
 		cout << "Failed to create script engine." << endl;
@@ -105,10 +112,10 @@ int main(int argc, char **argv)
 	// Execute the script
 	r = ExecuteScript(engine, argv[scriptArg], debug);
 	
-	// Release the engine
+	// Shut down the engine
 	if( g_commandLineArgs )
 		g_commandLineArgs->Release();
-	engine->Release();
+	engine->ShutDownAndRelease();
 
 	return r;
 }
@@ -139,10 +146,12 @@ int ConfigureEngine(asIScriptEngine *engine)
 	RegisterStdStringUtils(engine);
 	RegisterScriptDictionary(engine);
 	RegisterScriptFile(engine);
+	RegisterScriptFileSystem(engine);
 
 	// Register a couple of extra functions for the scripts
 	r = engine->RegisterGlobalFunction("void print(const string &in)", asFUNCTION(PrintString), asCALL_CDECL); assert( r >= 0 );
 	r = engine->RegisterGlobalFunction("array<string> @getCommandLineArgs()", asFUNCTION(GetCommandLineArgs), asCALL_CDECL); assert( r >= 0 );
+	r = engine->RegisterGlobalFunction("int exec(const string &in)", asFUNCTION(ExecSystemCmd), asCALL_CDECL); assert( r >= 0 );
 
 	// Setup the context manager and register the support for co-routines
 	g_ctxMgr = new CContextMgr();
@@ -160,7 +169,7 @@ int ConfigureEngine(asIScriptEngine *engine)
 }
 
 // This is the to-string callback for the string type
-std::string StringToString(void *obj, bool expandMembers, CDebugger *dbg)
+std::string StringToString(void *obj, int /* expandMembers */, CDebugger * /* dbg */)
 {
 	// We know the received object is a string
 	std::string *val = reinterpret_cast<std::string*>(obj);
@@ -179,25 +188,61 @@ std::string StringToString(void *obj, bool expandMembers, CDebugger *dbg)
 
 // This is the to-string callback for the array type
 // This is generic and will take care of all template instances based on the array template
-std::string ArrayToString(void *obj, bool expandMembers, CDebugger *dbg)
+std::string ArrayToString(void *obj, int expandMembers, CDebugger *dbg)
 {
 	CScriptArray *arr = reinterpret_cast<CScriptArray*>(obj);
 
 	std::stringstream s;
 	s << "(len=" << arr->GetSize() << ")";
 	
-	if( expandMembers )
+	if( expandMembers > 0 )
 	{
 		s << " [";
 		for( asUINT n = 0; n < arr->GetSize(); n++ )
 		{
-			s << dbg->ToString(arr->At(n), arr->GetElementTypeId(), false, arr->GetArrayObjectType()->GetEngine());
+			s << dbg->ToString(arr->At(n), arr->GetElementTypeId(), expandMembers - 1, arr->GetArrayObjectType()->GetEngine());
 			if( n < arr->GetSize()-1 )
 				s << ", ";
 		}
 		s << "]";
 	}
 
+	return s.str();
+}
+
+// This is the to-string callback for the dictionary type
+std::string DictionaryToString(void *obj, int expandMembers, CDebugger *dbg)
+{
+	CScriptDictionary *dic = reinterpret_cast<CScriptDictionary*>(obj);
+ 
+	std::stringstream s;
+	s << "(len=" << dic->GetSize() << ")";
+ 
+	if( expandMembers > 0 )
+	{
+		s << " [";
+		asUINT n = 0;
+		for( CScriptDictionary::CIterator it = dic->begin(); it != dic->end(); it++, n++ )
+		{
+			s << "[" << it.GetKey() << "] = ";
+
+			// Get the type and address of the value
+			const void *val = it.GetAddressOfValue();
+			int typeId = it.GetTypeId();
+
+			// Use the engine from the currently active context (if none is active, the debugger
+			// will use the engine held inside it by default, but in an environment where there
+			// multiple engines this might not be the correct instance).
+			asIScriptContext *ctx = asGetActiveContext();
+
+			s << dbg->ToString(const_cast<void*>(val), typeId, expandMembers - 1, ctx ? ctx->GetEngine() : 0);
+			
+			if( n < dic->GetSize() - 1 )
+				s << ", ";
+		}
+		s << "]";
+	}
+ 
 	return s.str();
 }
 
@@ -208,10 +253,13 @@ void InitializeDebugger(asIScriptEngine *engine)
 	// it to the scripts contexts that will be used to execute the scripts
 	g_dbg = new CDebugger();
 
+	// Let the debugger hold an engine pointer that can be used by the callbacks
+	g_dbg->SetEngine(engine);
+
 	// Register the to-string callbacks so the user can see the contents of strings
-	// TODO: Add a callback for the dictionary type too
 	g_dbg->RegisterToStringCallback(engine->GetObjectTypeByName("string"), StringToString);
 	g_dbg->RegisterToStringCallback(engine->GetObjectTypeByName("array"), ArrayToString);
+	g_dbg->RegisterToStringCallback(engine->GetObjectTypeByName("dictionary"), DictionaryToString);
 
 	// Allow the user to initialize the debugging before moving on
 	cout << "Debugging, waiting for commands. Type 'h' for help." << endl;
@@ -280,7 +328,7 @@ int ExecuteScript(asIScriptEngine *engine, const char *scriptFile, bool debug)
 	// Set up a context to execute the script
 	// The context manager will request the context from the 
 	// pool, which will automatically attach the debugger
-	asIScriptContext *ctx = g_ctxMgr->AddContext(engine, func);
+	asIScriptContext *ctx = g_ctxMgr->AddContext(engine, func, true);
 
 	// Execute the script until completion
 	// The script may create co-routines. These will automatically
@@ -319,6 +367,9 @@ int ExecuteScript(asIScriptEngine *engine, const char *scriptFile, bool debug)
 			r = 0;
 	}
 
+	// Return the context after retrieving the return value
+	g_ctxMgr->DoneWithContext(ctx);
+
 	// Destroy the context manager
 	if( g_ctxMgr )
 	{
@@ -333,8 +384,14 @@ int ExecuteScript(asIScriptEngine *engine, const char *scriptFile, bool debug)
 	engine->GarbageCollect();
 
 	// Release all contexts that have been allocated
+#if AS_CAN_USE_CPP11
 	for( auto ctx : g_ctxPool )
 		ctx->Release();
+#else
+	for( size_t n = 0; n < g_ctxPool.size(); n++ )
+		g_ctxPool[n]->Release();
+#endif
+
 	g_ctxPool.clear();
 
 	// Destroy debugger
@@ -350,7 +407,53 @@ int ExecuteScript(asIScriptEngine *engine, const char *scriptFile, bool debug)
 // This little function allows the script to print a string to the screen
 void PrintString(const string &str)
 {
+#ifdef _WIN32
+	// Unless the std out has been redirected to file we'll need to allow Windows to convert
+	// the text to the current locale so that characters will be displayed appropriately.
+	HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+	DWORD mode = 0;
+	if( console != INVALID_HANDLE_VALUE && GetConsoleMode(console, &mode) != 0 ) 
+	{
+		// We're writing to a console window, so convert the UTF8 string to UTF16 and write with
+		// WriteConsoleW. Windows will then automatically display the characters correctly according
+		// to the user's settings
+		wchar_t bufUTF16[10000];
+		MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, bufUTF16, 10000);
+		WriteConsoleW(console, bufUTF16, lstrlenW(bufUTF16), 0, 0);
+	}
+	else
+	{
+		// We're writing to a file, so just write the bytes as-is without any conversion
+		cout << str;
+	}
+#else
 	cout << str;
+#endif
+}
+
+// TODO: Perhaps it might be interesting to implement pipes so that the script can receive input from stdin, 
+//       or execute commands that return output similar to how popen is used
+
+// This function simply calls the system command and returns the status
+int ExecSystemCmd(const string &str)
+{
+	// Check if the command line processor is available
+	if( system(0) == 0 )
+	{
+		asIScriptContext *ctx = asGetActiveContext();
+		if( ctx )
+			ctx->SetException("Command interpreter not available\n");
+		return -1;
+	}
+
+#ifdef _WIN32
+	// Convert the command to UTF16 to properly handle unicode path names
+	wchar_t bufUTF16[10000];
+	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, bufUTF16, 10000);
+	return _wsystem(bufUTF16);
+#else
+	return system(cmd.c_str());
+#endif
 }
 
 // This function returns the command line arguments that were passed to the script

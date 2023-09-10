@@ -1,29 +1,41 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "anubis", "anubis.vcproj", "{E03DB130-B4EC-461E-9803-002671191F58}"
-	ProjectSection(ProjectDependencies) = postProject
-		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD} = {39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "anubis", "anubis.vcxproj", "{E03DB130-B4EC-461E-9803-002671191F58}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "angelscript", "..\angelscript\angelscript\projects\msvc9\angelscript.vcproj", "{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "angelscript", "..\angelscript\angelscript\projects\msvc2013\angelscript.vcxproj", "{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|Win32.Build.0 = Debug|Win32
-		{E03DB130-B4EC-461E-9803-002671191F58}.Release|Win32.ActiveCfg = Release|Win32
-		{E03DB130-B4EC-461E-9803-002671191F58}.Release|Win32.Build.0 = Release|Win32
-		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|Win32.ActiveCfg = Debug|Win32
-		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|Win32.Build.0 = Debug|Win32
-		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|Win32.ActiveCfg = Release|Win32
-		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|Win32.Build.0 = Release|Win32
+		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|ARM.ActiveCfg = Debug|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|ARM.Build.0 = Debug|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|x64.ActiveCfg = Debug|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Debug|x64.Build.0 = Debug|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Release|ARM.ActiveCfg = Release|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Release|ARM.Build.0 = Release|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Release|x64.ActiveCfg = Release|x64
+		{E03DB130-B4EC-461E-9803-002671191F58}.Release|x64.Build.0 = Release|x64
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|ARM.Build.0 = Debug|ARM
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|x64.ActiveCfg = Debug|x64
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Debug|x64.Build.0 = Debug|x64
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|ARM.ActiveCfg = Release|ARM
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|ARM.Build.0 = Release|ARM
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|x64.ActiveCfg = Release|x64
+		{39E6AF97-6BA3-4A72-8C61-BCEBF214EBFD}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7659481-8968-4AFA-B2DD-82B0EE233F8F}
 	EndGlobalSection
 EndGlobal

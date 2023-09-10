@@ -15,7 +15,7 @@
 #ifndef __GLCTX_H__
 #define __GLCTX_H__
 
-#include "SDL_opengl.h"
+#include <SDL2/SDL_opengl.h>
 
 // because for some dumb reason, these aren't defined
 #ifndef GL_ARB_framebuffer_object

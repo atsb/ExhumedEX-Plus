@@ -132,6 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09044a12dfb2d44d19bd8a4025cb814d"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_context.html#a09044a12dfb2d44d19bd8a4025cb814d">SetArgObject</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> arg, void *obj)=0</td></tr>
 <tr class="memdesc:a09044a12dfb2d44d19bd8a4025cb814d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object argument value.  <a href="#a09044a12dfb2d44d19bd8a4025cb814d">More...</a><br/></td></tr>
 <tr class="separator:a09044a12dfb2d44d19bd8a4025cb814d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626d97ec564c92120e2abaf69f6e3698"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_context.html#a626d97ec564c92120e2abaf69f6e3698">SetArgVarType</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> arg, void *ptr, int typeId)=0</td></tr>
+<tr class="memdesc:a626d97ec564c92120e2abaf69f6e3698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the variable argument value and type.  <a href="#a626d97ec564c92120e2abaf69f6e3698">More...</a><br/></td></tr>
+<tr class="separator:a626d97ec564c92120e2abaf69f6e3698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fbab94982862b30cd55996d4a24949c"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_context.html#a0fbab94982862b30cd55996d4a24949c">GetAddressOfArg</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> arg)=0</td></tr>
 <tr class="memdesc:a0fbab94982862b30cd55996d4a24949c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the argument for assignment.  <a href="#a0fbab94982862b30cd55996d4a24949c">More...</a><br/></td></tr>
 <tr class="separator:a0fbab94982862b30cd55996d4a24949c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,7 +267,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Aborts the current execution of a script. </p>
+<p>Aborts the current execution of a script.</p>
+<p>If the call to Abort is done from within a function called by the script, it will only take effect after that function returns. </p>
 
 </div>
 </div>
@@ -1779,6 +1783,64 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a626d97ec564c92120e2abaf69f6e3698"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int asIScriptContext::SetArgVarType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a>&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>typeId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>The argument index. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>A pointer to the value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">typeId</td><td>The type id of the value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A negative value on error. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">asCONTEXT_NOT_PREPARED</td><td>The context is not in prepared state. </td></tr>
+    <tr><td class="paramname">asINVALID_ARG</td><td>The <em>arg</em> is larger than the number of arguments in the prepared function. </td></tr>
+    <tr><td class="paramname">asINVALID_TYPE</td><td>The argument is not a variable type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method should be used when setting the argument for functions with <a class="el" href="doc_adv_var_type.html">variable parameter types</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="ac882e19b922c681052a0a88d69289a47"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2103,6 +2165,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Suspends the current execution of a script. The execution can then be resumed by calling <a class="el" href="classas_i_script_context.html#a8e52894432737acac2e1a422e496bf84">Execute</a> again.</p>
+<p>If the call to Suspend is done from within a function called by the script, it will only take effect after that function returns.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_call_script_func.html">Calling a script function</a> </dd></dl>
 
 </div>
@@ -2147,7 +2210,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_script_context.html">asIScriptContext</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

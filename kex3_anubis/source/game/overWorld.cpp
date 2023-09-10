@@ -18,7 +18,7 @@
 #include "kexlib.h"
 #include "renderMain.h"
 #include "game.h"
-#include "overworld.h"
+#include "overWorld.h"
 #include "localization.h"
 #include "playerCmd.h"
 

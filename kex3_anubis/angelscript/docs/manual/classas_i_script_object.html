@@ -71,6 +71,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4bed3c3ac9f16294985835747aa122d3"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#a4bed3c3ac9f16294985835747aa122d3">Release</a> () const =0</td></tr>
 <tr class="memdesc:a4bed3c3ac9f16294985835747aa122d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease reference counter.  <a href="#a4bed3c3ac9f16294985835747aa122d3">More...</a><br/></td></tr>
 <tr class="separator:a4bed3c3ac9f16294985835747aa122d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ccca7fe3453219377fc9bd190bf7903"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classas_i_lockable_shared_bool.html">asILockableSharedBool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#a9ccca7fe3453219377fc9bd190bf7903">GetWeakRefFlag</a> () const =0</td></tr>
+<tr class="memdesc:a9ccca7fe3453219377fc9bd190bf7903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weak ref flag for the object.  <a href="#a9ccca7fe3453219377fc9bd190bf7903">More...</a><br/></td></tr>
+<tr class="separator:a9ccca7fe3453219377fc9bd190bf7903"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Type info</div></td></tr>
 <tr class="memitem:a19c5ab9d8adb0f921bf0b6474d97f468"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#a19c5ab9d8adb0f921bf0b6474d97f468">GetTypeId</a> () const =0</td></tr>
 <tr class="memdesc:a19c5ab9d8adb0f921bf0b6474d97f468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type id of the object.  <a href="#a19c5ab9d8adb0f921bf0b6474d97f468">More...</a><br/></td></tr>
@@ -98,6 +101,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afda786c03b02710ac4d16692ebf0ad05"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#afda786c03b02710ac4d16692ebf0ad05">CopyFrom</a> (<a class="el" href="classas_i_script_object.html">asIScriptObject</a> *other)=0</td></tr>
 <tr class="memdesc:afda786c03b02710ac4d16692ebf0ad05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the content from another object of the same type.  <a href="#afda786c03b02710ac4d16692ebf0ad05">More...</a><br/></td></tr>
 <tr class="separator:afda786c03b02710ac4d16692ebf0ad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">User data</div></td></tr>
+<tr class="memitem:ac85cea9bca5dd3868e027285e44dd6d0"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#ac85cea9bca5dd3868e027285e44dd6d0">SetUserData</a> (void *data, <a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a> type=0)=0</td></tr>
+<tr class="memdesc:ac85cea9bca5dd3868e027285e44dd6d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets user data on the script object instance.  <a href="#ac85cea9bca5dd3868e027285e44dd6d0">More...</a><br/></td></tr>
+<tr class="separator:ac85cea9bca5dd3868e027285e44dd6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e8ab74fd7552d057e23e0ce550a157"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_object.html#a63e8ab74fd7552d057e23e0ce550a157">GetUserData</a> (<a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a> type=0) const =0</td></tr>
+<tr class="memdesc:a63e8ab74fd7552d057e23e0ce550a157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets user data from the script object instance.  <a href="#a63e8ab74fd7552d057e23e0ce550a157">More...</a><br/></td></tr>
+<tr class="separator:a63e8ab74fd7552d057e23e0ce550a157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a3e08890e31163e4d33c0f27dc9072662"></a>
@@ -361,6 +371,62 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a63e8ab74fd7552d057e23e0ce550a157"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* asIScriptObject::GetUserData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>An identifier used to identify which user data to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The pointer to the user data. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ccca7fe3453219377fc9bd190bf7903"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classas_i_lockable_shared_bool.html">asILockableSharedBool</a>* asIScriptObject::GetWeakRefFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The weak ref flag for the object.</dd></dl>
+<p>This is a short-cut for the <a class="el" href="classas_i_script_engine.html#a417391408204670fdcc7fd87cc84339c">asIScriptEngine::GetWeakRefFlagOfScriptObject</a> method. </p>
+
+</div>
+</div>
 <a class="anchor" id="a4bed3c3ac9f16294985835747aa122d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -386,6 +452,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac85cea9bca5dd3868e027285e44dd6d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void* asIScriptObject::SetUserData </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>A pointer to the user data. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>An identifier used to identify which user data to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The previous pointer stored in the object type.</dd></dl>
+<p>This method allows the application to associate a value, e.g. a pointer, with the script object instance. Multiple different values can be defined where the type argument identifies which is referred to.</p>
+<p>The user data types identifiers between 1000 and 1999 are reserved for use by official add-ons.</p>
+<p>Optionally, a callback function can be <a class="el" href="classas_i_script_engine.html#a4654e2cae0690c50e19b177f1ec54592">registered</a> to clean up the user data when the script object is destroyed. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="angelscript_8h.html">angelscript.h</a></li>
 </ul>
@@ -395,7 +506,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_script_object.html">asIScriptObject</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:18 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

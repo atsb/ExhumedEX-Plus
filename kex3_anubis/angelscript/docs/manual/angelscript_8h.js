@@ -40,6 +40,7 @@ var angelscript_8h =
     [ "asCLEANFUNCTIONFUNC_t", "angelscript_8h.html#ae396d162d9d46c34a7f197ecbc788dfa", null ],
     [ "asCLEANMODULEFUNC_t", "angelscript_8h.html#a90d681aba2f00b701425d4dbdca3375b", null ],
     [ "asCLEANOBJECTTYPEFUNC_t", "angelscript_8h.html#a8bbbe3a90082461266acf8f98ce9216e", null ],
+    [ "asCLEANSCRIPTOBJECTFUNC_t", "angelscript_8h.html#ac29678e8c7f48b9c2aaabae90ee258d1", null ],
     [ "asDWORD", "angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc", null ],
     [ "asFREEFUNC_t", "angelscript_8h.html#a9dd42e5d8378d6a8aa8f35efacfb772e", null ],
     [ "asINT64", "angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df", null ],
@@ -251,6 +252,7 @@ var angelscript_8h =
       [ "asBC_POWdi", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a550ee3e286be8a70a06194206c0ae1b9", null ],
       [ "asBC_POWi64", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a7546139b9cafeae5d71a345ec3b4424d", null ],
       [ "asBC_POWu64", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a23bbb267da86c108b4fe23f0443d5f1d", null ],
+      [ "asBC_Thiscall1", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a25fe35c5c31674255821ecc3c9a9d23c", null ],
       [ "asBC_MAXBYTECODE", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a4fa08310c6ec707a75e4d0ccc7fd7cc5", null ],
       [ "asBC_VarDecl", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0ae0ad0178ac3b4254fe231bbae379f666", null ],
       [ "asBC_Block", "angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a35e971c82e0ccc5148b4d98639e91304", null ],
@@ -351,6 +353,8 @@ var angelscript_8h =
       [ "asEP_DISALLOW_VALUE_ASSIGN_FOR_REF_TYPE", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fa563bec877e91b0646c47197b2ae7ac0c", null ],
       [ "asEP_ALTER_SYNTAX_NAMED_ARGS", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fa9c876445c7d138ad096705fc18f311d1", null ],
       [ "asEP_DISABLE_INTEGER_DIVISION", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fae6af9c6963372e11c6da873868f594cd", null ],
+      [ "asEP_DISALLOW_EMPTY_LIST_ELEMENTS", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fabed7d49670612ec27227210021926692", null ],
+      [ "asEP_PRIVATE_PROP_AS_PROTECTED", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0faa6f88a81f5706542acb94f3c470ac3f3", null ],
       [ "asEP_LAST_PROPERTY", "angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fa14fb03eee4d87405994b9aef761eae3c", null ]
     ] ],
     [ "asEFuncType", "angelscript_8h.html#a06fb2a1ebf5d007e0d542abced1b648f", [
@@ -415,12 +419,12 @@ var angelscript_8h =
       [ "asOBJ_APP_CLASS_ALLFLOATS", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa12afb6a0fa4ac874ce89815d3611823d", null ],
       [ "asOBJ_NOCOUNT", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aad8b12da6bf9cd48990d48c2ddf13584d", null ],
       [ "asOBJ_APP_CLASS_ALIGN8", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa244efb813b401b3a6d087c3add802818", null ],
+      [ "asOBJ_IMPLICIT_HANDLE", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2", null ],
       [ "asOBJ_MASK_VALID_FLAGS", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa6570f63d7f13e7d945770228a82f1f12", null ],
       [ "asOBJ_SCRIPT_OBJECT", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaa82f3ef517372e0db029f7dcfe7f88eb", null ],
       [ "asOBJ_SHARED", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa92354ace56201eb543c818b6c0852baf", null ],
       [ "asOBJ_NOINHERIT", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa770f4012f052a1190edbac8931140091", null ],
       [ "asOBJ_SCRIPT_FUNCTION", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa817bffd72a92219d1dc5c6d2361f6e09", null ],
-      [ "asOBJ_IMPLICIT_HANDLE", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2", null ],
       [ "asOBJ_LIST_PATTERN", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaa1094cbe2986e60ba82da9dea38bba05", null ],
       [ "asOBJ_ENUM", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa018e73b8c343fe8f46fa7a7829643ff9", null ],
       [ "asOBJ_TEMPLATE_SUBTYPE", "angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa8e4f2ff9cea9a561be32711c91bf71e6", null ],
@@ -456,7 +460,8 @@ var angelscript_8h =
       [ "asWRONG_CALLING_CONV", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a2774780aba35e11f224f8c0bd0937207", null ],
       [ "asBUILD_IN_PROGRESS", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54abbab3f809b0eeea2c331e5239be517c1", null ],
       [ "asINIT_GLOBAL_VARS_FAILED", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a539a1fcf3f48feaaf7c0776c88123430", null ],
-      [ "asOUT_OF_MEMORY", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a9a5232a5c1028cd729a744f592387059", null ]
+      [ "asOUT_OF_MEMORY", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a9a5232a5c1028cd729a744f592387059", null ],
+      [ "asMODULE_IS_IN_USE", "angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54af1e13f62c802e525a94722429575a345", null ]
     ] ],
     [ "asETokenClass", "angelscript_8h.html#a012a602727ca3fe1efa27053bc58cbca", [
       [ "asTC_UNKNOWN", "angelscript_8h.html#a012a602727ca3fe1efa27053bc58cbcaa2a6ba011564d30250b5664beee57f727", null ],
@@ -500,7 +505,7 @@ var angelscript_8h =
     [ "asAtomicDec", "angelscript_8h.html#a0565bcb53be170dd85ae27a5b6f2b828", null ],
     [ "asAtomicInc", "angelscript_8h.html#af0074d581ac2edd06e63e56e4be52c8e", null ],
     [ "asCreateLockableSharedBool", "angelscript_8h.html#aa0ffb789dab56b5617e2f961f9c79fdb", null ],
-    [ "asCreateScriptEngine", "angelscript_8h.html#af84c6359750675bf3ceccf373286a533", null ],
+    [ "asCreateScriptEngine", "angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b", null ],
     [ "asFreeMem", "angelscript_8h.html#a9da61275bbfd5f7bd55ed411d05fe103", null ],
     [ "asGetActiveContext", "angelscript_8h.html#ad3a20dc58093b92a5a44c7b6ada34a10", null ],
     [ "asGetLibraryOptions", "angelscript_8h.html#aba86cba765a7148e2a306b4305ba48f9", null ],

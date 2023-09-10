@@ -18,7 +18,7 @@
 #include "kexlib.h"
 #include "game.h"
 #include "scriptSystem.h"
-#include "overworld.h"
+#include "overWorld.h"
 #include "gameSysObject.h"
 
 //

@@ -21,7 +21,7 @@ var doc_addon_script =
     ] ],
     [ "weakref object", "doc_addon_weakref.html", [
       [ "Public C++ interface", "doc_addon_weakref.html#doc_addon_weakref_1", null ],
-      [ "Example usage in script", "doc_addon_weakref.html#doc_addon_weakref_2", null ]
+      [ "Public script interface", "doc_addon_weakref.html#doc_addon_weakref_2", null ]
     ] ],
     [ "dictionary object", "doc_addon_dict.html", [
       [ "Public C++ interface", "doc_addon_dict.html#doc_addon_dict_1", null ],
@@ -31,6 +31,10 @@ var doc_addon_script =
       [ "Public C++ interface", "doc_addon_file.html#doc_addon_file_1", null ],
       [ "Public script interface", "doc_addon_file.html#doc_addon_file_2", null ],
       [ "Script example", "doc_addon_file.html#doc_addon_file_3", null ]
+    ] ],
+    [ "filesystem object", "doc_addon_filesystem.html", [
+      [ "Public C++ interface", "doc_addon_filesystem.html#doc_addon_filesystem_1", null ],
+      [ "Public script interface", "doc_addon_filesystem.html#doc_addon_filesystem_2", null ]
     ] ],
     [ "math functions", "doc_addon_math.html", [
       [ "Public script interface", "doc_addon_math.html#doc_addon_math_1", null ]

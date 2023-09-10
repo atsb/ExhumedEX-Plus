@@ -22,7 +22,7 @@
 kexCvar kexPlayerCmd::cvarMSensitivityX("cl_msensitivityx", CVF_FLOAT|CVF_CONFIG, "5", 1, 10, "Mouse-X sensitivity");
 kexCvar kexPlayerCmd::cvarMSensitivityY("cl_msensitivityy", CVF_FLOAT|CVF_CONFIG, "5", 1, 10, "Mouse-Y sensitivity");
 kexCvar kexPlayerCmd::cvarInvertLook("cl_mlookinvert", CVF_BOOL|CVF_CONFIG, "0", "Invert mouse-look");
-kexCvar kexPlayerCmd::cvarMSmooth("cl_mousesmooth", CVF_INT|CVF_CONFIG, "4", 1, 4, "Set smooth mouse threshold");
+kexCvar kexPlayerCmd::cvarMSmooth("cl_mousesmooth", CVF_INT|CVF_CONFIG, "8", 1, 8, "Set smooth mouse threshold");
 kexCvar kexPlayerCmd::cvarJoyStickLookSensitivityX("cl_joylooksensitivity_x", CVF_FLOAT|CVF_CONFIG, "0.5", 0.1f, 1, "Joystick Look sensitivity (x-axis)");
 kexCvar kexPlayerCmd::cvarJoyStickLookSensitivityY("cl_joylooksensitivity_y", CVF_FLOAT|CVF_CONFIG, "0.25", 0.1f, 1, "Joystick Look sensitivity (y-axis)");
 kexCvar kexPlayerCmd::cvarJoyStickMoveSensitivity("cl_joymovesensitivity", CVF_FLOAT|CVF_CONFIG, "1", 0.1f, 5, "Joystick Move sensitivity");
@@ -99,37 +99,8 @@ uint kexPlayerCmd::ButtonHeldTime(const int btn)
 void kexPlayerCmd::BuildTurning(void)
 {
     static float history[4][2];
-    static float turnLerp[2];
     static int historyCount = 0;
     int smooth;
-    
-    if(buttons & BC_LEFT)
-    {
-        turnLerp[0] = (0.078125f - turnLerp[0]) * 0.05f + turnLerp[0];
-    }
-    else
-    {
-        turnLerp[0] = (0 - turnLerp[0]) * 0.15f + turnLerp[0];
-
-        if(kexMath::Fabs(turnLerp[0]) <= 0.005f)
-        {
-            turnLerp[0] = 0;
-        }
-    }
-
-    if(buttons & BC_RIGHT)
-    {
-        turnLerp[1] = (0.078125f - turnLerp[1]) * 0.05f + turnLerp[1];
-    }
-    else
-    {
-        turnLerp[1] = (0 - turnLerp[1]) * 0.15f + turnLerp[1];
-
-        if(kexMath::Fabs(turnLerp[1]) <= 0.005f)
-        {
-            turnLerp[1] = 0;
-        }
-    }
 
     angles[0] = ((float)turnx * cvarMSensitivityX.GetFloat()) / 2048.0f;
     angles[1] = ((float)turny * cvarMSensitivityY.GetFloat()) / 2048.0f;
@@ -143,7 +114,7 @@ void kexPlayerCmd::BuildTurning(void)
     history[historyCount & 3][1] = angles[1];
     
     smooth = cvarMSmooth.GetInt();
-    kexMath::Clamp(smooth, 1, 4);
+    kexMath::Clamp(smooth, 1, 8);
     cvarMSmooth.Set(smooth);
     
     for(int i = 0; i < cvarMSmooth.GetInt(); ++i)
@@ -154,9 +125,6 @@ void kexPlayerCmd::BuildTurning(void)
     
     angles[0] /= cvarMSmooth.GetFloat();
     angles[1] /= cvarMSmooth.GetFloat();
-
-    angles[0] -= turnLerp[0];
-    angles[0] += turnLerp[1];
     
     historyCount++;
 }

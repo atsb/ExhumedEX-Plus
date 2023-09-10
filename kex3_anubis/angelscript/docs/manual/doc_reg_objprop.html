@@ -63,7 +63,17 @@ $(document).ready(function(){initNavTree('doc_reg_objprop.html','');});
 <div class="line">};</div>
 <div class="line"></div>
 <div class="line">r = engine-&gt;<a class="code" href="classas_i_script_engine.html#a33f3cd249307f5f11120a395579410f6" title="Registers a property for the object type.">RegisterObjectProperty</a>(<span class="stringliteral">&quot;mytype&quot;</span>, <span class="stringliteral">&quot;int a&quot;</span>, <a class="code" href="angelscript_8h.html#a717eccea17214bc1eb64bb9789c4915a" title="Returns the offset of an attribute in a struct.">asOFFSET</a>(MyStruct,a)); assert( r &gt;= 0 );</div>
-</div><!-- fragment --><p>It is also possible to expose properties through <a class="el" href="doc_script_class_prop.html">property accessors</a>, which are a pair of class methods with prefixes get_ and set_ for getting and setting the property value. These methods should be registered with <a class="el" href="doc_register_func.html">RegisterObjectMethod</a>. This is especially useful when the offset of the property cannot be determined, or if the type of the property is not registered in the script and some translation must occur, i.e. from <code>char*</code> to <code>string</code>.</p>
+</div><!-- fragment --><p>If a class member is indirect, i.e. the class holds a pointer to the member that is allocated on the heap, then it is possible to registered the property using &amp; to tell the script engine that an dereference is needed to access the member.</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>MyStruct</div>
+<div class="line">{</div>
+<div class="line">  OtherStruct *a;</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line">r = engine-&gt;<a class="code" href="classas_i_script_engine.html#a33f3cd249307f5f11120a395579410f6" title="Registers a property for the object type.">RegisterObjectProperty</a>(<span class="stringliteral">&quot;mytype&quot;</span>, <span class="stringliteral">&quot;othertype &amp;a&quot;</span>, <a class="code" href="angelscript_8h.html#a717eccea17214bc1eb64bb9789c4915a" title="Returns the offset of an attribute in a struct.">asOFFSET</a>(MyStruct,a)); assert( r &gt;= 0 );</div>
+</div><!-- fragment --><p>Of course, the application must make sure the pointer is valid during the whole time that it may be accessed from the script.</p>
+<h1><a class="anchor" id="doc_reg_objprop_accessor"></a>
+Property accessors</h1>
+<p>It is also possible to expose properties through <a class="el" href="doc_script_class_prop.html">property accessors</a>, which are a pair of class methods with prefixes get_ and set_ for getting and setting the property value. These methods should be registered with <a class="el" href="doc_register_func.html">RegisterObjectMethod</a>. This is especially useful when the offset of the property cannot be determined, or if the type of the property is not registered in the script and some translation must occur, i.e. from <code>char*</code> to <code>string</code>.</p>
 <p>If the application class contains a C++ array as a member, it may be advantageous to expose the array through <a class="el" href="doc_script_class_prop.html">indexed property accessors</a> rather than attempting to matching the C++ array type to a registered type in AngelScript. To do this you can create a couple of simple proxy functions that will translate to the array access.</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>MyStruct</div>
 <div class="line">{</div>
@@ -91,7 +101,7 @@ $(document).ready(function(){initNavTree('doc_reg_objprop.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

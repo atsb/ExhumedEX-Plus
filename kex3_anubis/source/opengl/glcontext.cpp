@@ -15,7 +15,7 @@
 //      OpenGL Loader/Interface
 //
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "kexlib.h"
 #include "dgl.h"
 

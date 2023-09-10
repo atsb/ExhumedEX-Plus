@@ -99,7 +99,8 @@ typedef enum
     OPENGL_VERSION_1_4,
     OPENGL_VERSION_1_5,
     OPENGL_VERSION_2_0,
-    OPENGL_VERSION_2_1,
+    OPENGL_VERSION_3_0,
+    OPENGL_VERSION_3_3,
 } glversion_t;
 
 int kexRenderBackend::GetOGLVersion(const char* version)
@@ -108,17 +109,17 @@ int kexRenderBackend::GetOGLVersion(const char* version)
     int MinorVersion;
     int versionvar;
 
-    versionvar = OPENGL_VERSION_1_0;
+    versionvar = OPENGL_VERSION_2_0;
 
-    if(sscanf(version, "%d.%d", &MajorVersion, &MinorVersion) == 2)
+    if(sscanf(version, "%d.%d", &MajorVersion, &MinorVersion) == 3)
     {
-        if(MajorVersion > 1)
+        if(MajorVersion > 2)
         {
-            versionvar = OPENGL_VERSION_2_0;
+            versionvar = OPENGL_VERSION_3_0;
 
-            if(MinorVersion > 0)
+            if(MinorVersion > 2)
             {
-                versionvar = OPENGL_VERSION_2_1;
+                versionvar = OPENGL_VERSION_3_3;
             }
         }
         else

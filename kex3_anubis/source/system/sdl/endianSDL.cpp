@@ -15,7 +15,7 @@
 //      Endian Swapping Class (SDL)
 //
 
-#include "SDL_endian.h"
+#include <SDL2/SDL_endian.h>
 #include "kexlib.h"
 
 class kexEndianSDL : public kexEndian

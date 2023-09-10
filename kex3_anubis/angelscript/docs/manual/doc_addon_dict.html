@@ -62,7 +62,9 @@ $(document).ready(function(){initNavTree('doc_addon_dict.html','');});
 <p>Compile the add-on with the pre-processor define AS_USE_STLNAMES=1 to register the methods with the same names as used by C++ STL where the methods have the same significance. Not all methods from STL is implemented in the add-on, but many of the most frequent once are so a port from script to C++ and vice versa might be easier if STL names are used.</p>
 <h1><a class="anchor" id="doc_addon_dict_1"></a>
 Public C++ interface</h1>
-<div class="fragment"><div class="line"><span class="keyword">class </span>CScriptDictionary</div>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> std::string dictKey;</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">class </span>CScriptDictionary</div>
 <div class="line">{</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="comment">// Factory functions</span></div>
@@ -76,25 +78,25 @@ Public C++ interface</h1>
 <div class="line">  CScriptDictionary &amp;operator=(<span class="keyword">const</span> CScriptDictionary &amp;other);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Sets a key/value pair</span></div>
-<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> std::string &amp;key, <span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId);</div>
-<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> std::string &amp;key, <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value);</div>
-<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> std::string &amp;key, <span class="keywordtype">double</span> &amp;value);</div>
+<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> dictKey &amp;key, <span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId);</div>
+<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> dictKey &amp;key, <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value);</div>
+<div class="line">  <span class="keywordtype">void</span> Set(<span class="keyword">const</span> dictKey &amp;key, <span class="keywordtype">double</span> &amp;value);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Gets the stored value. Returns false if the value isn&#39;t compatible with informed type  </span></div>
-<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> std::string &amp;key, <span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId) <span class="keyword">const</span>;</div>
-<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> std::string &amp;key, <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value) <span class="keyword">const</span>;</div>
-<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> std::string &amp;key, <span class="keywordtype">double</span> &amp;value) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> dictKey &amp;key, <span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> dictKey &amp;key, <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">bool</span> Get(<span class="keyword">const</span> dictKey &amp;key, <span class="keywordtype">double</span> &amp;value) <span class="keyword">const</span>;</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Index accessors. If the dictionary is not const it inserts the value if it doesn&#39;t already exist</span></div>
 <div class="line">  <span class="comment">// If the dictionary is const then a script exception is set if it doesn&#39;t exist and a null pointer is returned</span></div>
-<div class="line">  CScriptDictValue *operator[](<span class="keyword">const</span> std::string &amp;key);</div>
-<div class="line">  <span class="keyword">const</span> CScriptDictValue *operator[](<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span>;</div>
+<div class="line">  CScriptDictValue *operator[](<span class="keyword">const</span> dictKey &amp;key);</div>
+<div class="line">  <span class="keyword">const</span> CScriptDictValue *operator[](<span class="keyword">const</span> dictKey &amp;key) <span class="keyword">const</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Returns the type id of the stored value, or negative if it doesn&#39;t exist</span></div>
-<div class="line">  <span class="keywordtype">int</span>  GetTypeId(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">int</span>  GetTypeId(<span class="keyword">const</span> dictKey &amp;key) <span class="keyword">const</span>;</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Returns true if the key is set</span></div>
-<div class="line">  <span class="keywordtype">bool</span> Exists(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span>;</div>
+<div class="line">  <span class="keywordtype">bool</span> Exists(<span class="keyword">const</span> dictKey &amp;key) <span class="keyword">const</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Returns true if the dictionary is empty</span></div>
 <div class="line">  <span class="keywordtype">bool</span> IsEmpty() <span class="keyword">const</span>;</div>
@@ -103,7 +105,7 @@ Public C++ interface</h1>
 <div class="line">  <a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> GetSize() <span class="keyword">const</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Deletes the key</span></div>
-<div class="line">  <span class="keywordtype">void</span> Delete(<span class="keyword">const</span> std::string &amp;key);</div>
+<div class="line">  <span class="keywordtype">void</span> Delete(<span class="keyword">const</span> dictKey &amp;key);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Deletes all keys</span></div>
 <div class="line">  <span class="keywordtype">void</span> DeleteAll();</div>
@@ -122,11 +124,12 @@ Public C++ interface</h1>
 <div class="line">    <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> CIterator &amp;other) <span class="keyword">const</span>;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// Accessors</span></div>
-<div class="line">    <span class="keyword">const</span> std::string &amp;GetKey() <span class="keyword">const</span>;</div>
-<div class="line">    <span class="keywordtype">int</span>                GetTypeId() <span class="keyword">const</span>;</div>
-<div class="line">    <span class="keywordtype">bool</span>               GetValue(<a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value) <span class="keyword">const</span>;</div>
-<div class="line">    <span class="keywordtype">bool</span>               GetValue(<span class="keywordtype">double</span> &amp;value) <span class="keyword">const</span>;</div>
-<div class="line">    <span class="keywordtype">bool</span>               GetValue(<span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keyword">const</span> dictKey &amp;GetKey() <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">int</span>            GetTypeId() <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span>           GetValue(<a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a> &amp;value) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span>           GetValue(<span class="keywordtype">double</span> &amp;value) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span>           GetValue(<span class="keywordtype">void</span> *value, <span class="keywordtype">int</span> typeId) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">void</span> *   GetAddressOfValue() <span class="keyword">const</span>;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  CIterator begin() <span class="keyword">const</span>;</div>
@@ -140,7 +143,7 @@ Public script interface</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

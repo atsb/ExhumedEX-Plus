@@ -102,7 +102,7 @@ Linking with the library</h1>
 <div class="line"></div>
 <div class="line"><span class="comment">// Declare the function pointers</span></div>
 <div class="line"><span class="keyword">typedef</span> <a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> * AS_CALL t_asCreateScriptEngine(<span class="keywordtype">int</span>);</div>
-<div class="line">t_asCreateScriptEngine *<a class="code" href="angelscript_8h.html#af84c6359750675bf3ceccf373286a533" title="Creates the script engine.">asCreateScriptEngine</a> = 0;</div>
+<div class="line">t_asCreateScriptEngine *<a class="code" href="angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b" title="Creates the script engine.">asCreateScriptEngine</a> = 0;</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// ... Declare the rest of the functions</span></div>
 <div class="line"></div>
@@ -137,13 +137,46 @@ Pocket PC with ARM CPU</h2>
 </div><!-- fragment --><h2><a class="anchor" id="doc_compile_marmalade"></a>
 Marmalade</h2>
 <p>Marmalade is a cross platform SDK created with mobile devices in mind. It functions by abstracting the underlying OS with its own C runtime library even though it uses the common C++ compilers, e.g. MSVC on Windows, and GNUC on Linux and Mac.</p>
-<p>When compiling AngelScript with Marmalade for iOS and Android scons must be used in order to properly compile the native ARM assembler routines. For Windows Phone you should be able to use MSVC normally. </p>
+<p>When compiling AngelScript with Marmalade for iOS and Android scons must be used in order to properly compile the native ARM assembler routines. For Windows Phone you should be able to use MSVC normally.</p>
+<h1><a class="anchor" id="doc_compile_size"></a>
+Size of the library</h1>
+<p>The size of the library depends on many different factors, such as compiler brand, compiler flags, and also what features of AngelScript that are included. However, to give an idea of how much space the library will take up on the disk and memory I've compiled the <a class="el" href="doc_samples_asrun.html">asrun sample</a> in a few different ways and noted down the size.</p>
+<table class="doxtable">
+<tr>
+<td><b>Options</b></td><td><b>Size of binary on disk</b> </td></tr>
+<tr>
+<td>32 bit / multithreaded dll / optimize for speed<br/>
+Without including AngelScript</td><td>14KB </td></tr>
+<tr>
+<td>32 bit / multithreaded dll / optimize for speed<br/>
+Using AngelScript and add-ons</td><td>796KB </td></tr>
+<tr>
+<td>32 bit / multithreaded dll / optimize for speed<br/>
+AngelScript without compiler (AS_NO_COMPILER) and add-ons</td><td>453KB </td></tr>
+<tr>
+<td>32 bit / multithreaded static / optimize for speed<br/>
+Using AngelScript but without add-ons</td><td>867KB </td></tr>
+<tr>
+<td>32 bit / multithreaded static / optimize for speed<br/>
+Using AngelScript and add-ons</td><td>1015KB </td></tr>
+<tr>
+<td>64 bit / multithreaded static / optimize for speed<br/>
+Using AngelScript and add-ons</td><td>1336KB </td></tr>
+<tr>
+<td>32 bit / multithreaded static / optimize for size<br/>
+Using AngelScript and add-ons</td><td>797KB </td></tr>
+<tr>
+<td>32 bit / multithreaded dll / optimize for size<br/>
+Using AngelScript and add-ons</td><td>582KB </td></tr>
+</table>
+<p>Based on this we can draw the conclusion that the engine and VM takes up about 300KB when optimized for speed, the compiler adds another 350KB, and the add-ons yet another 150KB.</p>
+<dl class="section note"><dt>Note</dt><dd>These tests were made with MSVC 2012 and version 2.30.2 of the library. </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

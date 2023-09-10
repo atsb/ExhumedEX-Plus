@@ -32,6 +32,7 @@ var classas_i_script_function =
     [ "IsFinal", "classas_i_script_function.html#aa071c702946372020a1245f901502d52", null ],
     [ "IsOverride", "classas_i_script_function.html#a5aec17ae5639fb9cad403c835d429f6e", null ],
     [ "IsPrivate", "classas_i_script_function.html#a7ef1f42ff812a03e2a323046835159fb", null ],
+    [ "IsProtected", "classas_i_script_function.html#a2e17b763527ba3a9b0d05c4cd35b5742", null ],
     [ "IsReadOnly", "classas_i_script_function.html#a99bbe26ae0ec3f0cc09070bf89aff2f9", null ],
     [ "IsShared", "classas_i_script_function.html#a805ae8064598ad12f44bb583118b6cc5", null ],
     [ "Release", "classas_i_script_function.html#a0a98f1f7f91574a11d7d8c5062bdcdee", null ],

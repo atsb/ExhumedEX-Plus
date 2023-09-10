@@ -15,7 +15,7 @@
 //      Main System (SDL)
 //
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "kexlib.h"
 #include "renderMain.h"
 
@@ -578,14 +578,9 @@ void kexSystemSDL::Error(const char* string, ...)
 const char *kexSystemSDL::GetBaseDirectory(void)
 {
 #ifdef KEX_MACOSX
-    static kexStr path = SDL_GetBasePath();
-    int idx = path.IndexOf("anubis.app");
-    if(idx == -1)
-    {
-        return "./";
-    }
+    // atsb: Cleaned this up and made it a 'mac app'
+    static kexStr path = SDL_GetPrefPath("", "ExhumedEXPlus");
     
-    path.Remove(idx, path.Length());
     return path.c_str();
 #else
     static const char dummyDirectory[] = {"."};

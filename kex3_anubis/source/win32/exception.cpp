@@ -36,6 +36,8 @@
 
 #include <windows.h>
 #include <tchar.h>
+#include <psapi.h>
+#include <iostream>
 
 //=============================================================================
 //
@@ -205,7 +207,7 @@ static void LogPrintf(LPCTSTR fmt, ...)
 typedef struct exceptiondata_s
 {
     DWORD  code;
-    TCHAR *name;
+    const TCHAR *name;
 } exceptiondata_t;
 
 static exceptiondata_t ExceptionData[] =
@@ -266,42 +268,37 @@ static const TCHAR *PhraseForException(DWORD code)
 // PrintHeader
 //
 // Prints a header for the exception.
+// Gibbon: Fixed for x64
 //
 static void PrintHeader(void)
 {
-    TCHAR *crashModuleFn = _T("Unknown");
-    MEMORY_BASIC_INFORMATION memoryInfo;
-   
     ZeroMemory(crashModulePath, sizeof(crashModulePath));
 
-#ifdef _M_IX86
-    // Use VirtualQuery to retrieve the allocation base associated with the
-    // process's code address.
-    if(VirtualQuery((void *)contextRecord->Eip, &memoryInfo, sizeof(memoryInfo)))
+    CONTEXT contextRecord;
+    RtlCaptureContext(&contextRecord); // Capture the current thread's context
+
+    HMODULE hModule;
+    TCHAR crashModulePath[MAX_PATH] = { 0 };
+    TCHAR crashModuleFn[MAX_PATH] = { 0 };
+
+    // Get the module handle containing the RIP (Instruction Pointer)
+    if (GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+        reinterpret_cast<LPCTSTR>(contextRecord.Rip), &hModule))
     {
-       if(GetModuleFileName((HINSTANCE)memoryInfo.AllocationBase,
-                            crashModulePath, charcount(crashModulePath)-2) > 0)
-       {
-          crashModuleFn = ExtractFileName(crashModulePath);
-       }
+        if (GetModuleFileName(hModule, crashModulePath, _countof(crashModulePath) - 2) > 0)
+        {
+            // Extract the filename from the full path
+            _tsplitpath(crashModulePath, NULL, NULL, crashModuleFn, NULL);
+        }
     }
 
-    LogPrintf(
-       _T("%s caused %s Exception (0x%08x)\r\nin module %s at %04x:%08x.\r\n\r\n"),
-       moduleName, 
-       PhraseForException(exceptionRecord->ExceptionCode),
-       exceptionRecord->ExceptionCode,
-       crashModuleFn, 
-       contextRecord->SegCs, 
-       contextRecord->Eip);
-#else
     // FIXME: how to get crash module name and address on non-x86, x64?
     LogPrintf(
-       _T("%s caused %s Exception (0x%08x)\r\n\r\n"),
-       moduleName,
-       PhraseForException(exceptionRecord->ExceptionCode),
-       exceptionRecord->ExceptionCode);
-#endif
+       _T("%s caused Exception at 0x%p\r\nin module %s at 0x%p\r\n\r\n"),
+        _T("moduleName"),
+        (void*)contextRecord.Rip,
+        crashModuleFn,
+        (void*)contextRecord.Rip);
 }
 
 //
@@ -369,26 +366,35 @@ static void PrintUserInfo(void)
 //
 static void PrintOSInfo(void)
 {
-    OSVERSIONINFO osinfo;
     TCHAR         mmb[64];
 
     ZeroMemory(mmb, sizeof(mmb));
    
-    osinfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    OSVERSIONINFOEX osinfo = { sizeof(OSVERSIONINFOEX) };
+    osinfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
 
-    if(GetVersionEx(&osinfo))
-    {
-       DWORD platformId   = osinfo.dwPlatformId;
-       DWORD minorVersion = osinfo.dwMinorVersion;
-       DWORD majorVersion = osinfo.dwMajorVersion;
-       DWORD buildNumber  = osinfo.dwBuildNumber & 0xFFFF;
+    ULONGLONG conditionMask = 0;
+    DWORD typeMask = VER_MAJORVERSION | VER_MINORVERSION | VER_BUILDNUMBER;
 
-       wsprintf(mmb, _T("%u.%u.%u"), majorVersion, minorVersion, buildNumber);
+    VER_SET_CONDITION(conditionMask, VER_MAJORVERSION, VER_GREATER_EQUAL);
+    VER_SET_CONDITION(conditionMask, VER_MINORVERSION, VER_GREATER_EQUAL);
+    VER_SET_CONDITION(conditionMask, VER_BUILDNUMBER, VER_GREATER_EQUAL);
 
-       LogPrintf("Operating system: %s\r\n", mmb);
+    osinfo.dwMajorVersion = 10;
+    osinfo.dwMinorVersion = 0;
+    osinfo.dwBuildNumber = 0;
+
+    if (VerifyVersionInfo(&osinfo, typeMask, conditionMask)) {
+        DWORD majorVersion = osinfo.dwMajorVersion;
+        DWORD minorVersion = osinfo.dwMinorVersion;
+        DWORD buildNumber = osinfo.dwBuildNumber;
+
+        wsprintf(mmb, _T("%u.%u.%u"), majorVersion, minorVersion, buildNumber);
+        LogPrintf("Operating system: %s\r\n", mmb);
     }
-    else
-       LogPrintf(_T("%s"), "Operating system unknown\r\n");
+    else {
+        LogPrintf(_T("%s"), "Operating system unknown\r\n");
+    }   
 }
 
 //
@@ -456,8 +462,6 @@ static void PrintSegVInfo(void)
 }
 
 // Note: everything inside here is x86-specific, unfortunately.
-#ifdef _M_IX86
-
 //
 // PrintRegInfo
 //
@@ -466,14 +470,14 @@ static void PrintSegVInfo(void)
 static void PrintRegInfo(void)
 {
     LogPrintf(_T("\r\nContext:\r\n"));
-    LogPrintf(_T("EDI:    0x%08x  ESI: 0x%08x  EAX:   0x%08x\r\n"),
-              contextRecord->Edi, contextRecord->Esi, contextRecord->Eax);
-    LogPrintf(_T("EBX:    0x%08x  ECX: 0x%08x  EDX:   0x%08x\r\n"),
-              contextRecord->Ebx, contextRecord->Ecx, contextRecord->Edx);
-    LogPrintf(_T("EIP:    0x%08x  EBP: 0x%08x  SegCs: 0x%08x\r\n"),
-              contextRecord->Eip, contextRecord->Ebp, contextRecord->SegCs);
-    LogPrintf(_T("EFlags: 0x%08x  ESP: 0x%08x  SegSs: 0x%08x\r\n"),
-              contextRecord->EFlags, contextRecord->Esp, contextRecord->SegSs);
+    LogPrintf(_T("RDI:    0x%016llx  RSI: 0x%016llx  RAX:   0x%016llx\r\n"),
+        contextRecord->Rdi, contextRecord->Rsi, contextRecord->Rax);
+    LogPrintf(_T("RBX:    0x%016llx  RCX: 0x%016llx  RDX:   0x%016llx\r\n"),
+        contextRecord->Rbx, contextRecord->Rcx, contextRecord->Rdx);
+    LogPrintf(_T("RIP:    0x%016llx  RBP: 0x%016llx  SegCs: 0x%016llx\r\n"),
+        contextRecord->Rip, contextRecord->Rbp, contextRecord->SegCs);
+    LogPrintf(_T("EFlags: 0x%016llx  RSP: 0x%016llx  SegSs: 0x%016llx\r\n"),
+        contextRecord->EFlags, contextRecord->Rsp, contextRecord->SegSs);
 }
 
 //
@@ -483,22 +487,19 @@ static void PrintRegInfo(void)
 //
 static void PrintCS(void)
 {
-    BYTE *ipaddr = (BYTE *)contextRecord->Eip;
+    BYTE* ipaddr = reinterpret_cast<BYTE*>(contextRecord->Rip);
     int i;
 
-    LogPrintf(_T("\r\nBytes at CS:EIP:\r\n"));
+    LogPrintf(_T("\r\nBytes at CS:RIP:\r\n"));
 
-    for(i = 0; i < CODETOPRINT; ++i)
-    {
-       // must check for exception, in case of invalid instruction pointer
-       __try
-       {
-          LogPrintf(_T("%02x "), ipaddr[i]);
-       }
-       __except(EXCEPTION_EXECUTE_HANDLER)
-       {
-          LogPrintf(_T("?? "));
-       }
+    for (i = 0; i < CODETOPRINT; ++i) {
+        // must check for exception, in case of invalid instruction pointer
+        __try {
+            LogPrintf(_T("%02x "), ipaddr[i]);
+        }
+        __except (EXCEPTION_EXECUTE_HANDLER) {
+            LogPrintf(_T("?? "));
+        }
     }
 }
 
@@ -509,87 +510,73 @@ static void PrintCS(void)
 //
 static void PrintStack(void)
 {
-    DWORD *stackptr = (DWORD *)contextRecord->Esp;
-    DWORD *stacktop;
-    DWORD *stackstart;
-    int   cnt = 0;
-    int   numPrinted = 0;
+    UINT_PTR* stackptr = reinterpret_cast<UINT_PTR*>(contextRecord->Rsp);
+    UINT_PTR* stacktop;
+    UINT_PTR* stackstart;
+    int cnt = 0;
+    int numPrinted = 0;
 
     LogPrintf(_T("\r\n\r\nStack:\r\n"));
 
-    __try
-    {
-       __asm
-       {
-          // Load the top address of the stack from the thread information block.
-          mov   eax, fs:[4]
-          mov   stacktop, eax
-       }
+    __try {
+            // Load the top address of the stack from the thread information block.
+            // Gibbon: Since x64 assembler is deprecated (as inline) now, let's convert it to C.
+            stacktop = (UINT_PTR*)__readgsqword(0x08);
 
-       if(stacktop > stackptr + STACKTOPRINT)
-          stacktop = stackptr + STACKTOPRINT;
+        if (stacktop > stackptr + STACKTOPRINT)
+            stacktop = stackptr + STACKTOPRINT;
 
-       stackstart = stackptr;
-		
-       while(stackptr + 1 <= stacktop)
-       {
-          if((cnt % 4) == 0)
-          {
-             stackstart = stackptr;
-             numPrinted = 0;
-             LogPrintf(_T("0x%08x: "), stackptr);
-          }
+        stackstart = stackptr;
 
-          if((++cnt % 4) == 0 || stackptr + 2 > stacktop)
-          {
-             int i, n;
+        while (stackptr + 1 <= stacktop) {
+            if ((cnt % 4) == 0) {
+                stackstart = stackptr;
+                numPrinted = 0;
+                LogPrintf(_T("0x%p: "), stackptr);
+            }
 
-             LogPrintf(_T("%08x "), *stackptr);
-             ++numPrinted;
+            if ((++cnt % 4) == 0 || stackptr + 2 > stacktop) {
+                int i, n;
 
-             n = numPrinted;
-            
-             while(n < 4)
-             {
-                 LogPrintf(_T("         "));
-                 ++n;
-             }
+                LogPrintf(_T("%016llx "), *stackptr);
+                ++numPrinted;
 
-             for(i = 0; i < numPrinted; ++i)
-             {
-                int j;
-                DWORD stackint = *stackstart;
-               
-                for(j = 0; j < 4; ++j)
-                {
-                   char c = (char)(stackint & 0xFF);
-                   if(c < 0x20 || c > 0x7E)
-                      c = '.';
-                   LogPrintf(_T("%c"), c);
-                   stackint = stackint >> 8;
+                n = numPrinted;
+
+                while (n < 4) {
+                    LogPrintf(_T("                "));
+                    ++n;
                 }
-                ++stackstart;
-             }
 
-             LogPrintf(_T("\r\n"));
-          }
-          else
-          {
-             LogPrintf(_T("%08x "), *stackptr);
-             ++numPrinted;
-          }
-          ++stackptr;
-       }
+                for (i = 0; i < numPrinted; ++i) {
+                    int j;
+                    UINT_PTR stackint = *stackstart;
 
-       LogPrintf(_T("\r\n"));
+                    for (j = 0; j < 8; ++j) {
+                        char c = (char)(stackint & 0xFF);
+                        if (c < 0x20 || c > 0x7E)
+                            c = '.';
+                        LogPrintf(_T("%c"), c);
+                        stackint = stackint >> 8;
+                    }
+                    ++stackstart;
+                }
+
+                LogPrintf(_T("\r\n"));
+            }
+            else {
+                LogPrintf(_T("%016llx "), *stackptr);
+                ++numPrinted;
+            }
+            ++stackptr;
+        }
+
+        LogPrintf(_T("\r\n"));
     }
-    __except(EXCEPTION_EXECUTE_HANDLER)
-    {
-       LogPrintf(_T("Could not access stack.\r\n"));
+    __except (EXCEPTION_EXECUTE_HANDLER) {
+        LogPrintf(_T("Could not access stack.\r\n"));
     }
 }
-
-#endif // _M_IX86
 
 //=============================================================================
 //
@@ -634,11 +621,12 @@ int __cdecl I_W32ExceptionHandler(PEXCEPTION_POINTERS ep)
 
     // This won't be terribly useful on non-x86 as-is.
     // That is assuming it works at all, of course.
-#ifdef _M_IX86
+
+    // Gibbon - it is all converted Kaiser, you're welcome :)
+
     PrintRegInfo();    // print CPU registers
     PrintCS();         // print code segment at EIP
     PrintStack();      // print stack dump
-#endif
 
     LogPrintf(_T("\r\n===== [end of %s] =====\r\n"), _T("CRASHLOG.TXT"));
     LogFlush(logFile);

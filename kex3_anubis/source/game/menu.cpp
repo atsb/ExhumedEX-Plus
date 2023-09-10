@@ -2281,6 +2281,10 @@ void kexMenuMouse::Init(void)
     scrollOption->items.Push("2");
     scrollOption->items.Push("3");
     scrollOption->items.Push("4");
+    scrollOption->items.Push("5");
+    scrollOption->items.Push("6");
+    scrollOption->items.Push("7");
+    scrollOption->items.Push("8");
     scrollOption->Callback = static_cast<selectCallback_t>(&kexMenuMouse::OnSmoothMouse);
 
     toggleInvert = ALLOC_MENU_OBJECT(kexMenuObjectOptionToggle);
@@ -2301,7 +2305,7 @@ void kexMenuMouse::Update(void)
 {
     int smoothMouse = kexPlayerCmd::cvarMSmooth.GetInt() - 1;
 
-    kexMath::Clamp(smoothMouse, 0, 3);
+    kexMath::Clamp(smoothMouse, 0, 7);
     scrollOption->selectedItem = smoothMouse;
 
     UpdateItems();
@@ -2341,6 +2345,22 @@ void kexMenuMouse::OnSmoothMouse(kexMenuObject *menuObject)
 
     case 3:
         kexPlayerCmd::cvarMSmooth.Set(4);
+        break;
+
+    case 4:
+        kexPlayerCmd::cvarMSmooth.Set(5);
+        break;
+
+    case 5:
+        kexPlayerCmd::cvarMSmooth.Set(6);
+        break;
+
+    case 6:
+        kexPlayerCmd::cvarMSmooth.Set(7);
+        break;
+
+    case 7:
+        kexPlayerCmd::cvarMSmooth.Set(8);
         break;
     }
 }

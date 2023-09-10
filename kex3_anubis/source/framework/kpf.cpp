@@ -15,6 +15,8 @@
 //      File System
 //
 
+#include <SDL2/SDL.h>
+
 #include "kexlib.h"
 #include "kpf.h"
 #include "unzip.h"
@@ -99,10 +101,14 @@ void kexPakFile::LoadZipFile(const char *file, const bool bUseBasePath)
 
     if(bUseBasePath)
     {
-        filepath = kex::cvarBasePath.GetValue();
+#ifndef _WIN32
+        filepath = SDL_GetPrefPath("", "ExhumedEXPlus");
+#else
+        filepath = SDL_GetBasePath();
+#endif
 
         fPath = filepath;
-        fPath = fPath + "/" + file;
+        fPath = fPath + file;
     }
     else
     {
@@ -270,9 +276,6 @@ void kexPakFile::LoadUserFiles(void)
             }
         }
     }
-
-    // auto-load files from /mods directory
-    GetMatchingExternalFiles(list, "mods/");
 
     for(unsigned int i = 0; i < list.Length(); ++i)
     {

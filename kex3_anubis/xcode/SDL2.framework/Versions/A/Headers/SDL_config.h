@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2023 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -19,37 +19,43 @@
   3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifndef _SDL_config_h
-#define _SDL_config_h
+#ifndef SDL_config_h_
+#define SDL_config_h_
 
-#include "SDL_platform.h"
+#include <SDL2/SDL_platform.h>
 
 /**
  *  \file SDL_config.h
  */
 
 /* Add any platform that doesn't build using the configure system. */
-#ifdef USING_PREMAKE_CONFIG_H
-#include "SDL_config_premake.h"
-#elif defined(__WIN32__)
-#include "SDL_config_windows.h"
+#if defined(__WIN32__)
+#include <SDL2/SDL_config_windows.h>
 #elif defined(__WINRT__)
-#include "SDL_config_winrt.h"
+#include <SDL2/SDL_config_winrt.h>
+#elif defined(__WINGDK__)
+#include <SDL2/SDL_config_wingdk.h>
+#elif defined(__XBOXONE__) || defined(__XBOXSERIES__)
+#include <SDL2/SDL_config_xbox.h>
 #elif defined(__MACOSX__)
-#include "SDL_config_macosx.h"
+#include <SDL2/SDL_config_macosx.h>
 #elif defined(__IPHONEOS__)
-#include "SDL_config_iphoneos.h"
+#include <SDL2/SDL_config_iphoneos.h>
 #elif defined(__ANDROID__)
-#include "SDL_config_android.h"
-#elif defined(__PSP__)
-#include "SDL_config_psp.h"
+#include <SDL2/SDL_config_android.h>
+#elif defined(__OS2__)
+#include <SDL2/SDL_config_os2.h>
+#elif defined(__EMSCRIPTEN__)
+#include <SDL2/SDL_config_emscripten.h>
+#elif defined(__NGAGE__)
+#include <SDL2/SDL_config_ngage.h>
 #else
-/* This is a minimal configuration just to get SDL running on new platforms */
-#include "SDL_config_minimal.h"
+/* This is a minimal configuration just to get SDL running on new platforms. */
+#include <SDL2/SDL_config_minimal.h>
 #endif /* platform config */
 
 #ifdef USING_GENERATED_CONFIG_H
 #error Wrong SDL_config.h, check your include path?
 #endif
 
-#endif /* _SDL_config_h */
+#endif /* SDL_config_h_ */

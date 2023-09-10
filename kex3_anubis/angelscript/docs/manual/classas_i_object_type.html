@@ -152,9 +152,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18ccd38257957182b18750313ae7b411"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_object_type.html#a18ccd38257957182b18750313ae7b411">GetPropertyCount</a> () const =0</td></tr>
 <tr class="memdesc:a18ccd38257957182b18750313ae7b411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of properties that the object contains.  <a href="#a18ccd38257957182b18750313ae7b411">More...</a><br/></td></tr>
 <tr class="separator:a18ccd38257957182b18750313ae7b411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50aab8b32f1bd77996474125bf1c57ce"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_object_type.html#a50aab8b32f1bd77996474125bf1c57ce">GetProperty</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> index, const char **name, int *typeId=0, bool *isPrivate=0, int *offset=0, bool *isReference=0, <a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a> *accessMask=0) const =0</td></tr>
-<tr class="memdesc:a50aab8b32f1bd77996474125bf1c57ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the attributes of the property.  <a href="#a50aab8b32f1bd77996474125bf1c57ce">More...</a><br/></td></tr>
-<tr class="separator:a50aab8b32f1bd77996474125bf1c57ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedaed498c8f4fbe29771a13b6ed30971"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_object_type.html#aedaed498c8f4fbe29771a13b6ed30971">GetProperty</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> index, const char **name, int *typeId=0, bool *isPrivate=0, bool *isProtected=0, int *offset=0, bool *isReference=0, <a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a> *accessMask=0) const =0</td></tr>
+<tr class="memdesc:aedaed498c8f4fbe29771a13b6ed30971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the attributes of the property.  <a href="#aedaed498c8f4fbe29771a13b6ed30971">More...</a><br/></td></tr>
+<tr class="separator:aedaed498c8f4fbe29771a13b6ed30971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c3f5e808e04518a3bb5fa1ec7bfb691"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_object_type.html#a9c3f5e808e04518a3bb5fa1ec7bfb691">GetPropertyDeclaration</a> (<a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> index, bool includeNamespace=false) const =0</td></tr>
 <tr class="memdesc:a9c3f5e808e04518a3bb5fa1ec7bfb691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the declaration of the property.  <a href="#a9c3f5e808e04518a3bb5fa1ec7bfb691">More...</a><br/></td></tr>
 <tr class="separator:a9c3f5e808e04518a3bb5fa1ec7bfb691"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -789,7 +789,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a50aab8b32f1bd77996474125bf1c57ce"></a>
+<a class="anchor" id="aedaed498c8f4fbe29771a13b6ed30971"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -819,6 +819,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">bool *&#160;</td>
           <td class="paramname"><em>isPrivate</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isProtected</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -856,6 +862,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">name</td><td>The name of the property </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">typeId</td><td>The type of the property </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">isPrivate</td><td>Whether the property is private or not </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isProtected</td><td>Whether the property is protected or not </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">offset</td><td>The offset into the object where the property is stored </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">isReference</td><td>True if the property is not stored inline </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">accessMask</td><td>The access mask of the property </td></tr>
@@ -1220,7 +1227,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_object_type.html">asIObjectType</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

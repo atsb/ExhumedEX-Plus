@@ -3,7 +3,8 @@ var doc_advanced_api =
     [ "Garbage collected objects", "doc_gc_object.html", [
       [ "GC support behaviours", "doc_gc_object.html#doc_reg_gcref_1", null ],
       [ "Factory for garbage collection", "doc_gc_object.html#doc_reg_gcref_2", null ],
-      [ "Addref and release for garbage collection", "doc_gc_object.html#doc_reg_gcref_3", null ]
+      [ "Addref and release for garbage collection", "doc_gc_object.html#doc_reg_gcref_3", null ],
+      [ "Garbage collected objects and multi-threading", "doc_gc_object.html#doc_reg_gcref_4", null ]
     ] ],
     [ "The generic calling convention", "doc_generic.html", [
       [ "Extracting function arguments", "doc_generic.html#doc_generic_1", null ],

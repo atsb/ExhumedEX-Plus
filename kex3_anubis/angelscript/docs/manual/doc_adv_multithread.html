@@ -82,6 +82,9 @@ Things to think about with a multithreaded environment</h1>
 <li>Resources that are shared by script modules such as registered properties and objects must be protected by the application for simultaneous access, as the script engine doesn't do this automatically. A read-write lock is provided by the library that can be used for this. See <a class="el" href="angelscript_8h.html#a016dbf716a1c761b3f903b92eb8bb580">asAcquireExclusiveLock</a>, <a class="el" href="angelscript_8h.html#a8a0617637eea3d76e33a52758b2cd49f">asReleaseExclusiveLock</a>, <a class="el" href="angelscript_8h.html#aa45545a038adcc8c73348cfe9488f32d">asAcquireSharedLock</a>, and <a class="el" href="angelscript_8h.html#a44f7327c5601e8dbf74768a2f3cc0dc3">asReleaseSharedLock</a>.</li>
 </ul>
 <ul>
+<li>If you use <a class="el" href="doc_adv_custom_options.html#doc_adv_custom_options_engine">automatic garbage collection</a> (turned on by default) then you must make sure the behaviours registered for types to <a class="el" href="doc_gc_object.html">support garbage collection</a> must be thread safe as the garbage collector can be invoked from any thread that is executing a script.</li>
+</ul>
+<ul>
 <li>Many of the add-ons are not thread safe. Either create your own or make sure you review the add-ons you wish to use to guarantee thread safety.</li>
 </ul>
 <h1><a class="anchor" id="doc_adv_fibers"></a>
@@ -93,7 +96,7 @@ Fibers</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

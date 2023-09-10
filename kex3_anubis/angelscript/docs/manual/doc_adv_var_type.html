@@ -80,13 +80,21 @@ $(document).ready(function(){initNavTree('doc_adv_var_type.html','');});
 <div class="line">}</div>
 </div><!-- fragment --><p>The variable type can also be used with <code>out</code> references, but not with <code>inout</code> references. Currently it can only be used with global functions, object constructors, and object methods. It cannot be used with other behaviours and operators.</p>
 <p>The variable type is not available within scripts, so it can only be used to register application functions.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_addon_any.html">any object</a> and <a class="el" href="doc_addon_dict.html">dictionary object</a> for examples </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_addon_any.html">any object</a> and <a class="el" href="doc_addon_dict.html">dictionary object</a> for examples</dd></dl>
+<h1><a class="anchor" id="doc_adv_var_type"></a>
+The variable parameter type</h1>
+<p>The variable parameter type can also be used in special versions of <a class="el" href="doc_script_class_ops.html#doc_script_class_conv">the opConv and opCast</a> operator overloads. This is especially useful for generic container types that need to be able to hold any type of content.</p>
+<ul>
+<li>void opCast(?&amp;out)</li>
+<li>void opConv(?&amp;out)</li>
+</ul>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_addon_handle.html">ref object</a> and <a class="el" href="doc_addon_dict.html">dictionary object</a> for examples </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

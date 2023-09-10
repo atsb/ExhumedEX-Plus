@@ -86,22 +86,22 @@ Public C++ interface</h1>
 <div class="line">  <span class="keywordtype">bool</span> IsEOF() <span class="keyword">const</span>;</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Reads a specified number of bytes into the string</span></div>
-<div class="line">  <span class="keywordtype">int</span> ReadString(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length, std::string &amp;str);</div>
+<div class="line">  std::string ReadString(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> length);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Reads to the next new-line character</span></div>
-<div class="line">  <span class="keywordtype">int</span> ReadLine(std::string &amp;str);</div>
+<div class="line">  std::string ReadLine();</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Reads a signed integer</span></div>
-<div class="line">  <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a>  ReadInt(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> bytes);</div>
+<div class="line">  <a class="code" href="angelscript_8h.html#aa8044b56ee56e2350b06f1e7207b43df" title="64 bit integer">asINT64</a>     ReadInt(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> bytes);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Reads an unsigned integer</span></div>
-<div class="line">  <a class="code" href="angelscript_8h.html#a10aea5de212e440ffd6ec8fc0b17563d" title="64 bit unsigned integer">asQWORD</a>  ReadUInt(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> bytes);</div>
+<div class="line">  <a class="code" href="angelscript_8h.html#a10aea5de212e440ffd6ec8fc0b17563d" title="64 bit unsigned integer">asQWORD</a>     ReadUInt(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> bytes);</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Reads a float</span></div>
-<div class="line">  <span class="keywordtype">float</span>    ReadFloat();</div>
+<div class="line">  <span class="keywordtype">float</span>       ReadFloat();</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Reads a double</span></div>
-<div class="line">  <span class="keywordtype">double</span>   ReadDouble();</div>
+<div class="line">  <span class="keywordtype">double</span>      ReadDouble();</div>
 <div class="line">    </div>
 <div class="line">  <span class="comment">// Writes a string to the file</span></div>
 <div class="line">  <span class="keywordtype">int</span> WriteString(<span class="keyword">const</span> std::string &amp;str);</div>
@@ -129,8 +129,8 @@ Public script interface</h1>
     int      close();
     int      getSize() const;
     bool     isEndOfFile() const;
-    int      readString(uint length, string &amp;out str);
-    int      readLine(string &amp;out str);
+    string   readString(uint length);
+    string   readLine();
     int64    readInt(uint bytes);
     uint64   readUInt(uint bytes);
     float    readFloat();
@@ -153,8 +153,7 @@ Script example</h1>
   if( f.open("file.txt", "r") &gt;= 0 ) 
   {
       // Read the whole file into the string buffer
-      string str;
-      f.readString(f.getSize(), str); 
+      string str = f.readString(f.getSize()); 
       f.close();
   }
 </pre> </div></div><!-- contents -->
@@ -162,7 +161,7 @@ Script example</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

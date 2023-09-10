@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{E03DB130-B4EC-461E-9803-002671191F58}</ProjectGuid>
+    <RootNamespace>anubis</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.33626.349</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\obj\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>..\obj\$(Configuration)\</IntDir>
+    <LinkIncremental />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental />
+    <TargetName>exhumed-ex-plus</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;.\..\SDL2\include;.\..\openal\include;.\..\zlib\;.\..\lpng1612;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;.\..\ogg\libogg\include\;.\..\ogg\libvorbis\include\;.\..\ffmpeg\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;__STDC_CONSTANT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>.\..\SDL2\lib\x86\SDL2.lib;.\..\SDL2\lib\x86\SDL2main.lib;.\..\openal\lib\eaxguid.lib;.\..\openal\lib\openal32.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Debug\libpngd.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Debug\ZLib\zlibd.lib;.\..\ogg\libogg\win32\VS2008\Win32\Debug\libogg_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Debug\libvorbis_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Debug\libvorbisfile_static.lib;.\..\angelscript\angelscript\lib\angelscriptd.lib;.\..\ffmpeg\windows\avcodec.lib;.\..\ffmpeg\windows\avdevice.lib;.\..\ffmpeg\windows\avfilter.lib;.\..\ffmpeg\windows\avformat.lib;.\..\ffmpeg\windows\avutil.lib;.\..\ffmpeg\windows\postproc.lib;.\..\ffmpeg\windows\swresample.lib;.\..\ffmpeg\windows\swscale.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;C:\vcpkg\packages\sdl2_x64-windows\include\SDL2;.\..\openal\include;.\..\zlib\;.\..\lpng1612;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;.\..\ogg\libogg\include\;.\..\ogg\libvorbis\include\;.\..\ffmpeg\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;__STDC_CONSTANT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\vcpkg\packages\sdl2_x64-windows\lib\SDL2.lib;C:\vcpkg\packages\openal-soft_x64-windows\lib\OpenAL32.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Debug\libpngd.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Debug\ZLib\zlibd.lib;.\..\ogg\libogg\win32\VS2008\Win32\Debug\libogg_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Debug\libvorbis_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Debug\libvorbisfile_static.lib;.\..\angelscript\angelscript\lib\angelscriptd.lib;.\..\ffmpeg\windows\avcodec.lib;.\..\ffmpeg\windows\avdevice.lib;.\..\ffmpeg\windows\avfilter.lib;.\..\ffmpeg\windows\avformat.lib;.\..\ffmpeg\windows\avutil.lib;.\..\ffmpeg\windows\postproc.lib;.\..\ffmpeg\windows\swresample.lib;.\..\ffmpeg\windows\swscale.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>.\;.\..\SDL2\include;.\..\openal\include;.\..\zlib\;.\..\lpng1612;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;.\..\ogg\libogg\include\;.\..\ogg\libvorbis\include\;.\..\ffmpeg\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;__STDC_CONSTANT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>.\..\SDL2\lib\x86\SDL2.lib;.\..\SDL2\lib\x86\SDL2main.lib;.\..\openal\lib\eaxguid.lib;.\..\openal\lib\openal32.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Release\libpng.lib;.\..\lpng1612\projects\visualc71\Win32_LIB_Release\ZLib\zlib.lib;.\..\ogg\libogg\win32\VS2008\Win32\Release\libogg_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Release\libvorbis_static.lib;.\..\ogg\libvorbis\win32\VS2008\Win32\Release\libvorbisfile_static.lib;.\..\angelscript\angelscript\lib\angelscript.lib;.\..\ffmpeg\windows\avcodec.lib;.\..\ffmpeg\windows\avdevice.lib;.\..\ffmpeg\windows\avfilter.lib;.\..\ffmpeg\windows\avformat.lib;.\..\ffmpeg\windows\avutil.lib;.\..\ffmpeg\windows\postproc.lib;.\..\ffmpeg\windows\swresample.lib;.\..\ffmpeg\windows\swscale.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>MSVCRTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>.\;C:\vcpkg\packages\sdl2_x64-windows\include\SDL2;C:\vcpkg\packages\openal-soft_x64-windows\include\AL;C:\vcpkg\packages\zlib_x64-windows\include;C:\vcpkg\packages\libpng_x64-windows\include\libpng16;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;C:\vcpkg\packages\libogg_x64-windows\include;C:\vcpkg\packages\libvorbis_x64-windows\include;C:\vcpkg\packages\ffmpeg_x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;__STDC_CONSTANT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>C:\vcpkg\packages\sdl2_x64-windows\lib\SDL2.lib;C:\vcpkg\packages\openal-soft_x64-windows\lib\OpenAL32.lib;C:\vcpkg\packages\libpng_x64-windows\lib\libpng16.lib;C:\vcpkg\packages\zlib_x64-windows\lib\zlib.lib;C:\vcpkg\packages\libogg_x64-windows\lib\ogg.lib;C:\vcpkg\packages\libvorbis_x64-windows\lib\vorbis.lib;C:\vcpkg\packages\libvorbis_x64-windows\lib\vorbisfile.lib;.\..\angelscript\angelscript\lib\angelscript64.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\avcodec.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\avdevice.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\avfilter.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\avformat.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\avutil.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\swresample.lib;C:\vcpkg\packages\ffmpeg_x64-windows\lib\swscale.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>MSVCRTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>false</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\framework\actions.cpp" />
+    <ClCompile Include="..\source\framework\binFile.cpp" />
+    <ClCompile Include="..\source\framework\cmd.cpp" />
+    <ClCompile Include="..\source\framework\console.cpp" />
+    <ClCompile Include="..\source\framework\cvar.cpp" />
+    <ClCompile Include="..\source\framework\defs.cpp" />
+    <ClCompile Include="..\source\framework\dict.cpp" />
+    <ClCompile Include="..\source\framework\kpf.cpp" />
+    <ClCompile Include="..\source\framework\kstring.cpp" />
+    <ClCompile Include="..\source\framework\memHeap.cpp" />
+    <ClCompile Include="..\source\framework\object.cpp" />
+    <ClCompile Include="..\source\framework\parser.cpp" />
+    <ClCompile Include="..\source\framework\session.cpp" />
+    <ClCompile Include="..\source\framework\unzip.cpp" />
+    <ClCompile Include="..\source\game\actionDef.cpp" />
+    <ClCompile Include="..\source\game\actor.cpp" />
+    <ClCompile Include="..\source\game\actorFactory.cpp" />
+    <ClCompile Include="..\source\game\ai.cpp" />
+    <ClCompile Include="..\source\game\cmodel.cpp" />
+    <ClCompile Include="..\source\game\dlightObj.cpp" />
+    <ClCompile Include="..\source\game\game.cpp" />
+    <ClCompile Include="..\source\game\gameObject.cpp" />
+    <ClCompile Include="..\source\game\hud.cpp" />
+    <ClCompile Include="..\source\game\inventoryMenu.cpp" />
+    <ClCompile Include="..\source\game\localization.cpp" />
+    <ClCompile Include="..\source\game\menu.cpp" />
+    <ClCompile Include="..\source\game\menuPanel.cpp" />
+    <ClCompile Include="..\source\game\mover.cpp" />
+    <ClCompile Include="..\source\game\overWorld.cpp" />
+    <ClCompile Include="..\source\game\pickup.cpp" />
+    <ClCompile Include="..\source\game\player.cpp" />
+    <ClCompile Include="..\source\game\playerCmd.cpp" />
+    <ClCompile Include="..\source\game\playLoop.cpp" />
+    <ClCompile Include="..\source\game\projectile.cpp" />
+    <ClCompile Include="..\source\game\pWeapon.cpp" />
+    <ClCompile Include="..\source\game\spring.cpp" />
+    <ClCompile Include="..\source\game\sprite.cpp" />
+    <ClCompile Include="..\source\game\spriteAnim.cpp" />
+    <ClCompile Include="..\source\game\titlescreen.cpp" />
+    <ClCompile Include="..\source\game\travelObject.cpp" />
+    <ClCompile Include="..\source\game\world.cpp" />
+    <ClCompile Include="..\source\main.cpp" />
+    <ClCompile Include="..\source\math\angle.cpp" />
+    <ClCompile Include="..\source\math\bounds.cpp" />
+    <ClCompile Include="..\source\math\mathlib.cpp" />
+    <ClCompile Include="..\source\math\matrix.cpp" />
+    <ClCompile Include="..\source\math\plane.cpp" />
+    <ClCompile Include="..\source\math\pluecker.cpp" />
+    <ClCompile Include="..\source\math\quaternion.cpp" />
+    <ClCompile Include="..\source\math\random.cpp" />
+    <ClCompile Include="..\source\math\vector.cpp" />
+    <ClCompile Include="..\source\movie\movie.cpp" />
+    <ClCompile Include="..\source\opengl\glcontext.cpp" />
+    <ClCompile Include="..\source\renderer\cpuVertexList.cpp" />
+    <ClCompile Include="..\source\renderer\fbo.cpp" />
+    <ClCompile Include="..\source\renderer\image.cpp" />
+    <ClCompile Include="..\source\renderer\renderBackend.cpp" />
+    <ClCompile Include="..\source\renderer\renderDynLight.cpp" />
+    <ClCompile Include="..\source\renderer\renderFont.cpp" />
+    <ClCompile Include="..\source\renderer\renderPortal.cpp" />
+    <ClCompile Include="..\source\renderer\renderPostProcess.cpp" />
+    <ClCompile Include="..\source\renderer\renderScene.cpp" />
+    <ClCompile Include="..\source\renderer\renderScreen.cpp" />
+    <ClCompile Include="..\source\renderer\renderUtils.cpp" />
+    <ClCompile Include="..\source\renderer\renderView.cpp" />
+    <ClCompile Include="..\source\renderer\shaderProg.cpp" />
+    <ClCompile Include="..\source\renderer\textureManager.cpp" />
+    <ClCompile Include="..\source\renderer\textureObject.cpp" />
+    <ClCompile Include="..\source\renderer\vertexBuffer.cpp" />
+    <ClCompile Include="..\source\script\objects\actorObject.cpp" />
+    <ClCompile Include="..\source\script\objects\gameSysObject.cpp" />
+    <ClCompile Include="..\source\script\objects\mathObject.cpp" />
+    <ClCompile Include="..\source\script\objects\refObject.cpp" />
+    <ClCompile Include="..\source\script\objects\stringObject.cpp" />
+    <ClCompile Include="..\source\script\objects\systemObject.cpp" />
+    <ClCompile Include="..\source\script\scriptSystem.cpp" />
+    <ClCompile Include="..\source\system\al\soundOAL.cpp" />
+    <ClCompile Include="..\source\system\endian.cpp" />
+    <ClCompile Include="..\source\system\input.cpp" />
+    <ClCompile Include="..\source\system\sdl\endianSDL.cpp" />
+    <ClCompile Include="..\source\system\sdl\inputSDL.cpp" />
+    <ClCompile Include="..\source\system\sdl\systemSDL.cpp" />
+    <ClCompile Include="..\source\system\sdl\threadSDL.cpp" />
+    <ClCompile Include="..\source\system\sdl\timerSDL.cpp" />
+    <ClCompile Include="..\source\system\sound.cpp" />
+    <ClCompile Include="..\source\system\system.cpp" />
+    <ClCompile Include="..\source\system\thread.cpp" />
+    <ClCompile Include="..\source\system\timer.cpp" />
+    <ClCompile Include="..\source\tools\dataConvert.cpp" />
+    <ClCompile Include="..\source\tools\mapEditor\mapEditor.cpp" />
+    <ClCompile Include="..\source\tools\spriteMake.cpp" />
+    <ClCompile Include="..\source\win32\exception.cpp" />
+    <ClCompile Include="..\source\win32\opndir.cpp" />
+    <ClCompile Include="..\source\win32\SDL_win32_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\framework\actions.h" />
+    <ClInclude Include="..\source\framework\array.h" />
+    <ClInclude Include="..\source\framework\binFile.h" />
+    <ClInclude Include="..\source\framework\cmd.h" />
+    <ClInclude Include="..\source\framework\console.h" />
+    <ClInclude Include="..\source\framework\cvar.h" />
+    <ClInclude Include="..\source\framework\defs.h" />
+    <ClInclude Include="..\source\framework\dict.h" />
+    <ClInclude Include="..\source\framework\hashlist.h" />
+    <ClInclude Include="..\source\framework\kpf.h" />
+    <ClInclude Include="..\source\framework\kstring.h" />
+    <ClInclude Include="..\source\framework\linkedlist.h" />
+    <ClInclude Include="..\source\framework\memHeap.h" />
+    <ClInclude Include="..\source\framework\msort.h" />
+    <ClInclude Include="..\source\framework\object.h" />
+    <ClInclude Include="..\source\framework\parser.h" />
+    <ClInclude Include="..\source\framework\queue.h" />
+    <ClInclude Include="..\source\framework\sdNodes.h" />
+    <ClInclude Include="..\source\framework\session.h" />
+    <ClInclude Include="..\source\framework\stack.h" />
+    <ClInclude Include="..\source\framework\unzip.h" />
+    <ClInclude Include="..\source\game\actionDef.h" />
+    <ClInclude Include="..\source\game\actor.h" />
+    <ClInclude Include="..\source\game\actorFactory.h" />
+    <ClInclude Include="..\source\game\ai.h" />
+    <ClInclude Include="..\source\game\cmodel.h" />
+    <ClInclude Include="..\source\game\dlightObj.h" />
+    <ClInclude Include="..\source\game\game.h" />
+    <ClInclude Include="..\source\game\gameObject.h" />
+    <ClInclude Include="..\source\game\hud.h" />
+    <ClInclude Include="..\source\game\inventoryMenu.h" />
+    <ClInclude Include="..\source\game\localization.h" />
+    <ClInclude Include="..\source\game\menu.h" />
+    <ClInclude Include="..\source\game\menuPanel.h" />
+    <ClInclude Include="..\source\game\mover.h" />
+    <ClInclude Include="..\source\game\overWorld.h" />
+    <ClInclude Include="..\source\game\pickup.h" />
+    <ClInclude Include="..\source\game\player.h" />
+    <ClInclude Include="..\source\game\playerCmd.h" />
+    <ClInclude Include="..\source\game\playLoop.h" />
+    <ClInclude Include="..\source\game\projectile.h" />
+    <ClInclude Include="..\source\game\pWeapon.h" />
+    <ClInclude Include="..\source\game\spring.h" />
+    <ClInclude Include="..\source\game\sprite.h" />
+    <ClInclude Include="..\source\game\spriteAnim.h" />
+    <ClInclude Include="..\source\game\titlescreen.h" />
+    <ClInclude Include="..\source\game\travelObject.h" />
+    <ClInclude Include="..\source\game\world.h" />
+    <ClInclude Include="..\source\kexlib.h" />
+    <ClInclude Include="..\source\math\mathlib.h" />
+    <ClInclude Include="..\source\movie\movie.h" />
+    <ClInclude Include="..\source\opengl\dgl.h" />
+    <ClInclude Include="..\source\opengl\glcontext.h" />
+    <ClInclude Include="..\source\renderer\cpuVertexList.h" />
+    <ClInclude Include="..\source\renderer\fbo.h" />
+    <ClInclude Include="..\source\renderer\image.h" />
+    <ClInclude Include="..\source\renderer\renderBackend.h" />
+    <ClInclude Include="..\source\renderer\renderFont.h" />
+    <ClInclude Include="..\source\renderer\renderMain.h" />
+    <ClInclude Include="..\source\renderer\renderPostProcess.h" />
+    <ClInclude Include="..\source\renderer\renderScene.h" />
+    <ClInclude Include="..\source\renderer\renderScreen.h" />
+    <ClInclude Include="..\source\renderer\renderUtils.h" />
+    <ClInclude Include="..\source\renderer\renderView.h" />
+    <ClInclude Include="..\source\renderer\shaderProg.h" />
+    <ClInclude Include="..\source\renderer\textureManager.h" />
+    <ClInclude Include="..\source\renderer\textureObject.h" />
+    <ClInclude Include="..\source\renderer\vertexBuffer.h" />
+    <ClInclude Include="..\source\script\objects\actorObject.h" />
+    <ClInclude Include="..\source\script\objects\gameSysObject.h" />
+    <ClInclude Include="..\source\script\objects\mathObject.h" />
+    <ClInclude Include="..\source\script\objects\refObject.h" />
+    <ClInclude Include="..\source\script\objects\stringObject.h" />
+    <ClInclude Include="..\source\script\objects\systemObject.h" />
+    <ClInclude Include="..\source\script\scriptSystem.h" />
+    <ClInclude Include="..\source\system\endian.h" />
+    <ClInclude Include="..\source\system\input.h" />
+    <ClInclude Include="..\source\system\joystick.h" />
+    <ClInclude Include="..\source\system\keyboard.h" />
+    <ClInclude Include="..\source\system\mouse.h" />
+    <ClInclude Include="..\source\system\sound.h" />
+    <ClInclude Include="..\source\system\system.h" />
+    <ClInclude Include="..\source\system\thread.h" />
+    <ClInclude Include="..\source\system\timer.h" />
+    <ClInclude Include="..\source\tools\mapEditor\mapEditor.h" />
+    <ClInclude Include="..\source\tools\spriteMake.h" />
+    <ClInclude Include="..\source\win32\opndir.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="anubis.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

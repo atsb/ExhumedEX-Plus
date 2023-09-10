@@ -17,6 +17,7 @@
 
 #include <math.h>
 #include <assert.h>
+#include <cstdint>
 #include "kexlib.h"
 
 #ifdef M_PI

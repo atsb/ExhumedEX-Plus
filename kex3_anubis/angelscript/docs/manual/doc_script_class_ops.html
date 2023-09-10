@@ -207,9 +207,11 @@ Functor operator</h1>
 Type conversion operators</h1>
 <table  cellspacing="0" cellpadding="0" border="0">
 <tr>
-<td width="80"><b>op</b></td><td width="200"><b>opfunc</b> </td></tr>
+<td width="150"><b>op</b></td><td width="200"><b>opfunc</b> </td></tr>
 <tr>
 <td><em>type</em>(<em>expr</em>)</td><td>opConv, opImplConv </td></tr>
+<tr>
+<td>cast&lt;<em>type</em>&gt;(<em>expr</em>)</td><td>opCast, opImplCast </td></tr>
 </table>
 <p>When the expression <code>type(expr)</code> is compiled and type doesn't have a constructor that take an argument with the type of the expression, the compiler will try to rewrite it as <code>expr.opConv()</code>. The compiler will then chose the opConv that returns the desired type.</p>
 <p>By implementing the opImplConv instead of opConv, the compiler will be able to use this for implicit conversions too, e.g. when compiling an assignment or a function argument.</p>
@@ -221,13 +223,23 @@ Type conversion operators</h1>
     int    opConv() const      { return int(myValue); }
   }
 </pre><p>This should only be used for value conversions and not reference casts. That is, the methods are expected to return a new instance of the value with the new type.</p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_expressions.html#conversion">Type conversions</a> </dd></dl>
+<p>If a reference cast is desired, i.e. a different type of handle to the same object instance, then the opCast method should be implemented instead. The compiler will attempt to rewrite an expression <code>cast&lt;type&gt;(expr)</code> as <code>expr.opCast()</code>, and chose the opCast overload that returns a handle of the desired type. Here too the opImplCast can be implemented instead if the reference cast is allowed to be performed implicitly by the compiler.</p>
+<pre>
+  class MyObjA
+  {
+    MyObjB @objB;
+    MyObjC @objC;
+    MyObjB @opCast() { return objB; }
+    MyObjC @opImplCast() { return objC; }
+  }
+</pre><p>An example where the opCast/opImplCast operator overloads come in handy is when extending a type without directly <a class="el" href="doc_script_class_inheritance.html">inheriting</a> from it.</p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_expressions.html#conversion">Type conversions</a>, <a class="el" href="doc_adv_inheritappclass.html">Inheriting from application registered class</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

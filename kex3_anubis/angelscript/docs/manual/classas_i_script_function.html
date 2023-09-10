@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ef1f42ff812a03e2a323046835159fb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_function.html#a7ef1f42ff812a03e2a323046835159fb">IsPrivate</a> () const =0</td></tr>
 <tr class="memdesc:a7ef1f42ff812a03e2a323046835159fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the class method is private.  <a href="#a7ef1f42ff812a03e2a323046835159fb">More...</a><br/></td></tr>
 <tr class="separator:a7ef1f42ff812a03e2a323046835159fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e17b763527ba3a9b0d05c4cd35b5742"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_function.html#a2e17b763527ba3a9b0d05c4cd35b5742">IsProtected</a> () const =0</td></tr>
+<tr class="memdesc:a2e17b763527ba3a9b0d05c4cd35b5742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the class method is protected.  <a href="#a2e17b763527ba3a9b0d05c4cd35b5742">More...</a><br/></td></tr>
+<tr class="separator:a2e17b763527ba3a9b0d05c4cd35b5742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa071c702946372020a1245f901502d52"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_function.html#aa071c702946372020a1245f901502d52">IsFinal</a> () const =0</td></tr>
 <tr class="memdesc:aa071c702946372020a1245f901502d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the method is final.  <a href="#aa071c702946372020a1245f901502d52">More...</a><br/></td></tr>
 <tr class="separator:aa071c702946372020a1245f901502d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,7 +364,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A null terminated string with the function declaration. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A null terminated string with the function declaration.</dd></dl>
+<p>The parameter names are not stored for <a class="el" href="angelscript_8h.html#a06fb2a1ebf5d007e0d542abced1b648fac6a82b2b64cfee8e143a41b4b627083a">virtual methods</a>. If you want to know the name of parameters to class methods, be sure to get the actual implementation rather than the virtual method. </p>
 
 </div>
 </div>
@@ -717,10 +721,11 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A negative value on error. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">asINVALID_ARG</td><td>The index is out of bounds. </td></tr>
+    <tr><td class="paramname">asINVALID_ARG</td><td>The index is out of bounds.</td></tr>
   </table>
   </dd>
 </dl>
+<p>The parameter names are not stored for <a class="el" href="angelscript_8h.html#a06fb2a1ebf5d007e0d542abced1b648fac6a82b2b64cfee8e143a41b4b627083a">virtual methods</a>. If you want to know the name of parameters to class methods, be sure to get the actual implementation rather than the virtual method. </p>
 
 </div>
 </div>
@@ -779,7 +784,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Since 2.29.0. Use <a class="el" href="classas_i_script_function.html#a2b3000b9fc5d3f2cfeea490d8c0c062a">asIScriptFunction::GetParam</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>Since 2.29.0. Use <a class="el" href="classas_i_script_function.html#a2b3000b9fc5d3f2cfeea490d8c0c062a">asIScriptFunction::GetParam</a> instead. </dd></dl>
 
 </div>
 </div>
@@ -1113,6 +1118,30 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2e17b763527ba3a9b0d05c4cd35b5742"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool asIScriptFunction::IsProtected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if the class method is protected </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a99bbe26ae0ec3f0cc09070bf89aff2f9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1240,7 +1269,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_script_function.html">asIScriptFunction</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:18 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -38,3 +38,12 @@ tags
 .DS_store
 /kex3_anubis/msvc/*.ncb
 /kex3_anubis/msvc/*.suo
+*.obj
+*.xcuserstate
+*.xcuserstate
+*.ipch
+*.db
+*.bin
+*.lock
+*.vsidx
+*.user

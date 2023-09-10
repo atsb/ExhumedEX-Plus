@@ -121,7 +121,9 @@ void kexBinFile::Close(void)
     }
     if(handle)
     {
+    #ifndef __linux__
         fclose(handle);
+    #endif
     }
     if(buffer)
     {

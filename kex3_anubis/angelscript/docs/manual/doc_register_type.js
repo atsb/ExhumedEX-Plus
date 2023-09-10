@@ -15,9 +15,10 @@ var doc_register_type =
       [ "List constructor", "doc_register_val_type.html#doc_reg_val_3", null ]
     ] ],
     [ "Registering operator behaviours", "doc_reg_opbeh.html", [
-      [ "Operator overloads", "doc_reg_opbeh.html#doc_reg_opbeh_1", null ],
-      [ "Value cast operators", "doc_reg_opbeh.html#doc_reg_opbeh_2", null ]
+      [ "Operator overloads", "doc_reg_opbeh.html#doc_reg_opbeh_1", null ]
     ] ],
     [ "Registering object methods", "doc_reg_objmeth.html", null ],
-    [ "Registering object properties", "doc_reg_objprop.html", null ]
+    [ "Registering object properties", "doc_reg_objprop.html", [
+      [ "Property accessors", "doc_reg_objprop.html#doc_reg_objprop_accessor", null ]
+    ] ]
 ];

@@ -118,8 +118,8 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a99c6b8b0882e45e5d0b2ed19f6f7a157"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99c6b8b0882e45e5d0b2ed19f6f7a157"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a99c6b8b0882e45e5d0b2ed19f6f7a157">ANGELSCRIPT_VERSION</a>&#160;&#160;&#160;22901</td></tr>
-<tr class="memdesc:a99c6b8b0882e45e5d0b2ed19f6f7a157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version 2.29.1. <br/></td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a99c6b8b0882e45e5d0b2ed19f6f7a157">ANGELSCRIPT_VERSION</a>&#160;&#160;&#160;23002</td></tr>
+<tr class="memdesc:a99c6b8b0882e45e5d0b2ed19f6f7a157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version 2.30.2. <br/></td></tr>
 <tr class="separator:a99c6b8b0882e45e5d0b2ed19f6f7a157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e0eb27a2013e875a33565dd3fe76f79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e0eb27a2013e875a33565dd3fe76f79"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a9e0eb27a2013e875a33565dd3fe76f79">AS_CAN_USE_CPP11</a>&#160;&#160;&#160;1</td></tr>
@@ -248,6 +248,10 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a8bbbe3a90082461266acf8f98ce9216e">asCLEANOBJECTTYPEFUNC_t</a> )(<a class="el" href="classas_i_object_type.html">asIObjectType</a> *)</td></tr>
 <tr class="memdesc:a8bbbe3a90082461266acf8f98ce9216e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature for the object type cleanup callback function. <br/></td></tr>
 <tr class="separator:a8bbbe3a90082461266acf8f98ce9216e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29678e8c7f48b9c2aaabae90ee258d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac29678e8c7f48b9c2aaabae90ee258d1"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#ac29678e8c7f48b9c2aaabae90ee258d1">asCLEANSCRIPTOBJECTFUNC_t</a> )(<a class="el" href="classas_i_script_object.html">asIScriptObject</a> *)</td></tr>
+<tr class="memdesc:ac29678e8c7f48b9c2aaabae90ee258d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature for the script object cleanup callback function. <br/></td></tr>
+<tr class="separator:ac29678e8c7f48b9c2aaabae90ee258d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f3c055107b52e232a7884c4f649f22"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23f3c055107b52e232a7884c4f649f22"></a>
 typedef <a class="el" href="classas_i_script_context.html">asIScriptContext</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a23f3c055107b52e232a7884c4f649f22">asREQUESTCONTEXTFUNC_t</a> )(<a class="el" href="classas_i_script_engine.html">asIScriptEngine</a> *, void *)</td></tr>
 <tr class="memdesc:a23f3c055107b52e232a7884c4f649f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function signature for the request context callback. <br/></td></tr>
@@ -317,7 +321,9 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a539a1fcf3f48feaaf7c0776c88123430">asINIT_GLOBAL_VARS_FAILED</a> = -26, 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a9a5232a5c1028cd729a744f592387059">asOUT_OF_MEMORY</a> = -27
+&#160;&#160;<a class="el" href="angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54a9a5232a5c1028cd729a744f592387059">asOUT_OF_MEMORY</a> = -27, 
+<br/>
+&#160;&#160;<a class="el" href="angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54af1e13f62c802e525a94722429575a345">asMODULE_IS_IN_USE</a> = -28
 <br/>
  }</td></tr>
 <tr class="memdesc:a6e2a1647f02f2c5da931bab09e860f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return codes.  <a href="angelscript_8h.html#a6e2a1647f02f2c5da931bab09e860f54">More...</a><br/></td></tr>
@@ -365,7 +371,11 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fa9c876445c7d138ad096705fc18f311d1">asEP_ALTER_SYNTAX_NAMED_ARGS</a> = 21, 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fae6af9c6963372e11c6da873868f594cd">asEP_DISABLE_INTEGER_DIVISION</a> = 22
+&#160;&#160;<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fae6af9c6963372e11c6da873868f594cd">asEP_DISABLE_INTEGER_DIVISION</a> = 22, 
+<br/>
+&#160;&#160;<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0fabed7d49670612ec27227210021926692">asEP_DISALLOW_EMPTY_LIST_ELEMENTS</a> = 23, 
+<br/>
+&#160;&#160;<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0faa6f88a81f5706542acb94f3c470ac3f3">asEP_PRIVATE_PROP_AS_PROTECTED</a> = 24
 <br/>
  }</td></tr>
 <tr class="memdesc:a53c2e8a74ade77c928316396394ebe0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Engine properties.  <a href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0f">More...</a><br/></td></tr>
@@ -461,17 +471,17 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aad8b12da6bf9cd48990d48c2ddf13584d">asOBJ_NOCOUNT</a> = (1&lt;&lt;18), 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa244efb813b401b3a6d087c3add802818">asOBJ_APP_CLASS_ALIGN8</a> = (1&lt;&lt;19)
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa244efb813b401b3a6d087c3add802818">asOBJ_APP_CLASS_ALIGN8</a> = (1&lt;&lt;19), 
+<br/>
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2">asOBJ_IMPLICIT_HANDLE</a> = (1&lt;&lt;20)
 , <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaa82f3ef517372e0db029f7dcfe7f88eb">asOBJ_SCRIPT_OBJECT</a> = (1&lt;&lt;20), 
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaa82f3ef517372e0db029f7dcfe7f88eb">asOBJ_SCRIPT_OBJECT</a> = (1&lt;&lt;21), 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa92354ace56201eb543c818b6c0852baf">asOBJ_SHARED</a> = (1&lt;&lt;21), 
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa92354ace56201eb543c818b6c0852baf">asOBJ_SHARED</a> = (1&lt;&lt;22), 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa770f4012f052a1190edbac8931140091">asOBJ_NOINHERIT</a> = (1&lt;&lt;22), 
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa770f4012f052a1190edbac8931140091">asOBJ_NOINHERIT</a> = (1&lt;&lt;23), 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa817bffd72a92219d1dc5c6d2361f6e09">asOBJ_SCRIPT_FUNCTION</a> = (1&lt;&lt;23), 
-<br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2">asOBJ_IMPLICIT_HANDLE</a> = (1&lt;&lt;24)
+&#160;&#160;<a class="el" href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7aa817bffd72a92219d1dc5c6d2361f6e09">asOBJ_SCRIPT_FUNCTION</a> = (1&lt;&lt;24)
 <br/>
  }</td></tr>
 <tr class="memdesc:a855d86fa9ee15b9f75e553ee376b5c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object type flags.  <a href="angelscript_8h.html#a855d86fa9ee15b9f75e553ee376b5c7a">More...</a><br/></td></tr>
@@ -1061,7 +1071,9 @@ Enumerations</h2></td></tr>
 <br/>
 &#160;&#160;<a class="el" href="angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a7546139b9cafeae5d71a345ec3b4424d">asBC_POWi64</a> = 198, 
 <br/>
-&#160;&#160;<a class="el" href="angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a23bbb267da86c108b4fe23f0443d5f1d">asBC_POWu64</a> = 199
+&#160;&#160;<a class="el" href="angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a23bbb267da86c108b4fe23f0443d5f1d">asBC_POWu64</a> = 199, 
+<br/>
+&#160;&#160;<a class="el" href="angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0a25fe35c5c31674255821ecc3c9a9d23c">asBC_Thiscall1</a> = 200
 <br/>
  }</td></tr>
 <tr class="memdesc:ab3692c4e5d47fc93f8c9646d1783aef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bytecode instructions used by the VM.  <a href="angelscript_8h.html#ab3692c4e5d47fc93f8c9646d1783aef0">More...</a><br/></td></tr>
@@ -1113,9 +1125,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af84c6359750675bf3ceccf373286a533"><td class="memItemLeft" align="right" valign="top"><a class="el" href="angelscript_8h.html#a6412a04ba6b2737922fdb2d8f822f51c">AS_API</a> <a class="el" href="classas_i_script_engine.html">asIScriptEngine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#af84c6359750675bf3ceccf373286a533">asCreateScriptEngine</a> (<a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a> version)</td></tr>
-<tr class="memdesc:af84c6359750675bf3ceccf373286a533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the script engine.  <a href="#af84c6359750675bf3ceccf373286a533">More...</a><br/></td></tr>
-<tr class="separator:af84c6359750675bf3ceccf373286a533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6a62345d9cca6c9b5a3dac67d80d0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="angelscript_8h.html#a6412a04ba6b2737922fdb2d8f822f51c">AS_API</a> <a class="el" href="classas_i_script_engine.html">asIScriptEngine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b">asCreateScriptEngine</a> (<a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a> version=<a class="el" href="angelscript_8h.html#a99c6b8b0882e45e5d0b2ed19f6f7a157">ANGELSCRIPT_VERSION</a>)</td></tr>
+<tr class="memdesc:acb6a62345d9cca6c9b5a3dac67d80d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the script engine.  <a href="#acb6a62345d9cca6c9b5a3dac67d80d0b">More...</a><br/></td></tr>
+<tr class="separator:acb6a62345d9cca6c9b5a3dac67d80d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79cbcfe1a47e436da6f2f28ff0314f75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="angelscript_8h.html#a6412a04ba6b2737922fdb2d8f822f51c">AS_API</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="angelscript_8h.html#a79cbcfe1a47e436da6f2f28ff0314f75">asGetLibraryVersion</a> ()</td></tr>
 <tr class="memdesc:a79cbcfe1a47e436da6f2f28ff0314f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the version of the compiled library.  <a href="#a79cbcfe1a47e436da6f2f28ff0314f75">More...</a><br/></td></tr>
 <tr class="separator:a79cbcfe1a47e436da6f2f28ff0314f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1822,6 +1834,9 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 <tr><td class="fieldname"><em><a class="anchor" id="ab3692c4e5d47fc93f8c9646d1783aef0a23bbb267da86c108b4fe23f0443d5f1d"></a>asBC_POWu64</em>&nbsp;</td><td class="fielddoc">
 <p>Computes the power of for two uint64 values. </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ab3692c4e5d47fc93f8c9646d1783aef0a25fe35c5c31674255821ecc3c9a9d23c"></a>asBC_Thiscall1</em>&nbsp;</td><td class="fielddoc">
+<p>Call registered function with single 32bit integer argument. Suspend further execution if requested. </p>
+</td></tr>
 </table>
 
 </div>
@@ -1935,16 +1950,16 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 <p>Obtain weak ref flag. </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a7e38df5b10ec8cbf2a688f1d114097c5ae0b54db9bbd5bf49d0e22cafd886b833"></a>asBEHAVE_VALUE_CAST</em>&nbsp;</td><td class="fielddoc">
-<p>Explicit value cast operator. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Since 2.30.0. Use <a class="el" href="doc_script_class_ops.html#doc_script_class_conv">opConv</a> instead. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a7e38df5b10ec8cbf2a688f1d114097c5a03d72ae8d0f1e1b4e16f903346a694c6"></a>asBEHAVE_IMPLICIT_VALUE_CAST</em>&nbsp;</td><td class="fielddoc">
-<p>Implicit value cast operator. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Since 2.30.0. Use <a class="el" href="doc_script_class_ops.html#doc_script_class_conv">opImplConv</a> instead. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a7e38df5b10ec8cbf2a688f1d114097c5a20746394824509f369f860ea1e96d1f6"></a>asBEHAVE_REF_CAST</em>&nbsp;</td><td class="fielddoc">
-<p>Explicit reference cast operator. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000003">Deprecated:</a></b></dt><dd>Since 2.30.0. Use <a class="el" href="doc_script_class_ops.html#doc_script_class_conv">opCast</a> instead. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a7e38df5b10ec8cbf2a688f1d114097c5a9b23cc523e8aa4984e5e56e54b95dee4"></a>asBEHAVE_IMPLICIT_REF_CAST</em>&nbsp;</td><td class="fielddoc">
-<p>Implicit reference cast operator. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>Since 2.30.0. Use <a class="el" href="doc_script_class_ops.html#doc_script_class_conv">opImplCast</a> instead. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a7e38df5b10ec8cbf2a688f1d114097c5a8c9afe12ff833cd09bd893e1408b9103"></a>asBEHAVE_TEMPLATE_CALLBACK</em>&nbsp;</td><td class="fielddoc">
 <p>Callback for validating template instances. </p>
@@ -2139,6 +2154,12 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a53c2e8a74ade77c928316396394ebe0fae6af9c6963372e11c6da873868f594cd"></a>asEP_DISABLE_INTEGER_DIVISION</em>&nbsp;</td><td class="fielddoc">
 <p>When true, the / and /= operators will perform floating-point division (i.e. 1/2 = 0.5 instead of 0). Default: false. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a53c2e8a74ade77c928316396394ebe0fabed7d49670612ec27227210021926692"></a>asEP_DISALLOW_EMPTY_LIST_ELEMENTS</em>&nbsp;</td><td class="fielddoc">
+<p>When true, the initialization lists may not contain empty elements. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a53c2e8a74ade77c928316396394ebe0faa6f88a81f5706542acb94f3c470ac3f3"></a>asEP_PRIVATE_PROP_AS_PROTECTED</em>&nbsp;</td><td class="fielddoc">
+<p>When true, private properties behave like protected properties. </p>
 </td></tr>
 </table>
 
@@ -2366,6 +2387,9 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 <tr><td class="fieldname"><em><a class="anchor" id="a855d86fa9ee15b9f75e553ee376b5c7aa244efb813b401b3a6d087c3add802818"></a>asOBJ_APP_CLASS_ALIGN8</em>&nbsp;</td><td class="fielddoc">
 <p>The C++ class contains types that may require 8byte alignment. Only valid for value types. </p>
 </td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2"></a>asOBJ_IMPLICIT_HANDLE</em>&nbsp;</td><td class="fielddoc">
+<p>The object is declared for implicit handle. Only valid for reference types. </p>
+</td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a855d86fa9ee15b9f75e553ee376b5c7aaa82f3ef517372e0db029f7dcfe7f88eb"></a>asOBJ_SCRIPT_OBJECT</em>&nbsp;</td><td class="fielddoc">
 <p>The object is a script class or an interface. </p>
 </td></tr>
@@ -2377,9 +2401,6 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a855d86fa9ee15b9f75e553ee376b5c7aa817bffd72a92219d1dc5c6d2361f6e09"></a>asOBJ_SCRIPT_FUNCTION</em>&nbsp;</td><td class="fielddoc">
 <p>The object type is a script function. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a855d86fa9ee15b9f75e553ee376b5c7aaee8bfdbc6c2faac1938bba7e3a8b5ff2"></a>asOBJ_IMPLICIT_HANDLE</em>&nbsp;</td><td class="fielddoc">
-<p>The object is declared for implicit handle. </p>
 </td></tr>
 </table>
 
@@ -2478,6 +2499,9 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="a6e2a1647f02f2c5da931bab09e860f54a9a5232a5c1028cd729a744f592387059"></a>asOUT_OF_MEMORY</em>&nbsp;</td><td class="fielddoc">
 <p>It wasn't possible to allocate the needed memory. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a6e2a1647f02f2c5da931bab09e860f54af1e13f62c802e525a94722429575a345"></a>asMODULE_IS_IN_USE</em>&nbsp;</td><td class="fielddoc">
+<p>The module is referred to by live objects or from the application. </p>
 </td></tr>
 </table>
 
@@ -2737,7 +2761,7 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
 
 </div>
 </div>
-<a class="anchor" id="af84c6359750675bf3ceccf373286a533"></a>
+<a class="anchor" id="acb6a62345d9cca6c9b5a3dac67d80d0b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2745,7 +2769,7 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
           <td class="memname"><a class="el" href="angelscript_8h.html#a6412a04ba6b2737922fdb2d8f822f51c">AS_API</a> <a class="el" href="classas_i_script_engine.html">asIScriptEngine</a>* asCreateScriptEngine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a>&#160;</td>
-          <td class="paramname"><em>version</em></td><td>)</td>
+          <td class="paramname"><em>version</em> = <code><a class="el" href="angelscript_8h.html#a99c6b8b0882e45e5d0b2ed19f6f7a157">ANGELSCRIPT_VERSION</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2756,8 +2780,9 @@ const <a class="el" href="structas_s_b_c_info.html">asSBCInfo</a>&#160;</td><td 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the script engine interface.</dd></dl>
-<p>Call this function to create a new script engine. When you're done with the script engine, i.e. after you've executed all your scripts, you should call <a class="el" href="classas_i_script_engine.html#aae91a45da75af9234b87e825b5c08b81">Release</a> on the pointer to free the engine object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the script engine interface, or null on error.</dd></dl>
+<p>Call this function to create a new script engine. When you're done with the script engine, i.e. after you've executed all your scripts, you should call <a class="el" href="classas_i_script_engine.html#a28c3800620d4aeaca75d084391eb758e">ShutDownAndRelease</a> on the pointer to cleanup any objects that may still be alive and free the engine object.</p>
+<p>The <em>version</em> argument is there to allow AngelScript to validate that the application has been compiled with the correct interface. This is especially important when linking dynamically against the library. If the version is incorrect a null pointer is returned. </p>
 
 </div>
 </div>
@@ -2992,7 +3017,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A negative value on error.</dd></dl>
-<p>Call this method to register the global memory allocation and deallocation functions that AngelScript should use for memory management. This function Should be called before <a class="el" href="angelscript_8h.html#af84c6359750675bf3ceccf373286a533">asCreateScriptEngine</a>.</p>
+<p>Call this method to register the global memory allocation and deallocation functions that AngelScript should use for memory management. This function Should be called before <a class="el" href="angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b">asCreateScriptEngine</a>.</p>
 <p>If not called, AngelScript will use the malloc and free functions from the standard C library. </p>
 
 </div>
@@ -3043,7 +3068,7 @@ template&lt;typename T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="angelscript_8h.html">angelscript.h</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -15,7 +15,7 @@
 //      Timer Class (SDL)
 //
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "kexlib.h"
 
 class kexTimerSDL : public kexTimer
@@ -58,7 +58,7 @@ void kexTimerSDL::Sleep(unsigned long usecs)
 
 int kexTimerSDL::GetTicks(void)
 {
-    return SDL_GetTicks();
+    return SDL_GetTicks64();
 }
 
 //

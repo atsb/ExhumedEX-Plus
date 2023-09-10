@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\win32">
+      <UniqueIdentifier>{96a1c15a-de05-4812-b8c9-4cfdd1bb5de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\framework">
+      <UniqueIdentifier>{923949ce-8ee0-4ebd-bc1f-b0112d626842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\math">
+      <UniqueIdentifier>{0742c64e-5b5e-4af1-a5af-6690cdedc64a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\opengl">
+      <UniqueIdentifier>{f330ba8b-3082-4863-99a2-197264eb809b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\renderer">
+      <UniqueIdentifier>{29336b3d-54af-42e2-94c8-0bc9f2eaedfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system">
+      <UniqueIdentifier>{8e4273d0-021e-48c6-9d63-c2c9fa67ba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system\sdl">
+      <UniqueIdentifier>{c932f9f0-d3a3-4e02-8588-40e537ae9504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\system\al">
+      <UniqueIdentifier>{33682b7e-ab55-4bc7-aa47-eff6f104c716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{740f9b63-9a85-46be-bf95-66c3f63cb1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools">
+      <UniqueIdentifier>{e6f73116-c6c7-4955-b219-320dd25475ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tools\mapEditor">
+      <UniqueIdentifier>{f2de65a1-b843-4b41-a45a-2ce2d7fab82a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script">
+      <UniqueIdentifier>{ac32feb5-1f04-4198-9a2e-befe05a6ffad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\script\objects">
+      <UniqueIdentifier>{f249f1c3-311c-4f0c-8b65-f4a42a4d1129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\movie">
+      <UniqueIdentifier>{32f415ea-1b5a-429e-a149-cdcceb70322f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\win32">
+      <UniqueIdentifier>{3fc5f608-46f6-4484-a130-1e5f16f78d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\framework">
+      <UniqueIdentifier>{097eff49-f71a-40ab-82b5-5cb04f52f620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{2bffb4b6-20f1-4b7a-a9fa-d0e020bb4690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\opengl">
+      <UniqueIdentifier>{94f890f4-692e-43f2-bf12-f5572db10807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\renderer">
+      <UniqueIdentifier>{fac14cd5-784f-4ec7-bf63-3b7391949bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\system">
+      <UniqueIdentifier>{2d29d8a2-00ed-4662-b807-ab29b3a80d2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game">
+      <UniqueIdentifier>{ebf893b8-ffab-4186-8510-964754a536a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tools">
+      <UniqueIdentifier>{fb16daaa-b37a-4ac5-bdfb-3ab3a21ace9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tools\mapEditor">
+      <UniqueIdentifier>{53912a01-4427-4b68-8367-e319ec9cc284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\script">
+      <UniqueIdentifier>{debf4ede-86d6-4bd2-ad48-b25fec0a1a44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\script\objects">
+      <UniqueIdentifier>{e6e0f1ae-2c06-4530-b978-088709aec954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\movie">
+      <UniqueIdentifier>{6d3bde5b-f5fa-461a-9ff0-f04166982fe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\win32\exception.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\win32\opndir.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\win32\SDL_win32_main.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\actions.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\binFile.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\cmd.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\console.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\cvar.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\defs.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\dict.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\kpf.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\kstring.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\memHeap.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\object.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\parser.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\session.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\framework\unzip.cpp">
+      <Filter>Source Files\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\angle.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\bounds.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\mathlib.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\matrix.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\plane.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\pluecker.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\quaternion.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\random.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\math\vector.cpp">
+      <Filter>Source Files\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\opengl\glcontext.cpp">
+      <Filter>Source Files\opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\cpuVertexList.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\fbo.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\image.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderBackend.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderDynLight.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderFont.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderPortal.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderPostProcess.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderScene.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderScreen.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderUtils.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\renderView.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\shaderProg.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\textureManager.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\textureObject.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\renderer\vertexBuffer.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\endian.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\input.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sound.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\system.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\thread.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\timer.cpp">
+      <Filter>Source Files\system</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sdl\endianSDL.cpp">
+      <Filter>Source Files\system\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sdl\inputSDL.cpp">
+      <Filter>Source Files\system\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sdl\systemSDL.cpp">
+      <Filter>Source Files\system\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sdl\threadSDL.cpp">
+      <Filter>Source Files\system\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\sdl\timerSDL.cpp">
+      <Filter>Source Files\system\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\system\al\soundOAL.cpp">
+      <Filter>Source Files\system\al</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\actionDef.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\actor.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\actorFactory.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\ai.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\cmodel.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\dlightObj.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\game.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\gameObject.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\hud.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\inventoryMenu.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\localization.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\menu.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\menuPanel.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\mover.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\overWorld.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\pickup.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\player.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\playerCmd.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\playLoop.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\projectile.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\pWeapon.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\spring.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\sprite.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\spriteAnim.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\titlescreen.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\travelObject.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\game\world.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\tools\dataConvert.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\tools\spriteMake.cpp">
+      <Filter>Source Files\tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\tools\mapEditor\mapEditor.cpp">
+      <Filter>Source Files\tools\mapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\scriptSystem.cpp">
+      <Filter>Source Files\script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\actorObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\gameSysObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\mathObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\refObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\stringObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\script\objects\systemObject.cpp">
+      <Filter>Source Files\script\objects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\movie\movie.cpp">
+      <Filter>Source Files\movie</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\source\kexlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\win32\opndir.h">
+      <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\actions.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\array.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\binFile.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\cmd.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\console.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\cvar.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\defs.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\dict.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\hashlist.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\kpf.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\kstring.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\linkedlist.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\memHeap.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\msort.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\object.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\parser.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\queue.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\sdNodes.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\session.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\stack.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\framework\unzip.h">
+      <Filter>Header Files\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\math\mathlib.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\opengl\dgl.h">
+      <Filter>Header Files\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\opengl\glcontext.h">
+      <Filter>Header Files\opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\cpuVertexList.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\fbo.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\image.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderBackend.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderFont.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderMain.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderPostProcess.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderScene.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderScreen.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderUtils.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\renderView.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\shaderProg.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\textureManager.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\textureObject.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\renderer\vertexBuffer.h">
+      <Filter>Header Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\endian.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\input.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\joystick.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\keyboard.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\mouse.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\sound.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\system.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\thread.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\system\timer.h">
+      <Filter>Header Files\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\actionDef.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\actor.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\actorFactory.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\ai.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\cmodel.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\dlightObj.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\game.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\gameObject.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\hud.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\inventoryMenu.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\localization.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\menu.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\menuPanel.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\mover.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\overWorld.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\pickup.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\player.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\playerCmd.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\playLoop.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\projectile.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\pWeapon.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\spring.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\sprite.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\spriteAnim.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\titlescreen.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\travelObject.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\game\world.h">
+      <Filter>Header Files\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\tools\spriteMake.h">
+      <Filter>Header Files\tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\tools\mapEditor\mapEditor.h">
+      <Filter>Header Files\tools\mapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\scriptSystem.h">
+      <Filter>Header Files\script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\actorObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\gameSysObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\mathObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\refObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\stringObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\script\objects\systemObject.h">
+      <Filter>Header Files\script\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\movie\movie.h">
+      <Filter>Header Files\movie</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="anubis.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

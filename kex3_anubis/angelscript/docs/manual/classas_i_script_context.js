@@ -45,6 +45,7 @@ var classas_i_script_context =
     [ "SetArgFloat", "classas_i_script_context.html#a702a40cfe539e4e655a84e15161f8db8", null ],
     [ "SetArgObject", "classas_i_script_context.html#a09044a12dfb2d44d19bd8a4025cb814d", null ],
     [ "SetArgQWord", "classas_i_script_context.html#a742c870360588e99528f09bae6156482", null ],
+    [ "SetArgVarType", "classas_i_script_context.html#a626d97ec564c92120e2abaf69f6e3698", null ],
     [ "SetArgWord", "classas_i_script_context.html#ac882e19b922c681052a0a88d69289a47", null ],
     [ "SetException", "classas_i_script_context.html#a4ed608208cafdebe5676df079e27d392", null ],
     [ "SetExceptionCallback", "classas_i_script_context.html#a4d1f481473df3f7aefccc5bb6904e405", null ],

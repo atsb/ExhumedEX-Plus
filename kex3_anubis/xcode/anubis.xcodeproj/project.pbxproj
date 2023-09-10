@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A72691F2AA752F700113CAA /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A72691B2AA752F700113CAA /* libz.a */; };
+		2A7269252AA7534000113CAA /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269242AA7534000113CAA /* libpng16.a */; };
+		2A72692A2AA75F6500113CAA /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269292AA75F6500113CAA /* libogg.a */; };
+		2A7269322AA765F100113CAA /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269312AA765F100113CAA /* libvorbis.a */; };
+		2A7269382AA7682400113CAA /* libvorbisfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269372AA7682400113CAA /* libvorbisfile.a */; };
 		410A697F1AAF53FC000BD442 /* dataConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 410A697E1AAF53FC000BD442 /* dataConvert.cpp */; };
 		4111E0821A8D4B19000D5B22 /* pickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4111E0801A8D4B19000D5B22 /* pickup.cpp */; };
 		411358D21AB75FE200916706 /* inventoryMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 411358D01AB75FE200916706 /* inventoryMenu.cpp */; };
 		4124D2251AE6A6F600FB03C0 /* dlightObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4124D2231AE6A6F600FB03C0 /* dlightObj.cpp */; };
 		413DD5BF1A89674B00767E49 /* actorObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 413DD5BD1A89674B00767E49 /* actorObject.cpp */; };
-		415A071F1AC9B81800D74D25 /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 415A07091AC9B5E700D74D25 /* libogg.a */; };
-		415A07201AC9B81800D74D25 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 415A07141AC9B5EF00D74D25 /* libvorbis.a */; };
-		415A07211AC9B81800D74D25 /* libvorbisfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 415A07181AC9B5EF00D74D25 /* libvorbisfile.a */; };
 		4178638F1A8E6B2C00329895 /* mover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4178638D1A8E6B2C00329895 /* mover.cpp */; };
 		419342261A8BB38B002C7F8E /* gameSysObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 419342251A8BB38B002C7F8E /* gameSysObject.cpp */; };
 		419C3BB41A89100400C19D68 /* actionDef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 419C3BB21A89100400C19D68 /* actionDef.cpp */; };
@@ -90,22 +92,9 @@
 		41E2CE871A51D39B00FC28DC /* vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41E2CE621A51D39B00FC28DC /* vector.cpp */; };
 		41E2CE881A51D39B00FC28DC /* glcontext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41E2CE651A51D39B00FC28DC /* glcontext.cpp */; };
 		41E2CE8D1A51D39B00FC28DC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41E2CE711A51D39B00FC28DC /* main.cpp */; };
-		41E2CE9D1A51D40700FC28DC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E2CE9C1A51D40700FC28DC /* libz.dylib */; };
 		41E2CE9F1A51D57700FC28DC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E2CE9E1A51D57700FC28DC /* OpenGL.framework */; };
-		41E2CEA11A51D5CC00FC28DC /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E2CE971A51D3E300FC28DC /* libpng.a */; };
 		41E2CEA31A51D68C00FC28DC /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41E2CE351A51D1EE00FC28DC /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		41E9B2EE1AB1F45000ECA62E /* actorFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 41E9B2EC1AB1F45000ECA62E /* actorFactory.cpp */; };
-		D8783A531C50228300B319BC /* movie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8783A511C50228300B319BC /* movie.cpp */; };
-		D8783A6F1C50294E00B319BC /* libavcodec.56.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8783A6A1C50294E00B319BC /* libavcodec.56.dylib */; };
-		D8783A701C50294E00B319BC /* libavformat.56.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8783A6B1C50294E00B319BC /* libavformat.56.dylib */; };
-		D8783A711C50294E00B319BC /* libavutil.54.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8783A6C1C50294E00B319BC /* libavutil.54.dylib */; };
-		D8783A721C50294E00B319BC /* libswresample.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8783A6D1C50294E00B319BC /* libswresample.1.dylib */; };
-		D8783A731C50294E00B319BC /* libswscale.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8783A6E1C50294E00B319BC /* libswscale.3.dylib */; };
-		D8783A791C502A6B00B319BC /* libavcodec.56.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8783A6A1C50294E00B319BC /* libavcodec.56.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D8783A7A1C502A6B00B319BC /* libavformat.56.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8783A6B1C50294E00B319BC /* libavformat.56.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D8783A7B1C502A6B00B319BC /* libavutil.54.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8783A6C1C50294E00B319BC /* libavutil.54.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D8783A7C1C502A6B00B319BC /* libswresample.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8783A6D1C50294E00B319BC /* libswresample.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D8783A7D1C502A6B00B319BC /* libswscale.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8783A6E1C50294E00B319BC /* libswscale.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D8783A9D1C502BA400B319BC /* cpuVertexList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8783A7E1C502BA400B319BC /* cpuVertexList.cpp */; };
 		D8783A9E1C502BA400B319BC /* fbo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8783A801C502BA400B319BC /* fbo.cpp */; };
 		D8783A9F1C502BA400B319BC /* image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8783A821C502BA400B319BC /* image.cpp */; };
@@ -125,69 +114,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		415A07061AC9B5E700D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = Ogg;
-		};
-		415A07081AC9B5E700D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 734FB2E50B18B33E00D561D7;
-			remoteInfo = "libogg (static)";
-		};
-		415A07111AC9B5EF00D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 730F23F1091827B100AB638C;
-			remoteInfo = Vorbis;
-		};
-		415A07131AC9B5EF00D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 738835E40B18F870005C7A69;
-			remoteInfo = "libvorbis (static)";
-		};
-		415A07151AC9B5EF00D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 738836130B190488005C7A69;
-			remoteInfo = "libvorbisenc (static)";
-		};
-		415A07171AC9B5EF00D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 738836220B1905E5005C7A69;
-			remoteInfo = "libvorbisfile (static)";
-		};
-		415A07191AC9B5FC00D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 734FB2E40B18B33E00D561D7;
-			remoteInfo = "libogg (static)";
-		};
-		415A071B1AC9B60100D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 738835E30B18F870005C7A69;
-			remoteInfo = "libvorbis (static)";
-		};
-		415A071D1AC9B60400D74D25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 738836210B1905E5005C7A69;
-			remoteInfo = "libvorbisfile (static)";
-		};
 		41B7764C1A83E81C008C8F23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41B776471A83E81C008C8F23 /* angelscript.xcodeproj */;
@@ -209,34 +135,6 @@
 			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = "angelscript OSX";
 		};
-		41E2CE941A51D3E300FC28DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8D07F2C80486CC7A007CD1D0;
-			remoteInfo = "mac-libpng";
-		};
-		41E2CE961A51D3E300FC28DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A55DFB7815EBB44B007CCF00;
-			remoteInfo = "mac-static-libpng";
-		};
-		41E2CE981A51D3E300FC28DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A5A58CFD17CF7FBE00B64330;
-			remoteInfo = "ios-static-libpng";
-		};
-		41E2CE9A1A51D3FB00FC28DC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A55DFB7715EBB44B007CCF00;
-			remoteInfo = "mac-static-libpng";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -256,17 +154,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
-				D8783A791C502A6B00B319BC /* libavcodec.56.dylib in CopyFiles */,
-				D8783A7A1C502A6B00B319BC /* libavformat.56.dylib in CopyFiles */,
-				D8783A7B1C502A6B00B319BC /* libavutil.54.dylib in CopyFiles */,
-				D8783A7C1C502A6B00B319BC /* libswresample.1.dylib in CopyFiles */,
-				D8783A7D1C502A6B00B319BC /* libswscale.3.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A72691B2AA752F700113CAA /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libz.a; sourceTree = "<group>"; };
+		2A7269242AA7534000113CAA /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng16.a; sourceTree = "<group>"; };
+		2A7269282AA75A6100113CAA /* anubis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = anubis.entitlements; path = anubis/anubis.entitlements; sourceTree = "<group>"; };
+		2A7269292AA75F6500113CAA /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libogg.a; sourceTree = "<group>"; };
+		2A7269312AA765F100113CAA /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libvorbis.a; sourceTree = "<group>"; };
+		2A7269372AA7682400113CAA /* libvorbisfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libvorbisfile.a; sourceTree = "<group>"; };
 		410A697E1AAF53FC000BD442 /* dataConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dataConvert.cpp; path = ../../source/tools/dataConvert.cpp; sourceTree = "<group>"; };
 		4111E0801A8D4B19000D5B22 /* pickup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pickup.cpp; path = ../../source/game/pickup.cpp; sourceTree = "<group>"; };
 		4111E0811A8D4B19000D5B22 /* pickup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pickup.h; path = ../../source/game/pickup.h; sourceTree = "<group>"; };
@@ -278,8 +177,6 @@
 		413DD5BD1A89674B00767E49 /* actorObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = actorObject.cpp; path = ../../source/script/objects/actorObject.cpp; sourceTree = "<group>"; };
 		413DD5BE1A89674B00767E49 /* actorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = actorObject.h; path = ../../source/script/objects/actorObject.h; sourceTree = "<group>"; };
 		41573F331AC07ECB0007662B /* joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = joystick.h; path = ../../source/system/joystick.h; sourceTree = "<group>"; };
-		415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Ogg.xcodeproj; path = ../ogg/libogg/macosx/Ogg.xcodeproj; sourceTree = "<group>"; };
-		415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Vorbis.xcodeproj; path = ../ogg/libvorbis/macosx/Vorbis.xcodeproj; sourceTree = "<group>"; };
 		4178638D1A8E6B2C00329895 /* mover.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mover.cpp; path = ../../source/game/mover.cpp; sourceTree = "<group>"; };
 		4178638E1A8E6B2C00329895 /* mover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mover.h; path = ../../source/game/mover.h; sourceTree = "<group>"; };
 		419342241A8BB38B002C7F8E /* gameSysObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameSysObject.h; path = ../../source/script/objects/gameSysObject.h; sourceTree = "<group>"; };
@@ -398,7 +295,7 @@
 		41DA07421A51FDE000562B25 /* timerSDL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = timerSDL.cpp; path = ../../source/system/sdl/timerSDL.cpp; sourceTree = "<group>"; };
 		41DA07441A51FEFC00562B25 /* systemSDL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = systemSDL.cpp; path = ../../source/system/sdl/systemSDL.cpp; sourceTree = "<group>"; };
 		41DA07461A52014400562B25 /* inputSDL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = inputSDL.cpp; path = ../../source/system/sdl/inputSDL.cpp; sourceTree = "<group>"; };
-		41E2CDF91A51CF2000FC28DC /* anubis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anubis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41E2CDF91A51CF2000FC28DC /* ExhumedEXPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExhumedEXPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41E2CDFC1A51CF2000FC28DC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		41E2CDFF1A51CF2000FC28DC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		41E2CE001A51CF2000FC28DC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -408,7 +305,6 @@
 		41E2CE0A1A51CF2000FC28DC /* anubis-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "anubis-Prefix.pch"; sourceTree = "<group>"; };
 		41E2CE0C1A51CF2000FC28DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		41E2CE141A51CF2000FC28DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		41E2CE1B1A51CF2000FC28DC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		41E2CE351A51D1EE00FC28DC /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		41E2CE591A51D39B00FC28DC /* angle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = angle.cpp; sourceTree = "<group>"; };
 		41E2CE5A1A51D39B00FC28DC /* bounds.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bounds.cpp; sourceTree = "<group>"; };
@@ -425,18 +321,9 @@
 		41E2CE661A51D39B00FC28DC /* glcontext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glcontext.h; sourceTree = "<group>"; };
 		41E2CE701A51D39B00FC28DC /* kexlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kexlib.h; path = ../../source/kexlib.h; sourceTree = "<group>"; };
 		41E2CE711A51D39B00FC28DC /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../source/main.cpp; sourceTree = "<group>"; };
-		41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = libpng/xcode/libpng.xcodeproj; sourceTree = "<group>"; };
-		41E2CE9C1A51D40700FC28DC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		41E2CE9E1A51D57700FC28DC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		41E9B2EC1AB1F45000ECA62E /* actorFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = actorFactory.cpp; path = ../../source/game/actorFactory.cpp; sourceTree = "<group>"; };
 		41E9B2ED1AB1F45000ECA62E /* actorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = actorFactory.h; path = ../../source/game/actorFactory.h; sourceTree = "<group>"; };
-		D8783A511C50228300B319BC /* movie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = movie.cpp; path = ../../source/movie/movie.cpp; sourceTree = "<group>"; };
-		D8783A521C50228300B319BC /* movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movie.h; path = ../../source/movie/movie.h; sourceTree = "<group>"; };
-		D8783A6A1C50294E00B319BC /* libavcodec.56.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavcodec.56.dylib; path = ../ffmpeg/macosx/libavcodec.56.dylib; sourceTree = "<group>"; };
-		D8783A6B1C50294E00B319BC /* libavformat.56.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavformat.56.dylib; path = ../ffmpeg/macosx/libavformat.56.dylib; sourceTree = "<group>"; };
-		D8783A6C1C50294E00B319BC /* libavutil.54.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libavutil.54.dylib; path = ../ffmpeg/macosx/libavutil.54.dylib; sourceTree = "<group>"; };
-		D8783A6D1C50294E00B319BC /* libswresample.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswresample.1.dylib; path = ../ffmpeg/macosx/libswresample.1.dylib; sourceTree = "<group>"; };
-		D8783A6E1C50294E00B319BC /* libswscale.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libswscale.3.dylib; path = ../ffmpeg/macosx/libswscale.3.dylib; sourceTree = "<group>"; };
 		D8783A7E1C502BA400B319BC /* cpuVertexList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpuVertexList.cpp; sourceTree = "<group>"; };
 		D8783A7F1C502BA400B319BC /* cpuVertexList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuVertexList.h; sourceTree = "<group>"; };
 		D8783A801C502BA400B319BC /* fbo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fbo.cpp; sourceTree = "<group>"; };
@@ -475,20 +362,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8783A6F1C50294E00B319BC /* libavcodec.56.dylib in Frameworks */,
-				D8783A701C50294E00B319BC /* libavformat.56.dylib in Frameworks */,
-				D8783A711C50294E00B319BC /* libavutil.54.dylib in Frameworks */,
-				D8783A721C50294E00B319BC /* libswresample.1.dylib in Frameworks */,
-				D8783A731C50294E00B319BC /* libswscale.3.dylib in Frameworks */,
-				415A071F1AC9B81800D74D25 /* libogg.a in Frameworks */,
-				415A07201AC9B81800D74D25 /* libvorbis.a in Frameworks */,
-				415A07211AC9B81800D74D25 /* libvorbisfile.a in Frameworks */,
+				2A7269322AA765F100113CAA /* libvorbis.a in Frameworks */,
+				2A72691F2AA752F700113CAA /* libz.a in Frameworks */,
+				2A7269252AA7534000113CAA /* libpng16.a in Frameworks */,
 				41B776581A83E8D3008C8F23 /* libangelscript.a in Frameworks */,
+				2A7269382AA7682400113CAA /* libvorbisfile.a in Frameworks */,
 				41BB267F1A547A9A00311383 /* OpenAL.framework in Frameworks */,
-				41E2CEA11A51D5CC00FC28DC /* libpng.a in Frameworks */,
 				41E2CE9F1A51D57700FC28DC /* OpenGL.framework in Frameworks */,
-				41E2CE9D1A51D40700FC28DC /* libz.dylib in Frameworks */,
 				41E2CE371A51D1EE00FC28DC /* SDL2.framework in Frameworks */,
+				2A72692A2AA75F6500113CAA /* libogg.a in Frameworks */,
 				41E2CDFD1A51CF2000FC28DC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,26 +378,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		415A06FF1AC9B5E700D74D25 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				415A07071AC9B5E700D74D25 /* Ogg.framework */,
-				415A07091AC9B5E700D74D25 /* libogg.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		415A070B1AC9B5EF00D74D25 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				415A07121AC9B5EF00D74D25 /* Vorbis.framework */,
-				415A07141AC9B5EF00D74D25 /* libvorbis.a */,
-				415A07161AC9B5EF00D74D25 /* libvorbisenc.a */,
-				415A07181AC9B5EF00D74D25 /* libvorbisfile.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		41B776481A83E81C008C8F23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,6 +520,7 @@
 		41E2CDF01A51CF2000FC28DC = {
 			isa = PBXGroup;
 			children = (
+				2A7269282AA75A6100113CAA /* anubis.entitlements */,
 				41E2CEA01A51D59000FC28DC /* Dependencies */,
 				41E2CDFB1A51CF2000FC28DC /* Frameworks */,
 				41E2CDFA1A51CF2000FC28DC /* Products */,
@@ -669,7 +532,7 @@
 		41E2CDFA1A51CF2000FC28DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41E2CDF91A51CF2000FC28DC /* anubis.app */,
+				41E2CDF91A51CF2000FC28DC /* ExhumedEXPlus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -677,17 +540,15 @@
 		41E2CDFB1A51CF2000FC28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8783A6A1C50294E00B319BC /* libavcodec.56.dylib */,
-				D8783A6B1C50294E00B319BC /* libavformat.56.dylib */,
-				D8783A6C1C50294E00B319BC /* libavutil.54.dylib */,
-				D8783A6D1C50294E00B319BC /* libswresample.1.dylib */,
-				D8783A6E1C50294E00B319BC /* libswscale.3.dylib */,
-				41E2CE9C1A51D40700FC28DC /* libz.dylib */,
+				2A7269372AA7682400113CAA /* libvorbisfile.a */,
+				2A7269312AA765F100113CAA /* libvorbis.a */,
+				2A72691B2AA752F700113CAA /* libz.a */,
+				2A7269242AA7534000113CAA /* libpng16.a */,
+				2A7269292AA75F6500113CAA /* libogg.a */,
 				41E2CDFC1A51CF2000FC28DC /* Cocoa.framework */,
 				41BB267E1A547A9A00311383 /* OpenAL.framework */,
 				41E2CE9E1A51D57700FC28DC /* OpenGL.framework */,
 				41E2CE351A51D1EE00FC28DC /* SDL2.framework */,
-				41E2CE1B1A51CF2000FC28DC /* XCTest.framework */,
 				41E2CDFE1A51CF2000FC28DC /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -724,7 +585,6 @@
 				41E2CE3C1A51D39B00FC28DC /* framework */,
 				41BACC671A5311EA0054A04A /* game */,
 				41E2CE581A51D39B00FC28DC /* math */,
-				D8783A4A1C50226100B319BC /* movie */,
 				41E2CE631A51D39B00FC28DC /* opengl */,
 				41E2CE671A51D39B00FC28DC /* renderer */,
 				41B776541A83E83C008C8F23 /* script */,
@@ -846,23 +706,10 @@
 			path = ../../source/renderer;
 			sourceTree = "<group>";
 		};
-		41E2CE8F1A51D3E300FC28DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				41E2CE951A51D3E300FC28DC /* libpng.framework */,
-				41E2CE971A51D3E300FC28DC /* libpng.a */,
-				41E2CE991A51D3E300FC28DC /* libpng.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		41E2CEA01A51D59000FC28DC /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				41B776471A83E81C008C8F23 /* angelscript.xcodeproj */,
-				41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */,
-				415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */,
-				415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -891,21 +738,12 @@
 			name = system;
 			sourceTree = "<group>";
 		};
-		D8783A4A1C50226100B319BC /* movie */ = {
-			isa = PBXGroup;
-			children = (
-				D8783A511C50228300B319BC /* movie.cpp */,
-				D8783A521C50228300B319BC /* movie.h */,
-			);
-			name = movie;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		41E2CDF81A51CF2000FC28DC /* anubis */ = {
+		41E2CDF81A51CF2000FC28DC /* ExhumedEXPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41E2CE2A1A51CF2100FC28DC /* Build configuration list for PBXNativeTarget "anubis" */;
+			buildConfigurationList = 41E2CE2A1A51CF2100FC28DC /* Build configuration list for PBXNativeTarget "ExhumedEXPlus" */;
 			buildPhases = (
 				41E2CDF51A51CF2000FC28DC /* Sources */,
 				41E2CDF61A51CF2000FC28DC /* Frameworks */,
@@ -916,15 +754,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				415A071E1AC9B60400D74D25 /* PBXTargetDependency */,
-				415A071C1AC9B60100D74D25 /* PBXTargetDependency */,
-				415A071A1AC9B5FC00D74D25 /* PBXTargetDependency */,
 				41B776531A83E828008C8F23 /* PBXTargetDependency */,
-				41E2CE9B1A51D3FB00FC28DC /* PBXTargetDependency */,
 			);
-			name = anubis;
+			name = ExhumedEXPlus;
 			productName = anubis;
-			productReference = 41E2CDF91A51CF2000FC28DC /* anubis.app */;
+			productReference = 41E2CDF91A51CF2000FC28DC /* ExhumedEXPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -933,11 +767,11 @@
 		41E2CDF11A51CF2000FC28DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = 41E2CDF41A51CF2000FC28DC /* Build configuration list for PBXProject "anubis" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -951,69 +785,15 @@
 					ProductGroup = 41B776481A83E81C008C8F23 /* Products */;
 					ProjectRef = 41B776471A83E81C008C8F23 /* angelscript.xcodeproj */;
 				},
-				{
-					ProductGroup = 41E2CE8F1A51D3E300FC28DC /* Products */;
-					ProjectRef = 41E2CE8E1A51D3E300FC28DC /* libpng.xcodeproj */;
-				},
-				{
-					ProductGroup = 415A06FF1AC9B5E700D74D25 /* Products */;
-					ProjectRef = 415A06FE1AC9B5E700D74D25 /* Ogg.xcodeproj */;
-				},
-				{
-					ProductGroup = 415A070B1AC9B5EF00D74D25 /* Products */;
-					ProjectRef = 415A070A1AC9B5EF00D74D25 /* Vorbis.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
-				41E2CDF81A51CF2000FC28DC /* anubis */,
+				41E2CDF81A51CF2000FC28DC /* ExhumedEXPlus */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		415A07071AC9B5E700D74D25 /* Ogg.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Ogg.framework;
-			remoteRef = 415A07061AC9B5E700D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		415A07091AC9B5E700D74D25 /* libogg.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libogg.a;
-			remoteRef = 415A07081AC9B5E700D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		415A07121AC9B5EF00D74D25 /* Vorbis.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Vorbis.framework;
-			remoteRef = 415A07111AC9B5EF00D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		415A07141AC9B5EF00D74D25 /* libvorbis.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libvorbis.a;
-			remoteRef = 415A07131AC9B5EF00D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		415A07161AC9B5EF00D74D25 /* libvorbisenc.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libvorbisenc.a;
-			remoteRef = 415A07151AC9B5EF00D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		415A07181AC9B5EF00D74D25 /* libvorbisfile.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libvorbisfile.a;
-			remoteRef = 415A07171AC9B5EF00D74D25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		41B7764D1A83E81C008C8F23 /* libangelscript.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1026,27 +806,6 @@
 			fileType = archive.ar;
 			path = libangelscript.a;
 			remoteRef = 41B7764E1A83E81C008C8F23 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		41E2CE951A51D3E300FC28DC /* libpng.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = libpng.framework;
-			remoteRef = 41E2CE941A51D3E300FC28DC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		41E2CE971A51D3E300FC28DC /* libpng.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libpng.a;
-			remoteRef = 41E2CE961A51D3E300FC28DC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		41E2CE991A51D3E300FC28DC /* libpng.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libpng.a;
-			remoteRef = 41E2CE981A51D3E300FC28DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1141,7 +900,6 @@
 				D8783AA01C502BA400B319BC /* renderBackend.cpp in Sources */,
 				41BAB9131A5EF32100DD0D11 /* playLoop.cpp in Sources */,
 				D8783AA51C502BA400B319BC /* renderScene.cpp in Sources */,
-				D8783A531C50228300B319BC /* movie.cpp in Sources */,
 				41C7FC261A5AFB6E003864CB /* memHeap.cpp in Sources */,
 				41E2CE811A51D39B00FC28DC /* mathlib.cpp in Sources */,
 				41C7FC291A5AFB6E003864CB /* unzip.cpp in Sources */,
@@ -1166,30 +924,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		415A071A1AC9B5FC00D74D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libogg (static)";
-			targetProxy = 415A07191AC9B5FC00D74D25 /* PBXContainerItemProxy */;
-		};
-		415A071C1AC9B60100D74D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libvorbis (static)";
-			targetProxy = 415A071B1AC9B60100D74D25 /* PBXContainerItemProxy */;
-		};
-		415A071E1AC9B60400D74D25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libvorbisfile (static)";
-			targetProxy = 415A071D1AC9B60400D74D25 /* PBXContainerItemProxy */;
-		};
 		41B776531A83E828008C8F23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "angelscript OSX";
 			targetProxy = 41B776521A83E828008C8F23 /* PBXContainerItemProxy */;
-		};
-		41E2CE9B1A51D3FB00FC28DC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "mac-static-libpng";
-			targetProxy = 41E2CE9A1A51D3FB00FC28DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1217,28 +955,41 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1246,8 +997,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				ONLY_ACTIVE_ARCH = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.7;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1256,30 +1007,45 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = "";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 11.7;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1288,8 +1054,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CODE_SIGN_ENTITLEMENTS = anubis/anubis.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1300,21 +1069,24 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(PROJECT_DIR)/OpenAL.framework/Versions/A/Headers",
 					"$(PROJECT_DIR)/SDL2.framework/Headers",
-					"$(PROJECT_DIR)/../lpng1612",
+					"$(PROJECT_DIR)/png",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers/,
 					"$(PROJECT_DIR)/../angelscript/angelscript/include",
-					"$(PROJECT_DIR)/../ogg/libogg/include",
-					"$(PROJECT_DIR)/../ogg/libvorbis/include",
+					"$(PROJECT_DIR)/ogg/libogg/include",
+					"$(PROJECT_DIR)/ogg/libvorbis/include",
 					"$(PROJECT_DIR)/../ffmpeg/include",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "anubis/anubis-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/macosx",
+					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exhumedexplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1324,8 +1096,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CODE_SIGN_ENTITLEMENTS = anubis/anubis.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1336,21 +1111,24 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(PROJECT_DIR)/OpenAL.framework/Versions/A/Headers",
 					"$(PROJECT_DIR)/SDL2.framework/Headers",
-					"$(PROJECT_DIR)/../lpng1612",
+					"$(PROJECT_DIR)/png",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers/,
 					"$(PROJECT_DIR)/../angelscript/angelscript/include",
-					"$(PROJECT_DIR)/../ogg/libogg/include",
-					"$(PROJECT_DIR)/../ogg/libvorbis/include",
+					"$(PROJECT_DIR)/ogg/libogg/include",
+					"$(PROJECT_DIR)/ogg/libvorbis/include",
 					"$(PROJECT_DIR)/../ffmpeg/include",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "anubis/anubis-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/macosx",
+					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exhumedexplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1368,7 +1146,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41E2CE2A1A51CF2100FC28DC /* Build configuration list for PBXNativeTarget "anubis" */ = {
+		41E2CE2A1A51CF2100FC28DC /* Build configuration list for PBXNativeTarget "ExhumedEXPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41E2CE2B1A51CF2100FC28DC /* Debug */,

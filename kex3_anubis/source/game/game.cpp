@@ -571,13 +571,6 @@ void kexGameLocal::Init(void)
 
 void kexGameLocal::Start(void)
 {
-    if(kex::cSystem->CheckParam("-skipintromovies") <= 0 &&
-        cvarShowMovieIntro.GetBool())
-    {
-        kex::cMoviePlayer->StartVideoStream("movies/LOBOTOMY.avi");
-        kex::cMoviePlayer->StartVideoStream("movies/INTRO1.avi");
-    }
-
     bNoMonsters = (kex::cSystem->CheckParam("-nomonsters") > 0);
 
     smallFont   = kexFont::Alloc("smallfont");
@@ -809,18 +802,6 @@ void kexGameLocal::Tick(void)
             case GS_MAPEDITOR:
                 extern kexMapEditor mapEditorLocal;
                 gameLoop = &mapEditorLocal;
-                break;
-
-            case GS_ENDING_BAD:
-                kex::cMoviePlayer->StartVideoStream("movies/BADEND1.avi");
-                kex::cMoviePlayer->StartVideoStream("movies/CREDU1.avi");
-                gameLoop = titleScreen;
-                break;
-
-            case GS_ENDING_GOOD:
-                kex::cMoviePlayer->StartVideoStream("movies/GOODEND1.avi");
-                kex::cMoviePlayer->StartVideoStream("movies/CREDU1.avi");
-                gameLoop = titleScreen;
                 break;
                 
             default:

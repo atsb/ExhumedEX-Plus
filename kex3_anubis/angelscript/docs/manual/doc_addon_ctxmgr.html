@@ -91,8 +91,15 @@ Public C++ interface</h1>
 <div class="line">  <span class="comment">// Create a new context, prepare it with the function, then return </span></div>
 <div class="line">  <span class="comment">// it so that the application can pass the argument values. The context</span></div>
 <div class="line">  <span class="comment">// will be released by the manager after the execution has completed.</span></div>
-<div class="line">  <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *AddContext(<a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine, <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *func);</div>
+<div class="line">  <span class="comment">// Set keepCtxAfterExecution to true if the application needs to retrieve</span></div>
+<div class="line">  <span class="comment">// information from the context after it the script has finished. </span></div>
+<div class="line">  <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *AddContext(<a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine, <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *func, <span class="keywordtype">bool</span> keepCtxAfterExecution = <span class="keyword">false</span>);</div>
 <div class="line"></div>
+<div class="line">  <span class="comment">// If the context was kept after the execution, this method must be </span></div>
+<div class="line">  <span class="comment">// called when the application is done with the context so it can be</span></div>
+<div class="line">  <span class="comment">// returned to the pool for reuse.</span></div>
+<div class="line">  <span class="keywordtype">void</span> DoneWithContext(<a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *ctx);</div>
+<div class="line">  </div>
 <div class="line">  <span class="comment">// Create a new context, prepare it with the function, then return</span></div>
 <div class="line">  <span class="comment">// it so that the application can pass the argument values. The context</span></div>
 <div class="line">  <span class="comment">// will be added as a co-routine in the same thread as the currCtx.</span></div>
@@ -119,7 +126,7 @@ Public C++ interface</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

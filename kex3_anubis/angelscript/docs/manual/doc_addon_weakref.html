@@ -70,9 +70,7 @@ Public C++ interface</h1>
 <div class="line">  CScriptWeakRef(<span class="keyword">const</span> CScriptWeakRef &amp;other);</div>
 <div class="line">  CScriptWeakRef(<span class="keywordtype">void</span> *ref, <a class="code" href="classas_i_object_type.html" title="The interface for an object type.">asIObjectType</a> *type);</div>
 <div class="line"></div>
-<div class="line">  <span class="comment">// Memory management</span></div>
-<div class="line">  <span class="keywordtype">void</span> AddRef() <span class="keyword">const</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> Release() <span class="keyword">const</span>;</div>
+<div class="line">  ~CScriptWeakRef();</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Copy the stored value from another weakref object</span></div>
 <div class="line">  CScriptWeakRef &amp;operator=(<span class="keyword">const</span> CScriptWeakRef &amp;other);</div>
@@ -81,33 +79,28 @@ Public C++ interface</h1>
 <div class="line">  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> CScriptWeakRef &amp;o) <span class="keyword">const</span>;</div>
 <div class="line">  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> CScriptWeakRef &amp;o) <span class="keyword">const</span>;</div>
 <div class="line"></div>
+<div class="line">  <span class="comment">// Sets a new reference</span></div>
+<div class="line">  CScriptWeakRef &amp;Set(<span class="keywordtype">void</span> *newRef);</div>
+<div class="line"></div>
 <div class="line">  <span class="comment">// Returns the object if it is still alive</span></div>
+<div class="line">  <span class="comment">// This will increment the refCount of the returned object</span></div>
 <div class="line">  <span class="keywordtype">void</span> *Get() <span class="keyword">const</span>;</div>
 <div class="line"></div>
+<div class="line">  <span class="comment">// Returns true if the contained reference is the same</span></div>
+<div class="line">  <span class="keywordtype">bool</span> Equals(<span class="keywordtype">void</span> *ref) <span class="keyword">const</span>;</div>
+<div class="line">  </div>
 <div class="line">  <span class="comment">// Returns the type of the reference held</span></div>
 <div class="line">  <a class="code" href="classas_i_object_type.html" title="The interface for an object type.">asIObjectType</a> *GetRefType() <span class="keyword">const</span>;</div>
 <div class="line">};</div>
 </div><!-- fragment --><h1><a class="anchor" id="doc_addon_weakref_2"></a>
-Example usage in script</h1>
-<p>In the scripts it can be used as follows:</p>
-<pre>
-  class MyClass {}
-  MyClass @obj1 = MyClass();</pre><pre>  // Keep a weakref to the object
-  weakref&lt;MyClass&gt; r1(obj1);</pre><pre>  // Keep a weakref to a readonly object
-  const_weakref&lt;MyClass&gt; r2(obj1);</pre><pre>  // As long as there is a strong reference to the object, 
-  // the weakref will be able to return a handle to the object
-  MyClass @obj2 = r1.get();
-  assert( obj2 !is null );</pre><pre>  // After all strong references are removed the
-  // weakref will only return null
-  @obj1 = null;
-  @obj2 = null;</pre><pre>  const MyClass @obj3 = r2.get();
-  assert( obj3 is null );
-</pre> </div></div><!-- contents -->
+Public script interface</h1>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="doc_datatypes_weakref.html">weakref in the script language</a> </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

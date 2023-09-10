@@ -12,11 +12,10 @@ var doc_script =
     ] ],
     [ "Expressions", "doc_expressions.html", [
       [ "Assignments", "doc_expressions.html#assignment", null ],
-      [ "Compound assignments", "doc_expressions.html#compound", null ],
       [ "Function call", "doc_expressions.html#function", null ],
-      [ "Type conversions", "doc_expressions.html#conversion", null ],
       [ "Math operators", "doc_expressions.html#math", null ],
       [ "Bitwise operators", "doc_expressions.html#bits", null ],
+      [ "Compound assignments", "doc_expressions.html#compound", null ],
       [ "Logic operators", "doc_expressions.html#logic", null ],
       [ "Equality comparison operators", "doc_expressions.html#equal", null ],
       [ "Relational comparison operators", "doc_expressions.html#relation", null ],
@@ -28,6 +27,7 @@ var doc_script =
       [ "Handle-of", "doc_expressions.html#handle", null ],
       [ "Parenthesis", "doc_expressions.html#parenthesis", null ],
       [ "Scope resolution", "doc_expressions.html#scope", null ],
+      [ "Type conversions", "doc_expressions.html#conversion", null ],
       [ "Anonymous objects", "doc_expressions.html#anonobj", null ]
     ] ],
     [ "Data types", "doc_datatypes.html", "doc_datatypes" ],

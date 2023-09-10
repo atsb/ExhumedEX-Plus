@@ -56,7 +56,8 @@ $(document).ready(function(){initNavTree('doc_script_class_prop.html','');});
 <div class="title">Property accessors </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Many times when working with properties it is necessary to make sure specific logic is followed when accessing them. An example would be to always send a notification when a property is modified, or computing the value of the property from other properties. By implementing property accessor methods for the properties this can be implemented by the class itself, making it easier for the one who accesses the properties.</p>
+<div class="textblock"><dl class="section note"><dt>Note</dt><dd>The application can optionally <a class="el" href="doc_adv_custom_options.html#doc_adv_custom_options_lang_mod">turn off support for property accessors</a>, so you need to verify your application's manual to determine if this is supported for your application or not.</dd></dl>
+<p>Many times when working with properties it is necessary to make sure specific logic is followed when accessing them. An example would be to always send a notification when a property is modified, or computing the value of the property from other properties. By implementing property accessor methods for the properties this can be implemented by the class itself, making it easier for the one who accesses the properties.</p>
 <p>In AngelScript property accessors are declared with the following syntax:</p>
 <pre>
   class MyObj
@@ -106,10 +107,16 @@ $(document).ready(function(){initNavTree('doc_script_class_prop.html','');});
     // The compiler will convert this to a call to get_prop().
     assert( obj.prop == 1000 );
   }
-</pre><p>Observe that as property accessors are actually a pair of methods rather than direct access to the value, some restrictions apply as to how they can be used in expressions. Expressions that need to read and write the value at the same time is usually not possible, e.g. the increment operator ++, or compound assignments. In such cases the expression must be expanded so that the read and write operation are performed separately, e.g. the increment operator must be rewritten as follows:</p>
+</pre><p>Observe that as property accessors are actually a pair of methods rather than direct access to the value, some restrictions apply as to how they can be used in expressions that inspect and mutate in the same operation. Compound assignments can be used on property accessors, if the owning object is a reference type, but not if the owning object is a value type, this is because the compiler must be able to guarantee that the object stays alive between the two calls to the get accessor and set accessor.</p>
+<p>The increment and decrement operators are currently not supported.</p>
+<p>In such cases the expression must be expanded so that the read and write operation are performed separately, e.g. the increment operator must be rewritten as follows:</p>
 <pre>
-  a = a + 1;
-</pre><p>Property accessors can be used to emulate a single property or an array of properties accessed through the index operator. Property accessors for indexed access work the same way as ordinary property accessors, except that they take an index argument. The get accessor should take the index argument as the only argument, and the set accessor should take the index argument as the first argument, and the new value as the second argument.</p>
+  a++;     // will not work if a is a virtual property
+  a += 1;  // this is OK, as long as the owner of the virtual 
+           // property is a reference type or the property is global
+</pre><h1><a class="anchor" id="doc_script_class_prop_index"></a>
+Indexed property accessors</h1>
+<p>Property accessors can be used to emulate a single property or an array of properties accessed through the index operator. Property accessors for indexed access work the same way as ordinary property accessors, except that they take an index argument. The get accessor should take the index argument as the only argument, and the set accessor should take the index argument as the first argument, and the new value as the second argument.</p>
 <pre>
   string firstString;
   string secondString;</pre><pre>  // A global indexed get accessor
@@ -136,13 +143,13 @@ $(document).ready(function(){initNavTree('doc_script_class_prop.html','');});
     stringArray[1] = "World";</pre><pre>    // Reading the value of the indexed properties
     print(StringArray[0] + " " + stringArray[1] + "\n");
   }
-</pre><p>The application can optionally turn off support for property accessors, so you need to verify your application's manual to determine if this is supported for your application or not. </p>
+</pre><p>Compound assignments currently doesn't work for indexed properties. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -276,9 +276,9 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A negative value on error. </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">asMODULE_IS_IN_USE</td><td>The module is currently in use. </td></tr>
     <tr><td class="paramname">asINVALID_ARG</td><td>The <em>code</em> argument is null. </td></tr>
-    <tr><td class="paramname">asNOT_SUPPORTED</td><td>Compiler support is disabled in the engine.</td></tr>
+    <tr><td class="paramname">asNOT_SUPPORTED</td><td>Compiler support is disabled in the engine. </td></tr>
+    <tr><td class="paramname">asOUT_OF_MEMORY</td><td>The necessary memory to hold the script code couldn't be allocated.</td></tr>
   </table>
   </dd>
 </dl>
@@ -397,7 +397,8 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">asERROR</td><td>The script failed to build. </td></tr>
     <tr><td class="paramname">asBUILD_IN_PROGRESS</td><td>Another thread is currently building. </td></tr>
     <tr><td class="paramname">asINIT_GLOBAL_VARS_FAILED</td><td>It was not possible to initialize at least one of the global variables. </td></tr>
-    <tr><td class="paramname">asNOT_SUPPORTED</td><td>Compiler support is disabled in the engine.</td></tr>
+    <tr><td class="paramname">asNOT_SUPPORTED</td><td>Compiler support is disabled in the engine. </td></tr>
+    <tr><td class="paramname">asMODULE_IS_IN_USE</td><td>The code in the module is still being used and and cannot be removed.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1101,7 +1102,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This method should be used to retrieve the index of the script variable that you wish to access.</p>
-<p>The method will find the script variable with the exact same declaration. </p>
+<p>The method will find the script variable with the exact same declaration.</p>
+<p>If the variable is declared in a namespace first call <a class="el" href="classas_i_script_module.html#ab8629af79cee8212d0d244314d36f42a">SetDefaultNamespace</a> to set the namespace that should be searched first for the variable. </p>
 
 </div>
 </div>
@@ -1140,7 +1142,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This method should be used to retrieve the index of the script variable that you wish to access. </p>
+<p>This method should be used to retrieve the index of the script variable that you wish to access.</p>
+<p>If the variable is declared in a namespace first call <a class="el" href="classas_i_script_module.html#ab8629af79cee8212d0d244314d36f42a">SetDefaultNamespace</a> to set the namespace that should be searched first for the variable. </p>
 
 </div>
 </div>
@@ -1605,6 +1608,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">asINVALID_ARG</td><td>The stream object wasn't specified. </td></tr>
     <tr><td class="paramname">asBUILD_IN_PROGRESS</td><td>Another thread is currently building. </td></tr>
     <tr><td class="paramname">asOUT_OF_MEMORY</td><td>The engine ran out of memory while loading the byte code. </td></tr>
+    <tr><td class="paramname">asMODULE_IS_IN_USE</td><td>The code in the module is still being used and and cannot be removed. </td></tr>
     <tr><td class="paramname">asERROR</td><td>It was not possible to load the byte code.</td></tr>
   </table>
   </dd>
@@ -2004,7 +2008,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_script_module.html">asIScriptModule</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:18 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

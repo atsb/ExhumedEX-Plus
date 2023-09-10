@@ -71,7 +71,10 @@ Public C++ interface</h1>
 <div class="line">  <span class="keyword">virtual</span> ~CDebugger();</div>
 <div class="line"></div>
 <div class="line">  <span class="comment">// Register callbacks to handle to-string conversions of application types</span></div>
-<div class="line">  <span class="keyword">typedef</span> std::string (*ToStringCallback)(<span class="keywordtype">void</span> *obj, <span class="keywordtype">bool</span> expandMembers, CDebugger *dbg);</div>
+<div class="line">  <span class="comment">// The expandMembersLevel is a counter for how many recursive levels the members should be expanded.</span></div>
+<div class="line">  <span class="comment">// If the object that is being converted to a string has members of its own the callback should call</span></div>
+<div class="line">  <span class="comment">// the debugger&#39;s ToString passing in expandMembersLevel - 1.</span></div>
+<div class="line">  <span class="keyword">typedef</span> std::string (*ToStringCallback)(<span class="keywordtype">void</span> *obj, <span class="keywordtype">int</span> expandMembersLevel, CDebugger *dbg);</div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> RegisterToStringCallback(<span class="keyword">const</span> <a class="code" href="classas_i_object_type.html" title="The interface for an object type.">asIObjectType</a> *ot, ToStringCallback callback);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// User interaction</span></div>
@@ -96,7 +99,12 @@ Public C++ interface</h1>
 <div class="line">  <span class="comment">// Helpers</span></div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> InterpretCommand(<span class="keyword">const</span> std::string &amp;cmd, <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *ctx);</div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> CheckBreakPoint(<a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *ctx);</div>
-<div class="line">  <span class="keyword">virtual</span> std::string ToString(<span class="keywordtype">void</span> *value, <a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> typeId, <span class="keywordtype">bool</span> expandMembers, <a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine);</div>
+<div class="line">  <span class="keyword">virtual</span> std::string ToString(<span class="keywordtype">void</span> *value, <a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> typeId, <span class="keywordtype">int</span> expandMembersLevel, <a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Optionally set the engine pointer in the debugger so it can be retrieved</span></div>
+<div class="line">  <span class="comment">// by callbacks that need it. This will hold a reference to the engine.</span></div>
+<div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetEngine(<a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine);</div>
+<div class="line">  <span class="keyword">virtual</span> <a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *GetEngine();</div>
 <div class="line">};</div>
 </div><!-- fragment --><h1><a class="anchor" id="doc_addon_debugger_1"></a>
 Example usage</h1>
@@ -118,7 +126,7 @@ Example usage</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

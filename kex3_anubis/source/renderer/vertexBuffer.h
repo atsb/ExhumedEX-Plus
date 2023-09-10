@@ -41,7 +41,7 @@ public:
         byte padding[8];
     } drawVert_t;
 
-    typedef struct
+    struct drawVertList_t
     {
         kexArray<drawVert_t> drawVerts;
 
@@ -64,9 +64,9 @@ public:
             AddVertex(x, y, z, t, u, 255, 255, 255, 255);
         }
 
-    } drawVertList_t;
+    };
 
-    typedef struct
+    struct drawIndiceList_t
     {
         kexArray<uint> drawIndices;
 
@@ -77,7 +77,7 @@ public:
             drawIndices.Push(t2);
         }
 
-    } drawIndiceList_t;
+    };
     
     static kexCvar      cvarRenderUseVBO;
     static bool         bUseVertexBuffers;

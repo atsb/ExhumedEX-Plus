@@ -26,14 +26,14 @@ CScriptMgr::~CScriptMgr()
 		contexts[n]->Release();
 
 	if( engine )
-		engine->Release();
+		engine->ShutDownAndRelease();
 }
 
 int CScriptMgr::Init()
 {
 	int r;
 
-	engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+	engine = asCreateScriptEngine();
 
 	// Set the message callback to print the human readable messages that the engine gives in case of errors
 	r = engine->SetMessageCallback(asMETHOD(CScriptMgr, MessageCallback), this, asCALL_THISCALL); assert( r >= 0 );

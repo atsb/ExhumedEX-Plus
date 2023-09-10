@@ -10,7 +10,9 @@ var doc_advanced =
       [ "With the line callback", "doc_adv_timeout.html#doc_adv_timeout_1", null ],
       [ "With a secondary thread", "doc_adv_timeout.html#doc_adv_timeout_2", null ]
     ] ],
-    [ "Garbage collection", "doc_gc.html", null ],
+    [ "Garbage collection", "doc_gc.html", [
+      [ "Garbage collection and multi-threading", "doc_gc.html#doc_gc_threads", null ]
+    ] ],
     [ "Multithreading", "doc_adv_multithread.html", [
       [ "Things to think about with a multithreaded environment", "doc_adv_multithread.html#doc_adv_multithread_1", null ],
       [ "Fibers", "doc_adv_multithread.html#doc_adv_fibers", null ]
@@ -29,10 +31,14 @@ var doc_advanced =
     ] ],
     [ "Fine tuning", "doc_finetuning.html", [
       [ "Cache the functions and types", "doc_finetuning.html#doc_finetuning_1", null ],
-      [ "Reuse the context object", "doc_finetuning.html#doc_finetuning_2", null ],
+      [ "Reuse the context object", "doc_finetuning.html#doc_finetuning_2", [
+        [ "Context pool", "doc_finetuning.html#doc_finetuning_2_1", null ],
+        [ "Nested calls", "doc_finetuning.html#doc_finetuning_2_2", null ]
+      ] ],
       [ "Compile scripts without line cues", "doc_finetuning.html#doc_finetuning_3", null ],
       [ "Disable thread safety", "doc_finetuning.html#doc_finetuning_4", null ],
-      [ "Turn off automatic garbage collection", "doc_finetuning.html#doc_finetuning_5", null ]
+      [ "Turn off automatic garbage collection", "doc_finetuning.html#doc_finetuning_5", null ],
+      [ "Compare native calling convention versus generic calling convention", "doc_finetuning.html#doc_finetuning_6", null ]
     ] ],
     [ "Access masks and exposing different interfaces", "doc_adv_access_mask.html", null ],
     [ "Using namespaces", "doc_adv_namespace.html", [

@@ -23,5 +23,11 @@ var doc_addon_types =
       [ "Supporting ref object", "doc_datatypes_ref.html#doc_datatypes_ref_addon", [
         [ "Operators", "doc_datatypes_ref.html#doc_datatypes_ref_addon_ops", null ]
       ] ]
+    ] ],
+    [ "weakref", "doc_datatypes_weakref.html", [
+      [ "Supporting weakref object", "doc_datatypes_weakref.html#doc_datatypes_weakref_addon", [
+        [ "Operators", "doc_datatypes_weakref.html#doc_datatypes_weakref_addon_ops", null ],
+        [ "Methods", "doc_datatypes_weakref.html#doc_datatypes_array_addon_mthd", null ]
+      ] ]
     ] ]
 ];

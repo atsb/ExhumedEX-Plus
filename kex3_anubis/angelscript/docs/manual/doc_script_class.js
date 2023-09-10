@@ -8,7 +8,7 @@ var doc_script_class =
     [ "Inheritance and polymorphism", "doc_script_class_inheritance.html", [
       [ "Extra control with final, abstract, and override", "doc_script_class_inheritance.html#doc_script_class_inheritance_2", null ]
     ] ],
-    [ "Private class members", "doc_script_class_private.html", null ],
+    [ "Protected and private class members", "doc_script_class_private.html", null ],
     [ "Operator overloads", "doc_script_class_ops.html", [
       [ "Prefixed unary operators", "doc_script_class_ops.html#doc_script_class_unary_ops", null ],
       [ "Postfixed unary operators", "doc_script_class_ops.html#doc_script_class_unary2_ops", null ],
@@ -19,6 +19,8 @@ var doc_script_class =
       [ "Functor operator", "doc_script_class_ops.html#doc_script_class_call", null ],
       [ "Type conversion operators", "doc_script_class_ops.html#doc_script_class_conv", null ]
     ] ],
-    [ "Property accessors", "doc_script_class_prop.html", null ],
+    [ "Property accessors", "doc_script_class_prop.html", [
+      [ "Indexed property accessors", "doc_script_class_prop.html#doc_script_class_prop_index", null ]
+    ] ],
     [ "Initialization of class members", "doc_script_class_memberinit.html", null ]
 ];

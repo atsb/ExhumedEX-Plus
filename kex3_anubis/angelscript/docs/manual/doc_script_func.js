@@ -10,5 +10,6 @@ var doc_script_func =
       [ "Can't use expressions that rely on local objects", "doc_script_func_retref.html#doc_script_refref_cleanup", null ]
     ] ],
     [ "Function overloading", "doc_script_func_overload.html", null ],
-    [ "Default arguments", "doc_script_func_defarg.html", null ]
+    [ "Default arguments", "doc_script_func_defarg.html", null ],
+    [ "Anonymous functions", "doc_script_anonfunc.html", null ]
 ];

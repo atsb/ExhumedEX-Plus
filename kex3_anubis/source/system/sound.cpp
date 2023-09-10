@@ -141,19 +141,3 @@ kexObject *kexSound::GetRefObject(const int handle)
 {
     return NULL;
 }
-
-//
-// kexSound::HookToMovieAudioStream
-//
-
-void kexSound::HookToMovieAudioStream(const int sampleRate, const int channels)
-{
-}
-
-//
-// kexSound::UnHookMovieAudioStream
-//
-
-void kexSound::UnHookMovieAudioStream(void)
-{
-}

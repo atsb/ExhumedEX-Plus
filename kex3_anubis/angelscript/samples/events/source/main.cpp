@@ -23,7 +23,7 @@ using namespace std;
 #define UINT unsigned int 
 typedef unsigned int DWORD;
 int ch;
-// Linux doesn't have timeGetTime(), this essintially does the same
+// Linux doesn't have timeGetTime(), this essentially does the same
 // thing, except this is milliseconds since Epoch (Jan 1st 1970) instead
 // of system start. It will work the same though...
 DWORD timeGetTime()
@@ -94,7 +94,7 @@ int main(int argc, char **argv)
 	int r;
 
 	// Create the script engine
-	asIScriptEngine *engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+	asIScriptEngine *engine = asCreateScriptEngine();
 	if( engine == 0 )
 	{
 		cout << "Failed to create script engine." << endl;
@@ -219,8 +219,8 @@ int main(int argc, char **argv)
 	mainCtx->Release();
 	eventCtx->Release();
 
-	// Release the engine
-	engine->Release();
+	// Shut down the engine
+	engine->ShutDownAndRelease();
 
 	return 0;
 }

@@ -81,12 +81,14 @@ General usage</h1>
   object obj;
   object@ obj_h;
   @obj_h = @obj;
-</pre><p>An object handle can be compared against another object handle (of the same type) to verify if they are pointing to the same object or not. It can also be compared against null, which is a special keyword that represents an empty handle. This is done using the identity operator, <code>is</code>.</p>
+</pre><p>Note that the compiler can often implicitly determine that it is the handle of the object that is needed rather than the actual object itself. In these cases it is not necessary to explicitly prepend the expression with @.</p>
+<p>An object handle can be compared against another object handle (of the same type) to verify if they are pointing to the same object or not. It can also be compared against null, which is a special keyword that represents an empty handle. This is done using the identity operator, <code>is</code>.</p>
 <pre>
   object@ obj_a, obj_b;
   if( obj_a is obj_b ) {}
   if( obj_a !is null ) {}
-</pre><h1><a class="anchor" id="doc_script_handle_2"></a>
+</pre><p>Observe, the == and != operators will do a value comparison on the objects referred to by the handles using the <a class="el" href="doc_script_class_ops.html#doc_script_class_cmp_ops">opEquals</a> or <a class="el" href="doc_script_class_ops.html#doc_script_class_cmp_ops">opCmp</a> operator overloads. Though, if the expressions are prepended with @ the operators will have the same function as <code>is</code> and <code>!is</code>.</p>
+<h1><a class="anchor" id="doc_script_handle_2"></a>
 Object life times</h1>
 <p>An object's life time is normally for the duration of the scope the variable was declared in. But if a handle outside the scope is set to reference the object, the object will live on until all object handles are released.</p>
 <pre>
@@ -130,7 +132,7 @@ Object relations and polymorphing</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

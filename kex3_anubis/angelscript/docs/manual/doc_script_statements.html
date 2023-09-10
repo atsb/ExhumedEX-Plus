@@ -131,12 +131,13 @@ Loops: while / do-while / for</h1>
   } while( j &lt; 10 );
 </pre><p>For both <code>while</code> and <code>do-while</code> the expression that determines if the loop should continue must evaluate to either true or false. If it evaluates to true, the loop continues, otherwise it stops and the code will continue with the next statement immediately following the loop.</p>
 <pre>
-  // More compact loop, where condituion is checked before the logic is executed
+  // More compact loop, where condition is checked before the logic is executed
   for( int n = 0; n &lt; 10; n++ ) 
   {
     // Do something
   }
 </pre><p>The <code>for</code> loop is a more compact form of a <code>while</code> loop. The first part of the statement (until the first <code>;</code>) is executed only once, before the loop starts. Here it is possible to declare a variable that will be visible only within the loop statement. The second part is the condition that must be satisfied for the loop to be executed. A blank expression here will always evaluate to true. The last part is executed after the logic within the loop, e.g. used to increment an iteration variable.</p>
+<p>Multiple variables can be declared in the <code>for</code> loop, separated by <code>,</code>. Likewise, multiple increment expressions can be used in the last part by separating them with <code>,</code>.</p>
 <h1><a class="anchor" id="break"></a>
 Loop control: break / continue</h1>
 <pre>
@@ -179,7 +180,7 @@ Statement blocks</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

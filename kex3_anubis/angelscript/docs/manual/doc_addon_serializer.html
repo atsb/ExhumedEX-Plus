@@ -65,6 +65,9 @@ $(document).ready(function(){initNavTree('doc_addon_serializer.html','');});
 <li>The serializer will attempt to backup all objects, but in some cases an application may not want to backup the actual object, but only a reference to it, e.g. an internal application object referenced by the script. Currently there is no way of telling the serializer to do differently in this case.</li>
 <li>If the module holds references to objects from another module it will probably fail in restoring the values.</li>
 </ul>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Show how to serialize extra objects too. And explain about memory management for restored objects</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Explain that handles to registered types without factories will be kept as-is</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Registered pod-types do not need a special user type as the serializer will simply keep a bitwise copy</dd></dl>
 <h1><a class="anchor" id="doc_addon_serializer_1"></a>
 Public C++ interface</h1>
 <div class="fragment"><div class="line"><span class="keyword">class </span>CSerializer</div>
@@ -141,15 +144,15 @@ Example usage</h1>
 <div class="line">    CScriptArray *arr = (CScriptArray*)ptr;</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; arr-&gt;GetSize(); i++ )</div>
-<div class="line">      val-&gt;m_children.push_back(<span class="keyword">new</span> CSerializedValue(val ,<span class="stringliteral">&quot;&quot;</span>, arr-&gt;At(i), arr-&gt;GetElementTypeId()));</div>
+<div class="line">      val-&gt;m_children.push_back(<span class="keyword">new</span> CSerializedValue(val ,<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, arr-&gt;At(i), arr-&gt;GetElementTypeId()));</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordtype">void</span> Restore(CSerializedValue *val, <span class="keywordtype">void</span> *ptr)</div>
 <div class="line">  {</div>
 <div class="line">    CScriptArray *arr = (CScriptArray*)ptr;</div>
-<div class="line">    arr-&gt;Resize(val-&gt;m_children.size());</div>
+<div class="line">    arr-&gt;Resize(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a>(val-&gt;m_children.size()));</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordflow">for</span>( <span class="keywordtype">size_t</span> i = 0; i &lt; val-&gt;m_children.size(); ++i )</div>
-<div class="line">      val-&gt;m_children[i]-&gt;Restore(arr-&gt;At(i));</div>
+<div class="line">      val-&gt;m_children[i]-&gt;Restore(arr-&gt;At(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a>(i)), arr-&gt;GetElementTypeId());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 </div><!-- fragment --> </div></div><!-- contents -->
@@ -157,7 +160,7 @@ Example usage</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -21,7 +21,7 @@ var classas_i_object_type =
     [ "GetModule", "classas_i_object_type.html#a0776f18c9f4fa640d45d3aef5af1e73b", null ],
     [ "GetName", "classas_i_object_type.html#a2075998cce987c3643d52de7abd99868", null ],
     [ "GetNamespace", "classas_i_object_type.html#a74fb1a08cb5907aeb8bece981fb48c12", null ],
-    [ "GetProperty", "classas_i_object_type.html#a50aab8b32f1bd77996474125bf1c57ce", null ],
+    [ "GetProperty", "classas_i_object_type.html#aedaed498c8f4fbe29771a13b6ed30971", null ],
     [ "GetPropertyCount", "classas_i_object_type.html#a18ccd38257957182b18750313ae7b411", null ],
     [ "GetPropertyDeclaration", "classas_i_object_type.html#a9c3f5e808e04518a3bb5fa1ec7bfb691", null ],
     [ "GetSize", "classas_i_object_type.html#a201bd5cc143082f844f701a5fef65bed", null ],

@@ -2,7 +2,7 @@ var classas_i_script_engine =
 [
     [ "AddRef", "classas_i_script_engine.html#aa95a5d9b5d9e7e6a230fedf056eaf8ce", null ],
     [ "AddRefScriptObject", "classas_i_script_engine.html#a065c31d3fe1caaf3581d4a914d03c258", null ],
-    [ "AssignScriptObject", "classas_i_script_engine.html#a3881846ac7a8d1f8b3c552ca8e426ccd", null ],
+    [ "AssignScriptObject", "classas_i_script_engine.html#a2b2139a18bf9da8a89f620c27d1962c4", null ],
     [ "BeginConfigGroup", "classas_i_script_engine.html#ac81014e50dd7efc1920adcb3fd2d1e5d", null ],
     [ "ClearMessageCallback", "classas_i_script_engine.html#ada64567fc9621e5e98160c7f03efa064", null ],
     [ "CreateContext", "classas_i_script_engine.html#a2630e1cd03ffab0fee9b820bf0afe42a", null ],
@@ -53,7 +53,8 @@ var classas_i_script_engine =
     [ "GetWeakRefFlagOfScriptObject", "classas_i_script_engine.html#a417391408204670fdcc7fd87cc84339c", null ],
     [ "IsHandleCompatibleWithObject", "classas_i_script_engine.html#a282b92f29b371545a6a6f6aa2ccf971e", null ],
     [ "NotifyGarbageCollectorOfNewObject", "classas_i_script_engine.html#a5541461b74697fceddf7626d88f3e755", null ],
-    [ "ParseToken", "classas_i_script_engine.html#adb8d7ba77b0b24abea68ba93ac153668", null ],
+    [ "ParseToken", "classas_i_script_engine.html#a57ecbd86ae9370684877c755e83cef0d", null ],
+    [ "RefCastObject", "classas_i_script_engine.html#a4ca08e2ba8b95643e8f38f89a0679e52", null ],
     [ "RegisterDefaultArrayType", "classas_i_script_engine.html#ac9451feece1297eba8d1649036039e82", null ],
     [ "RegisterEnum", "classas_i_script_engine.html#abed6e77f2a532c8a4f528650fa137d37", null ],
     [ "RegisterEnumValue", "classas_i_script_engine.html#a4d331153596dd39838f3bed2a861af18", null ],
@@ -84,6 +85,8 @@ var classas_i_script_engine =
     [ "SetMessageCallback", "classas_i_script_engine.html#a74192fe950808eb72a64e3e371f0ea02", null ],
     [ "SetModuleUserDataCleanupCallback", "classas_i_script_engine.html#a7523853b9a9bf7dab603fa6a06393d51", null ],
     [ "SetObjectTypeUserDataCleanupCallback", "classas_i_script_engine.html#a2336a92d5cd2a6a37007addf81ca059f", null ],
+    [ "SetScriptObjectUserDataCleanupCallback", "classas_i_script_engine.html#a4654e2cae0690c50e19b177f1ec54592", null ],
     [ "SetUserData", "classas_i_script_engine.html#aabee8d6ef426c434adee85ec6d57f940", null ],
+    [ "ShutDownAndRelease", "classas_i_script_engine.html#a28c3800620d4aeaca75d084391eb758e", null ],
     [ "WriteMessage", "classas_i_script_engine.html#a936ce6566af958bb75ba1c0945d8b03a", null ]
 ];

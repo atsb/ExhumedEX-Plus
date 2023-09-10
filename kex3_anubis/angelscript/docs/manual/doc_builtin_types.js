@@ -10,6 +10,8 @@ var doc_builtin_types =
       [ "Objects", "doc_datatypes_obj.html#objects", null ],
       [ "Object handles", "doc_datatypes_obj.html#handles", null ]
     ] ],
-    [ "Function handles", "doc_datatypes_funcptr.html", null ],
+    [ "Function handles", "doc_datatypes_funcptr.html", [
+      [ "Delegates", "doc_datatypes_funcptr.html#doc_datatypes_delegate", null ]
+    ] ],
     [ "Auto declarations", "doc_datatypes_auto.html", null ]
 ];

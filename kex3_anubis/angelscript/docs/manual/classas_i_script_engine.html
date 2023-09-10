@@ -71,6 +71,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aae91a45da75af9234b87e825b5c08b81"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#aae91a45da75af9234b87e825b5c08b81">Release</a> () const =0</td></tr>
 <tr class="memdesc:aae91a45da75af9234b87e825b5c08b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease reference counter.  <a href="#aae91a45da75af9234b87e825b5c08b81">More...</a><br/></td></tr>
 <tr class="separator:aae91a45da75af9234b87e825b5c08b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c3800620d4aeaca75d084391eb758e"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a28c3800620d4aeaca75d084391eb758e">ShutDownAndRelease</a> ()=0</td></tr>
+<tr class="memdesc:a28c3800620d4aeaca75d084391eb758e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down the engine then decrease the reference counter.  <a href="#a28c3800620d4aeaca75d084391eb758e">More...</a><br/></td></tr>
+<tr class="separator:a28c3800620d4aeaca75d084391eb758e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Engine properties</div></td></tr>
 <tr class="memitem:a1bce4e5f573a2ca0ff55163e28f761dd"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a1bce4e5f573a2ca0ff55163e28f761dd">SetEngineProperty</a> (<a class="el" href="angelscript_8h.html#a53c2e8a74ade77c928316396394ebe0f">asEEngineProp</a> property, <a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a> value)=0</td></tr>
 <tr class="memdesc:a1bce4e5f573a2ca0ff55163e28f761dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dynamically change some engine properties.  <a href="#a1bce4e5f573a2ca0ff55163e28f761dd">More...</a><br/></td></tr>
@@ -276,17 +279,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4a4cea1cfeea361b8a44d80f3d928e3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classas_i_script_function.html">asIScriptFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#ab4a4cea1cfeea361b8a44d80f3d928e3">CreateDelegate</a> (<a class="el" href="classas_i_script_function.html">asIScriptFunction</a> *func, void *obj)=0</td></tr>
 <tr class="memdesc:ab4a4cea1cfeea361b8a44d80f3d928e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a delegate for an object and method.  <a href="#ab4a4cea1cfeea361b8a44d80f3d928e3">More...</a><br/></td></tr>
 <tr class="separator:ab4a4cea1cfeea361b8a44d80f3d928e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3881846ac7a8d1f8b3c552ca8e426ccd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a3881846ac7a8d1f8b3c552ca8e426ccd">AssignScriptObject</a> (void *dstObj, void *srcObj, const <a class="el" href="classas_i_object_type.html">asIObjectType</a> *type)=0</td></tr>
-<tr class="memdesc:a3881846ac7a8d1f8b3c552ca8e426ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy one script object to another.  <a href="#a3881846ac7a8d1f8b3c552ca8e426ccd">More...</a><br/></td></tr>
-<tr class="separator:a3881846ac7a8d1f8b3c552ca8e426ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2139a18bf9da8a89f620c27d1962c4"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a2b2139a18bf9da8a89f620c27d1962c4">AssignScriptObject</a> (void *dstObj, void *srcObj, const <a class="el" href="classas_i_object_type.html">asIObjectType</a> *type)=0</td></tr>
+<tr class="memdesc:a2b2139a18bf9da8a89f620c27d1962c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy one script object to another.  <a href="#a2b2139a18bf9da8a89f620c27d1962c4">More...</a><br/></td></tr>
+<tr class="separator:a2b2139a18bf9da8a89f620c27d1962c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a643746a83d3c1ba30cae7df40558bd13"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a643746a83d3c1ba30cae7df40558bd13">ReleaseScriptObject</a> (void *obj, const <a class="el" href="classas_i_object_type.html">asIObjectType</a> *type)=0</td></tr>
 <tr class="memdesc:a643746a83d3c1ba30cae7df40558bd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the object pointer.  <a href="#a643746a83d3c1ba30cae7df40558bd13">More...</a><br/></td></tr>
 <tr class="separator:a643746a83d3c1ba30cae7df40558bd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a065c31d3fe1caaf3581d4a914d03c258"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a065c31d3fe1caaf3581d4a914d03c258">AddRefScriptObject</a> (void *obj, const <a class="el" href="classas_i_object_type.html">asIObjectType</a> *type)=0</td></tr>
 <tr class="memdesc:a065c31d3fe1caaf3581d4a914d03c258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the reference counter for the script object.  <a href="#a065c31d3fe1caaf3581d4a914d03c258">More...</a><br/></td></tr>
 <tr class="separator:a065c31d3fe1caaf3581d4a914d03c258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ca08e2ba8b95643e8f38f89a0679e52"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a4ca08e2ba8b95643e8f38f89a0679e52">RefCastObject</a> (void *obj, <a class="el" href="classas_i_object_type.html">asIObjectType</a> *fromType, <a class="el" href="classas_i_object_type.html">asIObjectType</a> *toType, void **newPtr, bool useOnlyImplicitCast=false)=0</td></tr>
+<tr class="memdesc:a4ca08e2ba8b95643e8f38f89a0679e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the handle on a successful reference cast to desired type.  <a href="#a4ca08e2ba8b95643e8f38f89a0679e52">More...</a><br/></td></tr>
+<tr class="separator:a4ca08e2ba8b95643e8f38f89a0679e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a282b92f29b371545a6a6f6aa2ccf971e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a282b92f29b371545a6a6f6aa2ccf971e">IsHandleCompatibleWithObject</a> (void *obj, int objTypeId, int handleTypeId) const =0</td></tr>
-<tr class="memdesc:a282b92f29b371545a6a6f6aa2ccf971e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the object referenced by a handle compatible with the specified type.  <a href="#a282b92f29b371545a6a6f6aa2ccf971e">More...</a><br/></td></tr>
 <tr class="separator:a282b92f29b371545a6a6f6aa2ccf971e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a417391408204670fdcc7fd87cc84339c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classas_i_lockable_shared_bool.html">asILockableSharedBool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a417391408204670fdcc7fd87cc84339c">GetWeakRefFlagOfScriptObject</a> (void *obj, const <a class="el" href="classas_i_object_type.html">asIObjectType</a> *type) const =0</td></tr>
 <tr class="memdesc:a417391408204670fdcc7fd87cc84339c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weak ref flag from the object.  <a href="#a417391408204670fdcc7fd87cc84339c">More...</a><br/></td></tr>
@@ -302,9 +307,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae5ba9fe99b72c60392cdaeef164f2c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register context callbacks for pooling.  <a href="#ae5ba9fe99b72c60392cdaeef164f2c65">More...</a><br/></td></tr>
 <tr class="separator:ae5ba9fe99b72c60392cdaeef164f2c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">String interpretation</div></td></tr>
-<tr class="memitem:adb8d7ba77b0b24abea68ba93ac153668"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="angelscript_8h.html#a012a602727ca3fe1efa27053bc58cbca">asETokenClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#adb8d7ba77b0b24abea68ba93ac153668">ParseToken</a> (const char *string, size_t stringLength=0, int *tokenLength=0) const =0</td></tr>
-<tr class="memdesc:adb8d7ba77b0b24abea68ba93ac153668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the class and length of the first token in the string.  <a href="#adb8d7ba77b0b24abea68ba93ac153668">More...</a><br/></td></tr>
-<tr class="separator:adb8d7ba77b0b24abea68ba93ac153668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ecbd86ae9370684877c755e83cef0d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="angelscript_8h.html#a012a602727ca3fe1efa27053bc58cbca">asETokenClass</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a57ecbd86ae9370684877c755e83cef0d">ParseToken</a> (const char *string, size_t stringLength=0, <a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> *tokenLength=0) const =0</td></tr>
+<tr class="memdesc:a57ecbd86ae9370684877c755e83cef0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the class and length of the first token in the string.  <a href="#a57ecbd86ae9370684877c755e83cef0d">More...</a><br/></td></tr>
+<tr class="separator:a57ecbd86ae9370684877c755e83cef0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Garbage collection</div></td></tr>
 <tr class="memitem:a17511a1de72ecdb836b974768f2ec422"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a17511a1de72ecdb836b974768f2ec422">GarbageCollect</a> (<a class="el" href="angelscript_8h.html#a5428f0c940201e5f3bbb28304aeb81bc">asDWORD</a> flags=<a class="el" href="angelscript_8h.html#ac06582350753eb4d89d6ba9442eadf9da31e476bfb875b0f4fb209a3ef2540709">asGC_FULL_CYCLE</a>, <a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> numIterations=1)=0</td></tr>
 <tr class="memdesc:a17511a1de72ecdb836b974768f2ec422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform garbage collection.  <a href="#a17511a1de72ecdb836b974768f2ec422">More...</a><br/></td></tr>
@@ -343,10 +348,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2336a92d5cd2a6a37007addf81ca059f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a2336a92d5cd2a6a37007addf81ca059f">SetObjectTypeUserDataCleanupCallback</a> (<a class="el" href="angelscript_8h.html#a8bbbe3a90082461266acf8f98ce9216e">asCLEANOBJECTTYPEFUNC_t</a> callback, <a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a> type=0)=0</td></tr>
 <tr class="memdesc:a2336a92d5cd2a6a37007addf81ca059f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that should be called when an object type is destroyed.  <a href="#a2336a92d5cd2a6a37007addf81ca059f">More...</a><br/></td></tr>
 <tr class="separator:a2336a92d5cd2a6a37007addf81ca059f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4654e2cae0690c50e19b177f1ec54592"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_i_script_engine.html#a4654e2cae0690c50e19b177f1ec54592">SetScriptObjectUserDataCleanupCallback</a> (<a class="el" href="angelscript_8h.html#ac29678e8c7f48b9c2aaabae90ee258d1">asCLEANSCRIPTOBJECTFUNC_t</a> callback, <a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a> type=0)=0</td></tr>
+<tr class="memdesc:a4654e2cae0690c50e19b177f1ec54592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the function that should be called when a script object is destroyed.  <a href="#a4654e2cae0690c50e19b177f1ec54592">More...</a><br/></td></tr>
+<tr class="separator:a4654e2cae0690c50e19b177f1ec54592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The engine is the central object. It is where the application <a class="el" href="doc_register_api_topic.html">registers the application interface</a> that the scripts should be able to use, and it is where the application can <a class="el" href="doc_compile_script.html">request modules to build scripts</a> and <a class="el" href="doc_call_script_func.html">contexts to execute them</a>.</p>
-<p>The engine instance is created with a call to <a class="el" href="angelscript_8h.html#af84c6359750675bf3ceccf373286a533">asCreateScriptEngine</a>.</p>
+<p>The engine instance is created with a call to <a class="el" href="angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b">asCreateScriptEngine</a>.</p>
 <p>It is allowed to have multiple instances of script engines, but there is rarely a need for it. Even if the application needs to expose different interfaces to different types of scripts this can usually be accomplished through the use of <a class="el" href="doc_adv_dynamic_config.html">configuration groups</a> and <a class="el" href="doc_adv_access_mask.html">access profiles</a>. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa95a5d9b5d9e7e6a230fedf056eaf8ce"></a>
@@ -370,7 +378,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The number of references to this object.</dd></dl>
-<p>Call this method when storing an additional reference to the object. Remember that the first reference that is received from <a class="el" href="angelscript_8h.html#af84c6359750675bf3ceccf373286a533">asCreateScriptEngine</a> is already accounted for. </p>
+<p>Call this method when storing an additional reference to the object. Remember that the first reference that is received from <a class="el" href="angelscript_8h.html#acb6a62345d9cca6c9b5a3dac67d80d0b">asCreateScriptEngine</a> is already accounted for. </p>
 
 </div>
 </div>
@@ -416,7 +424,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3881846ac7a8d1f8b3c552ca8e426ccd"></a>
+<a class="anchor" id="a2b2139a18bf9da8a89f620c27d1962c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -424,7 +432,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void asIScriptEngine::AssignScriptObject </td>
+          <td class="memname">virtual int asIScriptEngine::AssignScriptObject </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>dstObj</em>, </td>
@@ -457,7 +465,15 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">dstObj</td><td>A pointer to the destination object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">srcObj</td><td>A pointer to the source object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the objects.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A negative value on error </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">asINVALID_ARG</td><td>One of the arguments is null </td></tr>
+    <tr><td class="paramname">asNOT_SUPPORTED</td><td>The object type is a ref type and value assignment has been turned off</td></tr>
   </table>
   </dd>
 </dl>
@@ -2258,16 +2274,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>A pointer to the object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">objTypeId</td><td>The type id of the object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">handleTypeId</td><td>The type id of the handle. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns true if the handle type is compatible with the object type.</dd></dl>
-<p>This method can be used to determine if a handle of a certain type is compatible with an object of another type. This is useful if you have a pointer to a object, but only knows that it implements a certain interface and now you want to determine if it implements another interface. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Since 2.30.0. Use <a class="el" href="classas_i_script_engine.html#a4ca08e2ba8b95643e8f38f89a0679e52">asIScriptEngine::RefCastObject</a> instead </dd></dl>
 
 </div>
 </div>
@@ -2321,7 +2328,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adb8d7ba77b0b24abea68ba93ac153668"></a>
+<a class="anchor" id="a57ecbd86ae9370684877c755e83cef0d"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2343,7 +2350,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int *&#160;</td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815">asUINT</a> *&#160;</td>
           <td class="paramname"><em>tokenLength</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
@@ -2368,6 +2375,78 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="angelscript_8h.html#a012a602727ca3fe1efa27053bc58cbca">asETokenClass</a> values.</dd></dl>
 <p>This function is useful for those applications that want to tokenize strings into tokens that the script language uses, e.g. IDEs providing syntax highlighting, or intellisense. It can also be used to parse the meta data strings that may be declared for script entities. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4ca08e2ba8b95643e8f38f89a0679e52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int asIScriptEngine::RefCastObject </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classas_i_object_type.html">asIObjectType</a> *&#160;</td>
+          <td class="paramname"><em>fromType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classas_i_object_type.html">asIObjectType</a> *&#160;</td>
+          <td class="paramname"><em>toType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void **&#160;</td>
+          <td class="paramname"><em>newPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useOnlyImplicitCast</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>A pointer to the object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fromType</td><td>The type of the object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">toType</td><td>The desired type for the cast. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">newPtr</td><td>The new pointer to the object if successful. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">useOnlyImplicitCast</td><td>If only the implicit reference cast operators should be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A negative value on error </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">asINVALID_ARG</td><td>A null pointer was supplied </td></tr>
+    <tr><td class="paramname">asNOT_SUPPORTED</td><td>The type of the object is a function pointer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This method is used to cast an object pointer to a different type. While both the new and old pointers are expected to refer to the same object instance, the address of the pointers are not necessarily the same.</p>
+<p>If the cast is successful the <em>newPtr</em> will be set to the new pointer, and the reference counter will be incremented. If the cast is not successful, the <em>newPtr</em> will be set to null, and the reference count left unchanged. </p>
 
 </div>
 </div>
@@ -3204,7 +3283,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The number of references to this object.</dd></dl>
 <p>Call this method when you will no longer use the references that you own.</p>
-<p>The application is responsible for releasing references to all other script objects before releasing its last reference to the engine. If this is not done, it is possible that memory leaks occur as the engine cannot free objects kept alive by the application. </p>
+<p>If you know that the engine is supposed to be shut down, then it is recommended to call the <a class="el" href="classas_i_script_engine.html#a28c3800620d4aeaca75d084391eb758e">ShutDownAndRelease</a> method instead. </p>
 
 </div>
 </div>
@@ -3835,6 +3914,49 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4654e2cae0690c50e19b177f1ec54592"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void asIScriptEngine::SetScriptObjectUserDataCleanupCallback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#ac29678e8c7f48b9c2aaabae90ee258d1">asCLEANSCRIPTOBJECTFUNC_t</a>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="angelscript_8h.html#a76fc6994aba7ff6c685a62c273c057e3">asPWORD</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>A pointer to the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>An identifier specifying which user data the callback is to be used with.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function given with this call will be invoked when a script object instance is destroyed if any <a class="el" href="classas_i_script_object.html#ac85cea9bca5dd3868e027285e44dd6d0">user data</a> has been registered with the type.</p>
+<p>The function is called from within the script object destructor, so the callback should not be used for anything but cleaning up the user data itself. </p>
+
+</div>
+</div>
 <a class="anchor" id="aabee8d6ef426c434adee85ec6d57f940"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3877,6 +3999,32 @@ Public Member Functions</h2></td></tr>
 <p>This method allows the application to associate a value, e.g. a pointer, with the engine instance.</p>
 <p>The type values 1000 through 1999 are reserved for use by the official add-ons.</p>
 <p>Optionally, a callback function can be <a class="el" href="classas_i_script_engine.html#a8fa4fc9aacb99db6d4be0a5542b85e35">registered</a> to clean up the user data when the engine is destroyed. </p>
+
+</div>
+</div>
+<a class="anchor" id="a28c3800620d4aeaca75d084391eb758e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int asIScriptEngine::ShutDownAndRelease </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The number of references to this object.</dd></dl>
+<p>Call this method when you know it is time to shut down the engine. This will automatically discard all the script modules and run a complete garbage collection cycle.</p>
+<p>Calling this method rather than the ordinary <a class="el" href="classas_i_script_engine.html#aae91a45da75af9234b87e825b5c08b81">Release</a> method will avoid potential memory leaks if for example there are objects in the modules or garbage collector that indirectly holds a reference to the engine. </p>
 
 </div>
 </div>
@@ -3959,7 +4107,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classas_i_script_engine.html">asIScriptEngine</a></li>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:17 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:22 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

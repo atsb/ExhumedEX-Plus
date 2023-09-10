@@ -85,8 +85,25 @@ $(document).ready(function(){initNavTree('doc_adv_inheritappclass.html','');});
 <div class="line">  <span class="keywordtype">int</span> m_value;</div>
 <div class="line">   </div>
 <div class="line">  <span class="comment">// A factory function that can be used by the script side to create</span></div>
-<div class="line">  <span class="keyword">static</span> FooScripted *Factory();</div>
-<div class="line">   </div>
+<div class="line">  <span class="keyword">static</span> FooScripted *Factory()</div>
+<div class="line">  {</div>
+<div class="line">    <a class="code" href="classas_i_script_context.html" title="The interface to the virtual machine.">asIScriptContext</a> *ctx = <a class="code" href="angelscript_8h.html#ad3a20dc58093b92a5a44c7b6ada34a10" title="Returns the currently active context.">asGetActiveContext</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Get the function that is calling the factory so we can be certain it is the FooScript script class</span></div>
+<div class="line">    <a class="code" href="classas_i_script_function.html" title="The interface for a script function description.">asIScriptFunction</a> *func = ctx-&gt;<a class="code" href="classas_i_script_context.html#a1c101300447f2909e5d188409a7180f6" title="Returns the function at the specified callstack level.">GetFunction</a>(0);</div>
+<div class="line">    <span class="keywordflow">if</span>( func-&gt;<a class="code" href="classas_i_script_function.html#a73442bb7c6dca067ae2f4d3d069d19de" title="Returns the object type for class or interface method.">GetObjectType</a>() == 0 || std::string(func-&gt;<a class="code" href="classas_i_script_function.html#a73442bb7c6dca067ae2f4d3d069d19de" title="Returns the object type for class or interface method.">GetObjectType</a>()-&gt;<a class="code" href="classas_i_object_type.html#a2075998cce987c3643d52de7abd99868" title="Returns a temporary pointer to the name of the datatype.">GetName</a>()) != <span class="stringliteral">&quot;FooScripted&quot;</span> )</div>
+<div class="line">    {</div>
+<div class="line">      ctx-&gt;<a class="code" href="classas_i_script_context.html#a4ed608208cafdebe5676df079e27d392" title="Sets an exception, which aborts the execution.">SetException</a>(<span class="stringliteral">&quot;Invalid attempt to manually instantiate FooScript_t&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Get the this pointer from the calling function so the FooScript C++</span></div>
+<div class="line">    <span class="comment">// class can be linked with the FooScript script class</span></div>
+<div class="line">    <a class="code" href="classas_i_script_object.html" title="The interface for an instance of a script object.">asIScriptObject</a> *obj = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classas_i_script_object.html" title="The interface for an instance of a script object.">asIScriptObject</a>*<span class="keyword">&gt;</span>(ctx-&gt;<a class="code" href="classas_i_script_context.html#a4f6761a7a0c872dda681d8e180830ff9" title="Returns a pointer to the object, if a class method is being executed.">GetThisPointer</a>(0));</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> FooScripted(obj);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
 <div class="line">  <span class="comment">// Reference counting</span></div>
 <div class="line">  <span class="keywordtype">void</span> AddRef() </div>
 <div class="line">  { </div>
@@ -111,11 +128,9 @@ $(document).ready(function(){initNavTree('doc_adv_inheritappclass.html','');});
 <div class="line">  <span class="comment">// The constructor and destructor are indirectly called</span></div>
 <div class="line">  FooScripted(<a class="code" href="classas_i_script_object.html" title="The interface for an instance of a script object.">asIScriptObject</a> *obj) : m_obj(0), m_isDead(0), m_value(0), m_refCount(1)</div>
 <div class="line">  {</div>
-<div class="line">    <a class="code" href="classas_i_script_engine.html" title="The engine interface.">asIScriptEngine</a> *engine = obj-&gt;<a class="code" href="classas_i_script_object.html#a5dda2d380ae1580e15ddf9d95893c57a" title="Return the script engine.">GetEngine</a>();</div>
-<div class="line"></div>
 <div class="line">    <span class="comment">// Get the weak ref flag for the script object to </span></div>
 <div class="line">    <span class="comment">// avoid holding a strong reference to the script class</span></div>
-<div class="line">    m_isDead = engine-&gt;<a class="code" href="classas_i_script_engine.html#a417391408204670fdcc7fd87cc84339c" title="Returns the weak ref flag from the object.">GetWeakRefFlagOfScriptObject</a>(obj, obj-&gt;<a class="code" href="classas_i_script_object.html#aeafb60827d684cdc1df38894a3fb47ef" title="Returns the object type interface for the object.">GetObjectType</a>());</div>
+<div class="line">    m_isDead = obj-&gt;<a class="code" href="classas_i_script_object.html#a9ccca7fe3453219377fc9bd190bf7903" title="Returns the weak ref flag for the object.">GetWeakRefFlag</a>();</div>
 <div class="line">    m_isDead-&gt;<a class="code" href="classas_i_lockable_shared_bool.html#a1183742552ce6b952cc3742bd456d787" title="Adds a reference to the shared boolean.">AddRef</a>();</div>
 <div class="line"></div>
 <div class="line">    m_obj = obj;</div>
@@ -163,7 +178,8 @@ $(document).ready(function(){initNavTree('doc_adv_inheritappclass.html','');});
     {
       get { return m_obj.m_value; }
       set { m_obj.m_value = value; }
-    }</pre><pre>    // Hold a reference to the C++ side of the proxy
+    }</pre><pre>    // The script class can be implicitly cast to the C++ type through the opImplCast method
+    FooScripted_t @opImplCast() { return m_obj; }</pre><pre>    // Hold a reference to the C++ side of the proxy
     private FooScripted_t @m_obj;
   }
 </pre><p>Now the scripts classes can derive from the FooScripted class and access the properties and methods of the parent class normally.</p>
@@ -173,7 +189,7 @@ $(document).ready(function(){initNavTree('doc_adv_inheritappclass.html','');});
   {
     void CallMe()
     {
-       m_value = m_value + 1;   
+       m_value += 1;
     }
   }</pre><pre>  void main()
   {
@@ -225,7 +241,7 @@ $(document).ready(function(){initNavTree('doc_adv_inheritappclass.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

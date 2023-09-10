@@ -126,6 +126,9 @@ Public C++ interface</h1>
 <div class="line">  <span class="keywordtype">int</span>  Find(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> startAt, <span class="keywordtype">void</span> *value) <span class="keyword">const</span>;</div>
 <div class="line">  <span class="keywordtype">int</span>  FindByRef(<span class="keywordtype">void</span> *ref) <span class="keyword">const</span>;</div>
 <div class="line">  <span class="keywordtype">int</span>  FindByRef(<a class="code" href="angelscript_8h.html#ac8186f029686800b7ce36bde4a55c815" title="32 bit unsigned integer">asUINT</a> startAt, <span class="keywordtype">void</span> *ref) <span class="keyword">const</span>;</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Returns the address of the inner buffer for direct manipulation</span></div>
+<div class="line">  <span class="keywordtype">void</span> *GetBuffer();</div>
 <div class="line">};</div>
 </div><!-- fragment --><h1><a class="anchor" id="doc_addon_array_2"></a>
 Public script interface</h1>
@@ -167,7 +170,7 @@ C++ example</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Oct 21 2014 22:29:16 for AngelScript by
+    <li class="footer">Generated on Sun Aug 30 2015 14:21:21 for AngelScript by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
