@@ -44,9 +44,6 @@
     <Filter Include="Source Files\script\objects">
       <UniqueIdentifier>{f249f1c3-311c-4f0c-8b65-f4a42a4d1129}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\movie">
-      <UniqueIdentifier>{32f415ea-1b5a-429e-a149-cdcceb70322f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -371,9 +368,6 @@
     </ClCompile>
     <ClCompile Include="..\source\script\objects\systemObject.cpp">
       <Filter>Source Files\script\objects</Filter>
-    </ClCompile>
-    <ClCompile Include="..\source\movie\movie.cpp">
-      <Filter>Source Files\movie</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

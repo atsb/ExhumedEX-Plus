@@ -1,41 +1,41 @@
-PowerslaveEX GPL Source Code
+PowerslaveEX-Plus GPL Source Code
 =======================================
 
-This is the source code to Powerslave EX, an ****UNOFFICIAL**** remake of Powerslave featured on the Playstation back in 1997. This remake is based on the first iteration of my custom game engine, Kex Engine 3.0. While most of the game logic has been reverse-engineered, the collision and AI system is completely original. The level format and how sprites are handled was also changed to a custom format to suit my engine's needs, so using data directly from the PSX CD will not work.
+Please note: This does not 'yet' support the remastered data due to some issues.  This only supports the older EX 'game.kpf' file.  I will not say where to find it and I will never supply it.  If you have the required data already, I strongly urge you to also buy the remastered version, if only to support the efforts of the ND team and the rights holders.
 
-I also would like to note that a lot of the core code in this verrsion of Kex is already out of date and is somewhat bugged. Though there has been a lot of improvements in other projects since this build, there's currently no plans to back-port those updates just yet. All levels, textures, audio and sprites have been stripped. However I am currently looking into a solution to generate the game data from the original PSX CD.
-
-Again I would like to stress that this is a ****UNOFFICIAL**** hobby project and is not supported by its ip-owners nor Playmates Interactive. Do ****NOT**** contact them for support.
-
-Compiling on Win32:
+Compiling on Windows:
 -------------------
 
-A project file for Microsoft Visual Studio 2008 is provided in kex3_anubis/msvc/
-The solution file is compatible with the Express releases.
+A project file for Microsoft Visual Studio 2022 is provided in kex3_anubis/msvc/
+Just open, and build.  All dependencies are assumed to be done via 'vcpkg' on windows and the default path reflects this.
 
-Compiling on MacOS 10.x:
+Compiling on macOS:
 -------------------
 
-There were plans to do a MacOSX port but cancelled when the project got halted. The XCODE project files can be found in kex3_anubis/xcode/
+A project file and all required dependencies are located in kex3_anubis/xcode/
+Just open, and build.
+
+Compiling on GNU/Linux:
+-------------------
+
+A Makefile is supplied in kex3_anubis/source
+Dependencies are assumed to already be installed (the -dev / -devel versions) from your package manager.
 
 Dependencies
 -------------------
 
 Powerslave EX uses the following third-party libraries (included in this repo)
 * SDL2
-* Angelscript
-* FFMpeg
+* Angelscript <-- already supplied as 2.30.2 in kex3_anubis/angelscript
 * OpenAL
 * Vorbis
 * LibPNG
 * ZLib
 
-Contributions
+Please Note: FFMPEG support was removed as I do not know the API and have no interest in learning it, the version used was extremely old and would have required a lot of effort to simply play a few movies.  Contributors are welcome to do a PR with a multiplatform implementation of the latest version if they so wish.
+
+Paths
 -------------------
-
-I am willing to accept contributions but do please try to follow the existing format and syntax in the source code.
-
-Technical Support
--------------------
-
-I will happily answer any questions you may have regarding to level formats or even about the source code. I can be contacted via svkaiser--at--gmail--dot--com
+On Windows, place the 'game.kpf' file in the same directory as the binary.
+On macOS, place the 'game.kpf' file in Library/Application Support/ExhumedEXPlus
+On GNU/Linux, place the 'game.kpf' file in the same directory as the binary.

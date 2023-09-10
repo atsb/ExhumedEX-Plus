@@ -162,7 +162,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>.\;C:\vcpkg\packages\sdl2_x64-windows\include\SDL2;C:\vcpkg\packages\openal-soft_x64-windows\include\AL;C:\vcpkg\packages\zlib_x64-windows\include;C:\vcpkg\packages\libpng_x64-windows\include\libpng16;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;C:\vcpkg\packages\libogg_x64-windows\include;C:\vcpkg\packages\libvorbis_x64-windows\include;C:\vcpkg\packages\ffmpeg_x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;C:\vcpkg\packages\sdl2_x64-windows\include;C:\vcpkg\packages\openal-soft_x64-windows\include;C:\vcpkg\packages\zlib_x64-windows\include;C:\vcpkg\packages\libpng_x64-windows\include\libpng16;.\..\angelscript\angelscript\include;.\..\source;.\..\source\framework;.\..\source\win32;.\..\source\math;.\..\source\opengl;.\..\source\renderer;.\..\source\game;.\..\source\system;.\..\source\system\sdl;.\..\source\tools\;.\..\source\tools\mapEditor\;.\..\source\script;.\..\source\script\objects;.\..\source\movie\;C:\vcpkg\packages\libogg_x64-windows\include;C:\vcpkg\packages\libvorbis_x64-windows\include;C:\vcpkg\packages\ffmpeg_x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;__STDC_CONSTANT_MACROS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -238,7 +238,6 @@
     <ClCompile Include="..\source\math\quaternion.cpp" />
     <ClCompile Include="..\source\math\random.cpp" />
     <ClCompile Include="..\source\math\vector.cpp" />
-    <ClCompile Include="..\source\movie\movie.cpp" />
     <ClCompile Include="..\source\opengl\glcontext.cpp" />
     <ClCompile Include="..\source\renderer\cpuVertexList.cpp" />
     <ClCompile Include="..\source\renderer\fbo.cpp" />
