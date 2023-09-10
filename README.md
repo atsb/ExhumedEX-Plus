@@ -36,6 +36,6 @@ Please Note: FFMPEG support was removed as I do not know the API and have no int
 
 Paths
 -------------------
-On Windows, place the 'game.kpf' file in the same directory as the binary.
-On macOS, place the 'game.kpf' file in Library/Application Support/ExhumedEXPlus
-On GNU/Linux, place the 'game.kpf' file in the same directory as the binary.
+* On Windows, place the 'game.kpf' file in the same directory as the binary.
+* On macOS, place the 'game.kpf' file in Library/Application Support/ExhumedEXPlus
+* On GNU/Linux, place the 'game.kpf' file in the same directory as the binary.
