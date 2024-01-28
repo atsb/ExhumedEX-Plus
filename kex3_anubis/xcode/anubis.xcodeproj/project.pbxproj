@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A72691F2AA752F700113CAA /* libz.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A72691B2AA752F700113CAA /* libz.a */; };
-		2A7269252AA7534000113CAA /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269242AA7534000113CAA /* libpng16.a */; };
-		2A72692A2AA75F6500113CAA /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269292AA75F6500113CAA /* libogg.a */; };
-		2A7269322AA765F100113CAA /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269312AA765F100113CAA /* libvorbis.a */; };
-		2A7269382AA7682400113CAA /* libvorbisfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7269372AA7682400113CAA /* libvorbisfile.a */; };
+		3CE1E61E2B6635600046B369 /* Vorbis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE1E61D2B6635600046B369 /* Vorbis.framework */; };
+		3CE1E61F2B6635780046B369 /* Vorbis.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CE1E61D2B6635600046B369 /* Vorbis.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CE1E62A2B6635910046B369 /* Ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE1E6202B6635910046B369 /* Ogg.framework */; };
+		3CE1E62B2B6635980046B369 /* Ogg.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CE1E6202B6635910046B369 /* Ogg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CE1E62F2B6635D20046B369 /* png.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE1E62E2B6635D20046B369 /* png.framework */; };
+		3CE1E6302B6635D70046B369 /* png.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CE1E62E2B6635D20046B369 /* png.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		410A697F1AAF53FC000BD442 /* dataConvert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 410A697E1AAF53FC000BD442 /* dataConvert.cpp */; };
 		4111E0821A8D4B19000D5B22 /* pickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4111E0801A8D4B19000D5B22 /* pickup.cpp */; };
 		411358D21AB75FE200916706 /* inventoryMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 411358D01AB75FE200916706 /* inventoryMenu.cpp */; };
@@ -144,6 +145,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3CE1E6302B6635D70046B369 /* png.framework in CopyFiles */,
+				3CE1E62B2B6635980046B369 /* Ogg.framework in CopyFiles */,
+				3CE1E61F2B6635780046B369 /* Vorbis.framework in CopyFiles */,
 				41E2CEA31A51D68C00FC28DC /* SDL2.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,12 +164,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A72691B2AA752F700113CAA /* libz.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libz.a; sourceTree = "<group>"; };
-		2A7269242AA7534000113CAA /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng16.a; sourceTree = "<group>"; };
 		2A7269282AA75A6100113CAA /* anubis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = anubis.entitlements; path = anubis/anubis.entitlements; sourceTree = "<group>"; };
-		2A7269292AA75F6500113CAA /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libogg.a; sourceTree = "<group>"; };
-		2A7269312AA765F100113CAA /* libvorbis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libvorbis.a; sourceTree = "<group>"; };
-		2A7269372AA7682400113CAA /* libvorbisfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libvorbisfile.a; sourceTree = "<group>"; };
+		3CE1E61D2B6635600046B369 /* Vorbis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Vorbis.framework; sourceTree = "<group>"; };
+		3CE1E6202B6635910046B369 /* Ogg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Ogg.framework; sourceTree = "<group>"; };
+		3CE1E6222B6635910046B369 /* pnginfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pnginfo.h; sourceTree = "<group>"; };
+		3CE1E6232B6635910046B369 /* pngstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngstruct.h; sourceTree = "<group>"; };
+		3CE1E6242B6635910046B369 /* pngpriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngpriv.h; sourceTree = "<group>"; };
+		3CE1E6252B6635910046B369 /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
+		3CE1E6262B6635910046B369 /* pngprefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngprefix.h; sourceTree = "<group>"; };
+		3CE1E6272B6635910046B369 /* pnglibconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pnglibconf.h; sourceTree = "<group>"; };
+		3CE1E6282B6635910046B369 /* pngconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngconf.h; sourceTree = "<group>"; };
+		3CE1E6292B6635910046B369 /* pngdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngdebug.h; sourceTree = "<group>"; };
+		3CE1E62E2B6635D20046B369 /* png.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = png.framework; sourceTree = "<group>"; };
 		410A697E1AAF53FC000BD442 /* dataConvert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dataConvert.cpp; path = ../../source/tools/dataConvert.cpp; sourceTree = "<group>"; };
 		4111E0801A8D4B19000D5B22 /* pickup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pickup.cpp; path = ../../source/game/pickup.cpp; sourceTree = "<group>"; };
 		4111E0811A8D4B19000D5B22 /* pickup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pickup.h; path = ../../source/game/pickup.h; sourceTree = "<group>"; };
@@ -362,15 +372,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7269322AA765F100113CAA /* libvorbis.a in Frameworks */,
-				2A72691F2AA752F700113CAA /* libz.a in Frameworks */,
-				2A7269252AA7534000113CAA /* libpng16.a in Frameworks */,
+				3CE1E61E2B6635600046B369 /* Vorbis.framework in Frameworks */,
 				41B776581A83E8D3008C8F23 /* libangelscript.a in Frameworks */,
-				2A7269382AA7682400113CAA /* libvorbisfile.a in Frameworks */,
 				41BB267F1A547A9A00311383 /* OpenAL.framework in Frameworks */,
+				3CE1E62A2B6635910046B369 /* Ogg.framework in Frameworks */,
 				41E2CE9F1A51D57700FC28DC /* OpenGL.framework in Frameworks */,
 				41E2CE371A51D1EE00FC28DC /* SDL2.framework in Frameworks */,
-				2A72692A2AA75F6500113CAA /* libogg.a in Frameworks */,
+				3CE1E62F2B6635D20046B369 /* png.framework in Frameworks */,
 				41E2CDFD1A51CF2000FC28DC /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +386,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CE1E6212B6635910046B369 /* png */ = {
+			isa = PBXGroup;
+			children = (
+				3CE1E6222B6635910046B369 /* pnginfo.h */,
+				3CE1E6232B6635910046B369 /* pngstruct.h */,
+				3CE1E6242B6635910046B369 /* pngpriv.h */,
+				3CE1E6252B6635910046B369 /* png.h */,
+				3CE1E6262B6635910046B369 /* pngprefix.h */,
+				3CE1E6272B6635910046B369 /* pnglibconf.h */,
+				3CE1E6282B6635910046B369 /* pngconf.h */,
+				3CE1E6292B6635910046B369 /* pngdebug.h */,
+			);
+			path = png;
+			sourceTree = "<group>";
+		};
 		41B776481A83E81C008C8F23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,11 +563,10 @@
 		41E2CDFB1A51CF2000FC28DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A7269372AA7682400113CAA /* libvorbisfile.a */,
-				2A7269312AA765F100113CAA /* libvorbis.a */,
-				2A72691B2AA752F700113CAA /* libz.a */,
-				2A7269242AA7534000113CAA /* libpng16.a */,
-				2A7269292AA75F6500113CAA /* libogg.a */,
+				3CE1E62E2B6635D20046B369 /* png.framework */,
+				3CE1E6202B6635910046B369 /* Ogg.framework */,
+				3CE1E6212B6635910046B369 /* png */,
+				3CE1E61D2B6635600046B369 /* Vorbis.framework */,
 				41E2CDFC1A51CF2000FC28DC /* Cocoa.framework */,
 				41BB267E1A547A9A00311383 /* OpenAL.framework */,
 				41E2CE9E1A51D57700FC28DC /* OpenGL.framework */,
@@ -1078,16 +1100,19 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "anubis/anubis-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/macosx",
 					"$(PROJECT_DIR)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exhumedexplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx14.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1120,16 +1145,19 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/OpenAL.framework/Versions/A/Headers,
 				);
 				INFOPLIST_FILE = "anubis/anubis-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.action-games";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/ @executable_path/../Frameworks/ @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/macosx",
 					"$(PROJECT_DIR)",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exhumedexplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx14.2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

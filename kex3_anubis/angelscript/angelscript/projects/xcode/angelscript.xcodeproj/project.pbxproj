@@ -647,7 +647,7 @@
 				GCC_PREFIX_HEADER = angelscript_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib/OSX/x86_64/Debug;
 				PRODUCT_NAME = angelscript;
-				SDKROOT = macosx;
+				SDKROOT = macosx14.2;
 			};
 			name = Debug;
 		};
@@ -664,7 +664,7 @@
 				GCC_PREFIX_HEADER = angelscript_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib/OSX/x86_64/Release;
 				PRODUCT_NAME = angelscript;
-				SDKROOT = macosx;
+				SDKROOT = macosx14.2;
 			};
 			name = Release;
 		};
@@ -678,10 +678,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx14.2;
 			};
 			name = Debug;
 		};
@@ -694,9 +695,10 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = macosx14.2;
 			};
 			name = Release;
 		};
